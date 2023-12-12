@@ -17,7 +17,7 @@
 package example.dagger;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import example.common.ElectricHeater;
 import example.common.Heater;
 import javax.inject.Singleton;

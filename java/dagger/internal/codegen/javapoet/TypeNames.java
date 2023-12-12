@@ -44,7 +44,7 @@ public final class TypeNames {
   public static final ClassName INTO_MAP = ClassName.get("dagger.multibindings", "IntoMap");
   public static final ClassName INTO_SET = ClassName.get("dagger.multibindings", "IntoSet");
   public static final ClassName MAP_KEY = ClassName.get("dagger", "MapKey");
-  public static final ClassName MODULE = ClassName.get("dagger", "Module");
+  public static final ClassName MODULE = ClassName.get("dagger", "ModuleDagger2");
   public static final ClassName MULTIBINDS = ClassName.get("dagger.multibindings", "Multibinds");
   public static final ClassName PROVIDES = ClassName.get("dagger", "Provides");
   public static final ClassName REUSABLE = ClassName.get("dagger", "Reusable");

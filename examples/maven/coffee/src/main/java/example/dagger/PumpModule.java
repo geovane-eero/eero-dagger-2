@@ -17,7 +17,7 @@
 package example.dagger;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 
 @ModuleDagger2
 abstract class PumpModule {

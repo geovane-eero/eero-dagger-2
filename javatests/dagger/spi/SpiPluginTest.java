@@ -39,7 +39,7 @@ public final class SpiPluginTest {
             "test.TestModule",
             "package test;",
             "",
-            "import dagger.Module;",
+            "import dagger.ModuleDagger2;",
             "import dagger.Provides;",
             "",
             "@ModuleDagger2",
@@ -434,7 +434,7 @@ public final class SpiPluginTest {
             "test.SubcomponentModule",
             "package test;",
             "",
-            "import dagger.Module;",
+            "import dagger.ModuleDagger2;",
             "",
             "@Module(subcomponents = TestSubcomponent.class)",
             "interface SubcomponentModule {}");

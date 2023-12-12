@@ -17,7 +17,7 @@
 package example.hilt;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
 import example.common.ElectricHeater;

@@ -169,6 +169,10 @@ abstract class BindingMethodValidator extends BindingElementValidator<XMethodEle
         // Binding method is in companion object, use companion object's enclosing class instead.
         enclosingTypeElement = enclosingTypeElement.getEnclosingTypeElement();
       }
+      report.addWarning("EnclosingTypeElement: " + enclosingTypeElement);
+      for (ClassName enclosingElementAnnotation : enclosingElementAnnotations) {
+        report.addWarning("Enclosing elemnent annotation: " + enclosingElementAnnotation);
+      }
       if (!hasAnyAnnotation(enclosingTypeElement, enclosingElementAnnotations)) {
         report.addError(
             bindingMethods(

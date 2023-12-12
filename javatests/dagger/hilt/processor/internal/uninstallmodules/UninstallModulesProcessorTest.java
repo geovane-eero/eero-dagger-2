@@ -41,7 +41,7 @@ public class UninstallModulesProcessorTest {
                 "test.InvalidModule",
                 "package test;",
                 "",
-                "import dagger.Module;",
+                "import dagger.ModuleDagger2;",
                 "import dagger.hilt.migration.DisableInstallInCheck;",
                 "",
                 "@DisableInstallInCheck",

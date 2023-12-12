@@ -17,7 +17,7 @@
 package example.dagger;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import javax.inject.Singleton;
 
 @ModuleDagger2

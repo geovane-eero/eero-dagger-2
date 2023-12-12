@@ -79,7 +79,7 @@ public final class ClassNames {
   public static final ClassName BINDS_OPTIONAL_OF =
       get("dagger", "BindsOptionalOf");
   public static final ClassName MAP_KEY = get("dagger", "MapKey");
-  public static final ClassName MODULE = get("dagger", "Module");
+  public static final ClassName MODULE = get("dagger", "ModuleDagger2");
   public static final ClassName MULTIBINDS =
       get("dagger.multibindings", "Multibinds");
   public static final ClassName INTO_MAP = get("dagger.multibindings", "IntoMap");

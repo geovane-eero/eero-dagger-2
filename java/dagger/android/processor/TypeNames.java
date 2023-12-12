@@ -28,7 +28,7 @@ public final class TypeNames {
   public static final ClassName CLASS_KEY = ClassName.get("dagger.multibindings", "ClassKey");
   public static final ClassName INTO_MAP = ClassName.get("dagger.multibindings", "IntoMap");
   public static final ClassName MAP_KEY = ClassName.get("dagger", "MapKey");
-  public static final ClassName MODULE = ClassName.get("dagger", "Module");
+  public static final ClassName MODULE = ClassName.get("dagger", "ModuleDagger2");
   public static final ClassName SUBCOMPONENT = ClassName.get("dagger", "Subcomponent");
   public static final ClassName SUBCOMPONENT_FACTORY = SUBCOMPONENT.nestedClass("Factory");
 

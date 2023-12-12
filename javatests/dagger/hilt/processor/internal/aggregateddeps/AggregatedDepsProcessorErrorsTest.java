@@ -43,7 +43,7 @@ public class AggregatedDepsProcessorErrorsTest {
             "",
             "import dagger.hilt.EntryPoint;",
             "import dagger.hilt.InstallIn;",
-            "import dagger.Module;",
+            "import dagger.ModuleDagger2;",
             "import dagger.hilt.components.SingletonComponent;",
             "import dagger.hilt.internal.ComponentEntryPoint;",
             "import dagger.hilt.internal.GeneratedEntryPoint;",

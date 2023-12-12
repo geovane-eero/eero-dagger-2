@@ -139,7 +139,8 @@ class DaggerKotlinIssueDetector : Detector(), SourceCodeScanner {
     private const val JVM_STATIC_ANNOTATION = "kotlin.jvm.JvmStatic"
     private const val INJECT_ANNOTATION = "javax.inject.Inject"
     private const val QUALIFIER_ANNOTATION = "javax.inject.Qualifier"
-    private const val MODULE_ANNOTATION = "dagger.Module"
+//    private const val MODULE_ANNOTATION = "dagger.Module"
+    private const val MODULE_ANNOTATION = "dagger.ModuleDagger2"
 
     val issues: List<Issue> = listOf(
       ISSUE_JVM_STATIC_PROVIDES_IN_OBJECT,
