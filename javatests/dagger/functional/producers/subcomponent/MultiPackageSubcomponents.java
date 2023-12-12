@@ -17,7 +17,7 @@
 package dagger.functional.producers.subcomponent;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.functional.producers.subcomponent.sub.ChildComponent;
 
@@ -27,7 +27,7 @@ final class MultiPackageSubcomponents {
     ChildComponent.Builder childComponentBuilder();
   }
 
-  @Module
+  @ModuleDagger2
   static final class IntModule {
     @Provides
     static int i() {

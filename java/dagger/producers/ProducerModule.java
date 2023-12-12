@@ -19,7 +19,7 @@ package dagger.producers;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.Beta;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
 @Beta
 public @interface ProducerModule {
   /**
-   * Additional {@code @ProducerModule}- or {@link Module}-annotated classes from which this module
+   * Additional {@code @ProducerModule}- or {@link ModuleDagger2}-annotated classes from which this module
    * is composed. The de-duplicated contributions of the modules in {@code includes}, and of their
    * inclusions recursively, are all contributed to the object graph.
    */

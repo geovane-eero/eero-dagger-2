@@ -17,9 +17,10 @@
 package dagger.functional.binds;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 
-@Module
+@ModuleDagger2
 interface InterfaceModule {
-  @Binds Foo<Object> bindFooOfObjects(FooOfObjects impl);
+  @Binds
+  Foo<Object> bindFooOfObjects(FooOfObjects impl);
 }

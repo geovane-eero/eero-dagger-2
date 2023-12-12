@@ -16,11 +16,11 @@
 
 package dagger.functional.tck;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import org.atinject.tck.auto.FuelTank;
 
-@Module
+@ModuleDagger2
 class FuelTankModule {
   @Provides
   static FuelTank provideFuelTank() {

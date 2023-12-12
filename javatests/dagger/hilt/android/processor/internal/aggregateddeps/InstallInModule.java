@@ -16,7 +16,7 @@
 
 package dagger.hilt.android.processor.internal.aggregateddeps;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
 
@@ -25,6 +25,6 @@ import dagger.hilt.components.SingletonComponent;
  * cannot be replaced. This needs to be compiled in a separate library because
  * AggregatedDepsProcesor does not defer modules that have not been generated yet.
  */
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 interface InstallInModule {}

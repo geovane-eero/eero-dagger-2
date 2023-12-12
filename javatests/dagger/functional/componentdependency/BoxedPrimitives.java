@@ -17,7 +17,7 @@
 package dagger.functional.componentdependency;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Provider;
 
@@ -31,7 +31,7 @@ interface BoxedPrimitives {
     Provider<Integer> providerOfBoxedPrimitive();
   }
 
-  @Module
+  @ModuleDagger2
   class PrimitiveModule {
     @Provides
     static int providePrimitive() {

@@ -17,18 +17,19 @@
 package dagger.functional.basic;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 
 // https://github.com/google/dagger/issues/279
 public class ComponentsWithNestedModules {
   @Component(modules = RegularComponent.SharedModule.class)
   public interface RegularComponent {
-    @Module class SharedModule {}
+    @ModuleDagger2
+    class SharedModule {}
   }
 
   @Component(modules = ExtendsRegularComponent.SharedModule.class)
   public interface ExtendsRegularComponent extends RegularComponent {
-    @Module(includes = RegularComponent.SharedModule.class)
+    @ModuleDagger2(includes = RegularComponent.SharedModule.class)
     class SharedModule {}
   }
 }

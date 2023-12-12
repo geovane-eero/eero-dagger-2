@@ -20,7 +20,7 @@ import com.google.common.truth.Truth.assertThat
 import com.google.common.util.concurrent.SettableFuture
 import com.google.common.util.concurrent.Uninterruptibles
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import java.lang.Exception
 import java.lang.RuntimeException
@@ -31,7 +31,6 @@ import java.util.Collections
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.atomic.AtomicInteger
-import java.util.function.Consumer
 import javax.inject.Provider
 import javax.inject.Qualifier
 import javax.inject.Singleton
@@ -49,7 +48,7 @@ class DoubleCheckCycleTest {
   internal annotation class Reentrant
 
   /** A module to be overridden in each test. */
-  @Module
+  @ModuleDagger2
   internal open class OverrideModule {
     @Provides
     @Singleton

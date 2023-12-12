@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.subcomponent.pruning
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.functional.kotlinsrc.subcomponent.pruning.ParentDoesntUseSubcomponent.ChildA
@@ -54,19 +54,20 @@ interface ParentDoesntUseSubcomponent {
     @FromChildA fun componentHierarchyFromChildA(): Set<Class<*>>
   }
 
-  @Module(subcomponents = [ChildA::class, ChildB::class])
+  @ModuleDagger2(subcomponents = [ChildA::class, ChildB::class])
   object ParentModule {
     @Provides
     @IntoSet
     fun provideComponentType(): Class<*> = ParentDoesntUseSubcomponent::class.java
   }
 
-  @Module
+  @ModuleDagger2
   object ChildAModule {
-    @Provides @IntoSet fun provideComponentType(): Class<*> = ChildA::class.java
+    @Provides
+    @IntoSet fun provideComponentType(): Class<*> = ChildA::class.java
   }
 
-  @Module
+  @ModuleDagger2
   class ChildBModule {
     @Provides
     @FromChildA
@@ -74,7 +75,8 @@ interface ParentDoesntUseSubcomponent {
       childABuilder.build().componentHierarchy()
 
     companion object {
-      @Provides @IntoSet fun provideComponentType(): Class<*> = ChildB::class.java
+      @Provides
+      @IntoSet fun provideComponentType(): Class<*> = ChildB::class.java
     }
   }
 

@@ -60,7 +60,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Iterables;
 import com.squareup.javapoet.ClassName;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.ContributionType;
 import dagger.internal.codegen.base.MapType;
 import dagger.internal.codegen.base.SetType;
@@ -370,7 +370,7 @@ public final class BindingFactory {
    * Returns a {@link dagger.internal.codegen.model.BindingKind#SUBCOMPONENT_CREATOR} binding
    * declared by a component method that returns a subcomponent builder. Use {{@link
    * #subcomponentCreatorBinding(ImmutableSet)}} for bindings declared using {@link
-   * Module#subcomponents()}.
+   * ModuleDagger2#subcomponents()}.
    *
    * @param component the component that declares or inherits the method
    */
@@ -389,7 +389,7 @@ public final class BindingFactory {
 
   /**
    * Returns a {@link dagger.internal.codegen.model.BindingKind#SUBCOMPONENT_CREATOR} binding
-   * declared using {@link Module#subcomponents()}.
+   * declared using {@link ModuleDagger2#subcomponents()}.
    */
   ProvisionBinding subcomponentCreatorBinding(
       ImmutableSet<SubcomponentDeclaration> subcomponentDeclarations) {

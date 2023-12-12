@@ -30,7 +30,7 @@ import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.TypeSpec;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.android.processor.internal.bindvalue.BindValueMetadata.BindValueElement;
 import dagger.hilt.processor.internal.ClassNames;
@@ -62,7 +62,7 @@ final class BindValueGenerator {
     className = Processors.append(testClassName, SUFFIX);
   }
 
-  //  @Module
+  //  @ModuleDagger2
   //  @InstallIn(SingletonComponent.class)
   //  public final class FooTest_BindValueModule {
   //     // providesMethods ...
@@ -72,7 +72,7 @@ final class BindValueGenerator {
     JavaPoetExtKt.addOriginatingElement(builder, metadata.testElement())
         .addAnnotation(Processors.getOriginatingElementAnnotation(metadata.testElement()))
         .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
-        .addAnnotation(Module.class)
+        .addAnnotation(ModuleDagger2.class)
         .addAnnotation(
             Components.getInstallInAnnotationSpec(ImmutableSet.of(ClassNames.SINGLETON_COMPONENT)))
         .addMethod(providesTestMethod());

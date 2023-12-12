@@ -16,7 +16,7 @@
 
 package dagger.hilt.android.simpleKotlin.viewmodel
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -27,7 +27,7 @@ class Foo @Inject constructor()
 
 class Bar
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 object StringModule {
   @Provides

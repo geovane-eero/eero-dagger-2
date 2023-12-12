@@ -17,9 +17,10 @@
 package dagger.functional.kotlinsrc.binds
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 
-@Module
+@ModuleDagger2
 internal interface InterfaceModule {
-  @Binds fun bindFooOfObjects(impl: FooOfObjects): Foo<Any>
+  @Binds
+  fun bindFooOfObjects(impl: FooOfObjects): Foo<Any>
 }

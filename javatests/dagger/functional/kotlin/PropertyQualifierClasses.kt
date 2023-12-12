@@ -17,7 +17,7 @@
 package dagger.functional.kotlin
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.functional.kotlin.processor.TriggerGeneratedTypeProcessor
 import javax.inject.Inject
@@ -29,7 +29,7 @@ interface TestKotlinComponentWithQualifier {
   fun inject(fooWithInjectedQualifier: FooWithInjectedQualifier)
 }
 
-@Module
+@ModuleDagger2
 class TestKotlinModuleWithQualifier {
   @Provides
   @JavaTestQualifier

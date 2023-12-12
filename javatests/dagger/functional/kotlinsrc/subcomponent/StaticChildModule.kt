@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.subcomponent
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal object StaticChildModule {
-  @Provides fun provideStaticObject(): Any = "static"
+  @Provides
+  fun provideStaticObject(): Any = "static"
 }

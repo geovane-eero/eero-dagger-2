@@ -17,14 +17,16 @@
 package dagger.functional.kotlinsrc.modules.subpackage
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal abstract class PackagePrivateModule {
-  @Binds abstract fun bindObject(string: String): Any
+  @Binds
+  abstract fun bindObject(string: String): Any
 
   companion object {
-    @Provides fun provideString(i: Int): String = "foo$i"
+    @Provides
+    fun provideString(i: Int): String = "foo$i"
   }
 }

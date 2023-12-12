@@ -55,7 +55,7 @@ import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import com.google.errorprone.annotations.CheckReturnValue;
 import com.squareup.javapoet.TypeName;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 import dagger.internal.codegen.base.ComponentAnnotation;
 import dagger.internal.codegen.base.DaggerSuperficialValidation;
@@ -101,7 +101,7 @@ public abstract class ComponentDescriptor {
 
   /**
    * The {@link ModuleDescriptor modules} declared in {@link Component#modules()} and reachable by
-   * traversing {@link Module#includes()}.
+   * traversing {@link ModuleDagger2#includes()}.
    */
   public abstract ImmutableSet<ModuleDescriptor> modules();
 
@@ -110,7 +110,7 @@ public abstract class ComponentDescriptor {
 
   /**
    * All {@linkplain Subcomponent direct child} components that are declared by a {@linkplain
-   * Module#subcomponents() module's subcomponents}.
+   * ModuleDagger2#subcomponents() module's subcomponents}.
    */
   abstract ImmutableSet<ComponentDescriptor> childComponentsDeclaredByModules();
 
@@ -226,7 +226,7 @@ public abstract class ComponentDescriptor {
 
   /**
    * All {@link Subcomponent}s which are direct children of this component. This includes
-   * subcomponents installed from {@link Module#subcomponents()} as well as subcomponent {@linkplain
+   * subcomponents installed from {@link ModuleDagger2#subcomponents()} as well as subcomponent {@linkplain
    * #childComponentsDeclaredByFactoryMethods() factory methods} and {@linkplain
    * #childComponentsDeclaredByBuilderEntryPoints() builder methods}.
    */

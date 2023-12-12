@@ -16,14 +16,14 @@
 
 package dagger.functional.kotlinsrc.subcomponent
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
 /**
  * This is a module that can be constructed with a default constructor, but has state, so callers
  * might want to pass a reference anyway.
  */
-@Module
+@ModuleDagger2
 class ChildModuleWithState {
   private var i = 0
 

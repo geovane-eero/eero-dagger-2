@@ -16,10 +16,10 @@
 
 package dagger.functional.kotlinsrc.basic
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 object PrimitivesModule {
   const val BOUND_BYTE: Byte = -41
   const val BOUND_CHAR = 'g'
@@ -43,20 +43,36 @@ object PrimitivesModule {
   val BOUND_FLOAT_ARRAY = floatArrayOf(0.1f, 0.01f, 0.001f)
   val BOUND_DOUBLE_ARRAY = doubleArrayOf(0.2, 0.02, 0.002)
 
-  @Provides fun provideByte(): Byte = BOUND_BYTE
-  @Provides fun provideChar(): Char = BOUND_CHAR
-  @Provides fun provideShort(): Short = BOUND_SHORT
-  @Provides fun provideInt(): Int = BOUND_INT
-  @Provides fun provideLong(): Long = BOUND_LONG
-  @Provides fun provideBoolean(): Boolean = BOUND_BOOLEAN
-  @Provides fun provideFloat(): Float = BOUND_FLOAT
-  @Provides fun boundDouble(): Double = BOUND_DOUBLE
-  @Provides fun provideByteArray(): ByteArray = BOUND_BYTE_ARRAY
-  @Provides fun provideCharArray(): CharArray = BOUND_CHAR_ARRAY
-  @Provides fun provideShortArray(): ShortArray = BOUND_SHORT_ARRAY
-  @Provides fun provideIntArray(): IntArray = BOUND_INT_ARRAY
-  @Provides fun provideLongArray(): LongArray = BOUND_LONG_ARRAY
-  @Provides fun provideBooleanArray(): BooleanArray = BOUND_BOOLEAN_ARRAY
-  @Provides fun provideFloatArray(): FloatArray = BOUND_FLOAT_ARRAY
-  @Provides fun boundDoubleArray(): DoubleArray = BOUND_DOUBLE_ARRAY
+  @Provides
+  fun provideByte(): Byte = BOUND_BYTE
+  @Provides
+  fun provideChar(): Char = BOUND_CHAR
+  @Provides
+  fun provideShort(): Short = BOUND_SHORT
+  @Provides
+  fun provideInt(): Int = BOUND_INT
+  @Provides
+  fun provideLong(): Long = BOUND_LONG
+  @Provides
+  fun provideBoolean(): Boolean = BOUND_BOOLEAN
+  @Provides
+  fun provideFloat(): Float = BOUND_FLOAT
+  @Provides
+  fun boundDouble(): Double = BOUND_DOUBLE
+  @Provides
+  fun provideByteArray(): ByteArray = BOUND_BYTE_ARRAY
+  @Provides
+  fun provideCharArray(): CharArray = BOUND_CHAR_ARRAY
+  @Provides
+  fun provideShortArray(): ShortArray = BOUND_SHORT_ARRAY
+  @Provides
+  fun provideIntArray(): IntArray = BOUND_INT_ARRAY
+  @Provides
+  fun provideLongArray(): LongArray = BOUND_LONG_ARRAY
+  @Provides
+  fun provideBooleanArray(): BooleanArray = BOUND_BOOLEAN_ARRAY
+  @Provides
+  fun provideFloatArray(): FloatArray = BOUND_FLOAT_ARRAY
+  @Provides
+  fun boundDoubleArray(): DoubleArray = BOUND_DOUBLE_ARRAY
 }

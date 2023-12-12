@@ -16,7 +16,7 @@
 
 package dagger.hilt.android;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
@@ -30,7 +30,7 @@ public final class MultiTestRootExternalModules {
   @Qualifier
   @interface External {}
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface PkgPrivateAppModule {
     @Provides
@@ -40,7 +40,7 @@ public final class MultiTestRootExternalModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface PkgPrivateActivityModule {
     @Provides

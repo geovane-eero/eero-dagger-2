@@ -16,10 +16,10 @@
 
 package dagger.functional.kotlinsrc.subcomponent
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal object UnresolvableChildComponentModule {
   /**
    * Provides a qualified version of the [UnresolvableChildComponent]'s builder. If the subcomponent

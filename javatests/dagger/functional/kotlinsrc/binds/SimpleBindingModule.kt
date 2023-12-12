@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.binds
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Reusable
 import dagger.multibindings.ElementsIntoSet
@@ -28,7 +28,7 @@ import java.util.TreeSet
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Module(includes = [InterfaceModule::class])
+@ModuleDagger2(includes = [InterfaceModule::class])
 internal abstract class SimpleBindingModule {
 
   @Binds

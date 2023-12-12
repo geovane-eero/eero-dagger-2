@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.builder
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,19 +27,21 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class PrivateConstructorsTest {
   // In Kotlin, object classes can't have constructors
-  @Module
+  @ModuleDagger2
   internal object M1 {
-    @Provides fun provideString(): String = "str"
+    @Provides
+    fun provideString(): String = "str"
   }
 
   // We suppress the warning to test the case of a "static" provides method in a module with a
   // private constructor. This is about as close as we can get since object classes can't have
   // constructors themselves.
   @SuppressWarnings("ClassShouldBeObject")
-  @Module
+  @ModuleDagger2
   class M2 private constructor() {
     companion object {
-      @Provides fun provideString(): Int = 13
+      @Provides
+      fun provideString(): Int = 13
     }
   }
 

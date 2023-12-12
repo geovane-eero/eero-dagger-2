@@ -17,7 +17,7 @@
 package library1
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Singleton
 import library2.MyTransitiveAnnotation
@@ -34,7 +34,7 @@ import library2.MyTransitiveType
 @MyTransitiveAnnotation
 @MyAnnotation(MyTransitiveType.VALUE)
 @MyOtherAnnotation(MyTransitiveType::class)
-@Module(includes = [MyComponentModule.MyAbstractModule::class])
+@ModuleDagger2(includes = [MyComponentModule.MyAbstractModule::class])
 class MyComponentModule
 @MyTransitiveAnnotation
 @MyAnnotation(MyTransitiveType.VALUE)
@@ -114,7 +114,7 @@ constructor(
     @MyTransitiveAnnotation
     @MyAnnotation(MyTransitiveType.VALUE)
     @MyOtherAnnotation(MyTransitiveType::class)
-    @Module
+    @ModuleDagger2
     internal interface MyAbstractModule {
         // TODO(b/219587431): Support @MyTransitiveAnnotation (Requires generating metadata).
         @MyAnnotation(MyTransitiveType.VALUE)

@@ -23,7 +23,7 @@ import static org.junit.Assert.assertThrows;
 import android.os.Build;
 import androidx.activity.ComponentActivity;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.EntryPoints;
@@ -44,7 +44,7 @@ import org.robolectric.Robolectric;
 import org.robolectric.android.controller.ActivityController;
 import org.robolectric.annotation.Config;
 
-// TODO(bcorso): Support transitively ignoring the @Module.includes of ignored modules?
+// TODO(bcorso): Support transitively ignoring the @ModuleDagger2.includes of ignored modules?
 // TODO(bcorso): Support including non-test @UninstallModules using @UninstallModules.includes?
 @UninstallModules({
   MultiTestRootExternalModules.PkgPrivateAppModule.class,
@@ -76,7 +76,7 @@ public final class MultiTestRoot1Test {
     String bindValueString();
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface ReplaceExternalAppModule {
     @Provides
@@ -86,7 +86,7 @@ public final class MultiTestRoot1Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   public interface ReplaceExternalActivityModule {
     @Provides
@@ -96,7 +96,7 @@ public final class MultiTestRoot1Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   public interface TestActivityModule {
     @Provides
@@ -105,7 +105,7 @@ public final class MultiTestRoot1Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface PkgPrivateTestModule {
     @Provides
@@ -114,7 +114,7 @@ public final class MultiTestRoot1Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface TestModule {
     @Provides
@@ -129,7 +129,7 @@ public final class MultiTestRoot1Test {
   }
 
   public static final class Outer {
-    @Module
+    @ModuleDagger2
     @InstallIn(SingletonComponent.class)
     public interface NestedTestModule {
       @Provides
@@ -170,7 +170,7 @@ public final class MultiTestRoot1Test {
   // Must be public due to b/183636779
   public static class Qux {}
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface BarModule {
     @Provides

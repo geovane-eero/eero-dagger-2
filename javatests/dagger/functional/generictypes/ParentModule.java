@@ -16,15 +16,16 @@
 
 package dagger.functional.generictypes;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 abstract class ParentModule<T1 extends Number & Comparable<T1>, T2, T3 extends Iterable<T1>> {
-  @Provides Iterable<T1> provideIterableOfAWithC(T1 t1, T3 c) {
+  @Provides
+  Iterable<T1> provideIterableOfAWithC(T1 t1, T3 c) {
     List<T1> list = new ArrayList<>();
     list.add(t1);
     for (T1 elt : c) {
@@ -33,7 +34,8 @@ abstract class ParentModule<T1 extends Number & Comparable<T1>, T2, T3 extends I
     return list;
   }
 
-  @Provides static char provideNonGenericBindingInParameterizedModule() {
+  @Provides
+  static char provideNonGenericBindingInParameterizedModule() {
     return 'c';
   }
 

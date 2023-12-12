@@ -16,7 +16,8 @@
 
 package dagger.functional.kotlinsrc.subcomponent
 
-import dagger.Module
+import dagger.ModuleDagger2
 
 /** This is a module that can't be constructed with a default constructor. */
-@Module class ChildModuleWithParameters(@Suppress("UNUSED_PARAMETER") whatever: Any)
+@ModuleDagger2
+class ChildModuleWithParameters(@Suppress("UNUSED_PARAMETER") whatever: Any)

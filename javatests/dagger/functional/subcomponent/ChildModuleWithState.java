@@ -16,18 +16,19 @@
 
 package dagger.functional.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
 /**
  * This is a module that can be constructed with a default constructor, but has state, so callers
  * might want to pass a reference anyway.
  */
-@Module
+@ModuleDagger2
 final class ChildModuleWithState {
   private int i = 0;
 
-  @Provides int provideInt() {
+  @Provides
+  int provideInt() {
     return i++;
   }
 }

@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.factory
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 object AbstractModule {
-  @Provides fun provideString(): String = "foo"
+  @Provides
+  fun provideString(): String = "foo"
 }

@@ -17,7 +17,7 @@
 package dagger.hilt.android.simple;
 
 import android.app.Application;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.InstallIn;
@@ -29,7 +29,7 @@ import javax.inject.Inject;
 /** A java-only application that uses Hilt. */
 @HiltAndroidApp
 public class SimpleApplication extends Application {
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface MyModule {
     @Provides

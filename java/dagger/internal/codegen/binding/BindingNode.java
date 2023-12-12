@@ -23,7 +23,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import dagger.BindsOptionalOf;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.model.BindingKind;
 import dagger.internal.codegen.model.ComponentPath;
 import dagger.internal.codegen.model.DaggerElement;
@@ -77,7 +77,7 @@ public abstract class BindingNode implements dagger.internal.codegen.model.Bindi
    *
    * <ul>
    *   <li>{@linkplain BindsOptionalOf optional binding} declarations
-   *   <li>{@linkplain Module#subcomponents() module subcomponent} declarations
+   *   <li>{@linkplain ModuleDagger2#subcomponents() module subcomponent} declarations
    *   <li>{@linkplain Multibinds multibinding} declarations
    * </ul>
    */

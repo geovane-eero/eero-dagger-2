@@ -16,10 +16,10 @@
 
 package dagger.functional.modules.subpackage;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module(includes = {PackagePrivateModule.class, NonAbstractPackagePrivateModule.class})
+@ModuleDagger2(includes = {PackagePrivateModule.class, NonAbstractPackagePrivateModule.class})
 public abstract class PublicModule {
   @Provides
   static int provideInt() {

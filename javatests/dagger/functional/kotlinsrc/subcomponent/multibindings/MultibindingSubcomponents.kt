@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.subcomponent.multibindings
 
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.multibindings.IntoMap
@@ -59,7 +59,7 @@ class MultibindingSubcomponents {
       "${RequiresMultibindings::class.java.simpleName}{set=$set, map=$map}"
   }
 
-  @Module
+  @ModuleDagger2
   internal abstract class ParentMultibindingModule {
     // This is not static because otherwise we have no tests that cover the case where a
     // subcomponent uses a module instance installed onto a parent component.
@@ -70,7 +70,8 @@ class MultibindingSubcomponents {
     ): RequiresMultibindings<BoundInParentAndChild>
 
     companion object {
-      @Provides @IntoSet fun onlyInParentElement(): BoundInParent = BoundInParent.INSTANCE
+      @Provides
+      @IntoSet fun onlyInParentElement(): BoundInParent = BoundInParent.INSTANCE
 
       @Provides
       @IntoMap
@@ -88,7 +89,7 @@ class MultibindingSubcomponents {
     }
   }
 
-  @Module
+  @ModuleDagger2
   internal object ChildMultibindingModule {
     @Provides
     @IntoSet
@@ -99,7 +100,8 @@ class MultibindingSubcomponents {
     @StringKey("child key")
     fun inParentAndChildEntry(): BoundInParentAndChild = BoundInParentAndChild.IN_CHILD
 
-    @Provides @IntoSet fun onlyInChildElement(): BoundInChild = BoundInChild.INSTANCE
+    @Provides
+    @IntoSet fun onlyInChildElement(): BoundInChild = BoundInChild.INSTANCE
 
     @Provides
     @IntoMap
@@ -107,7 +109,7 @@ class MultibindingSubcomponents {
     fun onlyInChildEntry(): BoundInChild = BoundInChild.INSTANCE
   }
 
-  @Module
+  @ModuleDagger2
   internal abstract class ChildMultibindingModuleWithOnlyBindsMultibindings {
     @Binds
     @IntoSet
@@ -118,7 +120,8 @@ class MultibindingSubcomponents {
     @StringKey("child key")
     abstract fun inParentAndChildEntry(instance: BoundInParentAndChild): BoundInParentAndChild
 
-    @Binds @IntoSet abstract fun inChild(instance: BoundInChild): BoundInChild
+    @Binds
+    @IntoSet abstract fun inChild(instance: BoundInChild): BoundInChild
 
     @Binds
     @IntoMap
@@ -130,7 +133,8 @@ class MultibindingSubcomponents {
       fun provideBoundInParentAndChildForBinds(): BoundInParentAndChild =
         BoundInParentAndChild.IN_CHILD
 
-      @Provides fun provideBoundInChildForBinds(): BoundInChild = BoundInChild.INSTANCE
+      @Provides
+      fun provideBoundInChildForBinds(): BoundInChild = BoundInChild.INSTANCE
     }
   }
 

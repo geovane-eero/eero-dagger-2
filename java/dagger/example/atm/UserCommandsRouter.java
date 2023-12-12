@@ -17,7 +17,7 @@
 package dagger.example.atm;
 
 import dagger.BindsInstance;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 
 @PerSession
@@ -30,6 +30,6 @@ interface UserCommandsRouter {
     UserCommandsRouter create(@BindsInstance @Username String username);
   }
 
-  @Module(subcomponents = UserCommandsRouter.class)
+  @ModuleDagger2(subcomponents = UserCommandsRouter.class)
   interface InstallationModule {}
 }

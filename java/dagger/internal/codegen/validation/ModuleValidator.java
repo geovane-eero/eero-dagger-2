@@ -54,6 +54,7 @@ import com.google.common.collect.Multimaps;
 import com.google.common.collect.Sets;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.TypeName;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.ComponentCreatorAnnotation;
 import dagger.internal.codegen.base.DaggerSuperficialValidation;
 import dagger.internal.codegen.base.ModuleKind;
@@ -79,7 +80,7 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
- * A {@linkplain ValidationReport validator} for {@link dagger.Module}s or {@link
+ * A {@linkplain ValidationReport validator} for {@link ModuleDagger2}s or {@link
  * dagger.producers.ProducerModule}s.
  */
 @Singleton
@@ -387,7 +388,7 @@ public final class ModuleValidator {
   /**
    * Validates modules included in a given module or installed in a given component.
    *
-   * <p>Checks that the referenced modules are non-generic types annotated with {@code @Module} or
+   * <p>Checks that the referenced modules are non-generic types annotated with {@code @ModuleDagger2} or
    * {@code @ProducerModule}.
    *
    * <p>If the referenced module is in the {@linkplain #addKnownModules(Collection) known modules
@@ -396,7 +397,7 @@ public final class ModuleValidator {
    * @param annotatedType the annotated module or component
    * @param annotation the annotation specifying the referenced modules ({@code @Component},
    *     {@code @ProductionComponent}, {@code @Subcomponent}, {@code @ProductionSubcomponent},
-   *     {@code @Module}, or {@code @ProducerModule})
+   *     {@code @ModuleDagger2}, or {@code @ProducerModule})
    * @param validModuleKinds the module kinds that the annotated type is permitted to include
    */
   ValidationReport validateReferencedModules(
@@ -455,7 +456,7 @@ public final class ModuleValidator {
         subreport.addError(
             String.format(
                 "%s is listed as a module, but it is a companion object class. "
-                    + "Add @Module to the enclosing class and reference that instead.",
+                    + "Add @ModuleDagger2 to the enclosing class and reference that instead.",
                 module.getQualifiedName()),
             annotatedType,
             annotation,
@@ -582,7 +583,7 @@ public final class ModuleValidator {
     // Note: We use XTypeElements#getAllMethods() rather than XTypeElement#getDeclaredMethods() here
     // because we need to include binding methods declared in supertypes because unlike most other
     // validations being done in this class, which assume that supertype binding methods will be
-    // validated in a separate call to the validator since the supertype itself must be a @Module,
+    // validated in a separate call to the validator since the supertype itself must be a @ModuleDagger2,
     // we need to look at all the binding methods in the module's type hierarchy here.
     return !(module.isKotlinObject() || module.isCompanionObject())
         && !XTypeElements.getAllMethods(module).stream()

@@ -18,13 +18,13 @@ package dagger.functional.subcomponent.module;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.functional.subcomponent.module.UsesModuleSubcomponents.ParentIncludesSubcomponentTransitively;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for {@link Module#subcomponents()}. */
+/** Tests for {@link ModuleDagger2#subcomponents()}. */
 @RunWith(JUnit4.class)
 public class ModuleWithSubcomponentsTest {
 

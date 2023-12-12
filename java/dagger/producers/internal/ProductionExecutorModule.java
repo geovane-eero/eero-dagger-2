@@ -17,7 +17,7 @@
 package dagger.producers.internal;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.producers.Production;
 import dagger.producers.ProductionScope;
 import java.util.concurrent.Executor;
@@ -26,7 +26,7 @@ import java.util.concurrent.Executor;
  * Binds the {@code @ProductionImplementation Executor} binding in {@link ProductionScope} so that
  * only on instance is ever used within production components.
  */
-@Module
+@ModuleDagger2
 public abstract class ProductionExecutorModule {
   @Binds
   @ProductionScope

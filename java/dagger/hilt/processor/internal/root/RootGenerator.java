@@ -170,7 +170,7 @@ final class RootGenerator {
   }
 
   // Generates:
-  // @Module(subcomponents = FooSubcomponent.class)
+  // @ModuleDagger2(subcomponents = FooSubcomponent.class)
   // interface FooSubcomponentBuilderModule {
   //   @Binds FooSubcomponentInterfaceBuilder bind(FooSubcomponent.Builder builder);
   // }

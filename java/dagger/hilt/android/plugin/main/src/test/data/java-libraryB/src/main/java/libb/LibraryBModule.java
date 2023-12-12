@@ -16,13 +16,13 @@
 
 package libb;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
 
 /** Test LibB Module */
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 public final class LibraryBModule {
   @Provides

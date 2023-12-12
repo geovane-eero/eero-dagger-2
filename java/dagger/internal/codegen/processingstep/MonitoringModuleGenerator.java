@@ -33,7 +33,7 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.collect.ImmutableList;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.SourceFileGenerator;
 import dagger.internal.codegen.binding.SourceFiles;
 import dagger.internal.codegen.javapoet.TypeNames;
@@ -57,7 +57,7 @@ final class MonitoringModuleGenerator extends SourceFileGenerator<XTypeElement> 
   public ImmutableList<TypeSpec.Builder> topLevelTypes(XTypeElement componentElement) {
     return ImmutableList.of(
         classBuilder(SourceFiles.generatedMonitoringModuleName(componentElement))
-            .addAnnotation(Module.class)
+            .addAnnotation(ModuleDagger2.class)
             .addModifiers(ABSTRACT)
             .addMethod(privateConstructor())
             .addMethod(setOfFactories())

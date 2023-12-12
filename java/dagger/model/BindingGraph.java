@@ -31,7 +31,7 @@ import com.google.common.graph.ImmutableNetwork;
 import com.google.common.graph.MutableNetwork;
 import com.google.common.graph.Network;
 import com.google.common.graph.NetworkBuilder;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import java.util.Optional;
 import java.util.stream.Stream;
 import javax.lang.model.element.ExecutableElement;
@@ -78,7 +78,7 @@ import javax.lang.model.element.TypeElement;
  * <p>There is a <b>subcomponent edge</b> for each parent-child component relationship in the graph.
  * The target node is the component node for the child component. For subcomponents defined by a
  * {@linkplain SubcomponentCreatorBindingEdge subcomponent creator binding} (either a method on the
- * component or a set of {@code @Module.subcomponents} annotation values), the source node is the
+ * component or a set of {@code @ModuleDagger2.subcomponents} annotation values), the source node is the
  * binding for the {@code @Subcomponent.Builder} type. For subcomponents defined by {@linkplain
  * ChildFactoryMethodEdge subcomponent factory methods}, the source node is the component node for
  * the parent.
@@ -361,7 +361,7 @@ public abstract class BindingGraph {
    */
   public interface SubcomponentCreatorBindingEdge extends Edge {
     /**
-     * The modules that {@linkplain Module#subcomponents() declare the subcomponent} that generated
+     * The modules that {@linkplain ModuleDagger2#subcomponents() declare the subcomponent} that generated
      * this edge. Empty if the parent component has a subcomponent creator method and there are no
      * declaring modules.
      */

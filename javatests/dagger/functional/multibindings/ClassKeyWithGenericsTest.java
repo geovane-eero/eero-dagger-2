@@ -19,7 +19,7 @@ package dagger.functional.multibindings;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
@@ -36,7 +36,7 @@ public final class ClassKeyWithGenericsTest {
     Map<Class<?>, String> map();
   }
 
-  @Module
+  @ModuleDagger2
   interface TestModule {
     @Provides
     @IntoMap

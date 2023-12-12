@@ -16,10 +16,10 @@
 
 package dagger.functional.basic;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class NullableModule {
   /**
    * A {@code Nullable} that isn't {@link javax.annotation.Nullable}, to ensure that Dagger can be

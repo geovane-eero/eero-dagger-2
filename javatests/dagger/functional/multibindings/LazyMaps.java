@@ -18,7 +18,7 @@ package dagger.functional.multibindings;
 
 import dagger.Component;
 import dagger.Lazy;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.StringKey;
@@ -34,7 +34,7 @@ import javax.inject.Singleton;
  * Lazy<V>>} instead of a plain {@link dagger.internal.MapFactory}. See b/65084589.
  */
 class LazyMaps {
-  @Module
+  @ModuleDagger2
   abstract static class TestModule {
     @Provides
     @Singleton

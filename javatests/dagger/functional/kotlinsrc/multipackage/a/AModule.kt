@@ -17,14 +17,14 @@
 package dagger.functional.kotlinsrc.multipackage.a
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.ElementsIntoSet
 import dagger.multibindings.IntoMap
 import dagger.multibindings.IntoSet
 import dagger.multibindings.StringKey
 
-@Module
+@ModuleDagger2
 abstract class AModule {
   @Binds
   @IntoSet
@@ -36,7 +36,8 @@ abstract class AModule {
   internal abstract fun provideInaccessibleToMap(inaccessible: Inaccessible): Inaccessible
 
   companion object {
-    @Provides @IntoSet fun provideString(): String = "a"
+    @Provides
+    @IntoSet fun provideString(): String = "a"
 
     @Provides
     @ElementsIntoSet

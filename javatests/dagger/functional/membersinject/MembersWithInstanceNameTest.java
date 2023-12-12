@@ -19,7 +19,7 @@ package dagger.functional.membersinject;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Inject;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public final class MembersWithInstanceNameTest {
     @Inject Foo() {}
   }
 
-  @Module
+  @ModuleDagger2
   interface TestModule {
     @Provides
     static String provideString() {

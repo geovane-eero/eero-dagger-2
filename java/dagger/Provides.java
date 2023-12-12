@@ -24,7 +24,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * Annotates methods of a {@linkplain Module module} to create a provider method binding. The
+ * Annotates methods of a {@linkplain ModuleDagger2 module} to create a provider method binding. The
  * method's return type is bound to its returned value. The {@linkplain Component component}
  * implementation will pass dependencies to the method as parameters.
  *

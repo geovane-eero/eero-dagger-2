@@ -19,7 +19,7 @@ package dagger.functional.assisted;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.assisted.Assisted;
@@ -72,7 +72,7 @@ public final class AssistedFactoryWithMultibindingsTest {
     }
   }
 
-  @Module(subcomponents = ChildComponent.class)
+  @ModuleDagger2(subcomponents = ChildComponent.class)
   static class ParentModule {
     @Provides
     @IntoSet
@@ -81,7 +81,7 @@ public final class AssistedFactoryWithMultibindingsTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class ChildModule {
     @Provides
     @IntoSet

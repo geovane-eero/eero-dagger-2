@@ -16,12 +16,12 @@
 
 package dagger.functional.kotlinsrc.staticprovides
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.ElementsIntoSet
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 object AllStaticModule {
   @Provides
   @IntoSet
@@ -29,5 +29,6 @@ object AllStaticModule {
     return "${AllStaticModule::class.java}.contributeString"
   }
 
-  @Provides @ElementsIntoSet fun contibuteEmptyIntegerSet(): Set<Int> = emptySet()
+  @Provides
+  @ElementsIntoSet fun contibuteEmptyIntegerSet(): Set<Int> = emptySet()
 }

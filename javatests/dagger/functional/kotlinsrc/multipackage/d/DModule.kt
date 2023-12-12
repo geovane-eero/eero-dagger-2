@@ -16,11 +16,12 @@
 
 package dagger.functional.kotlinsrc.multipackage.d
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 object DModule {
-  @Provides @IntoSet fun provideString(): String = "d"
+  @Provides
+  @IntoSet fun provideString(): String = "d"
 }

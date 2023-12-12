@@ -31,7 +31,7 @@ import java.util.Set;
 
 /** Enumeration of the kinds of modules. */
 public enum ModuleKind {
-  /** {@code @Module} */
+  /** {@code @ModuleDagger2} */
   MODULE(TypeNames.MODULE),
 
   /** {@code @ProducerModule} */

@@ -16,7 +16,7 @@
 
 package dagger.functional.kotlinsrc.modules
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Provider
@@ -25,9 +25,10 @@ import javax.inject.Provider
  * Module with bindings that might result in generated factories with conflicting field and
  * parameter names.
  */
-@Module
+@ModuleDagger2
 internal object ModuleWithConflictingNames {
-  @Provides fun getObject(foo: Int, fooProvider: Provider<String>): Any = "$foo${fooProvider.get()}"
+  @Provides
+  fun getObject(foo: Int, fooProvider: Provider<String>): Any = "$foo${fooProvider.get()}"
 
   /**
    * A class that might result in a generated factory with conflicting field and parameter names.

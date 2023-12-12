@@ -17,7 +17,7 @@
 package dagger.functional.producers.multibindings;
 
 import com.google.common.collect.ImmutableSet;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.functional.producers.multibindings.Qualifiers.EmptyButDeclaredInModule;
 import dagger.functional.producers.multibindings.Qualifiers.EmptyButDeclaredInModuleAndProducerModule;
@@ -31,7 +31,7 @@ import dagger.multibindings.StringKey;
 import java.util.Map;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 abstract class MultibindingModule {
   @Provides
   @IntoSet

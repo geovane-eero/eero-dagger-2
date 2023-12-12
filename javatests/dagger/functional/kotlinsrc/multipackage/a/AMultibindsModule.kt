@@ -16,11 +16,11 @@
 
 package dagger.functional.kotlinsrc.multipackage.a
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.multibindings.Multibinds
 
 /** A module that `@Multibinds` a set and a map of [Inaccessible]. */
-@Module
+@ModuleDagger2
 abstract class AMultibindsModule {
   @Multibinds internal abstract fun inaccessibleSet(): Set<Inaccessible>
 

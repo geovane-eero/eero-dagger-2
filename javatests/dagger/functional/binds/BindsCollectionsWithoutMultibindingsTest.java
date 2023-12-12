@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -32,7 +32,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public class BindsCollectionsWithoutMultibindingsTest {
-  @Module
+  @ModuleDagger2
   abstract static class M {
     @Provides
     static HashSet<String> provideHashSet() {

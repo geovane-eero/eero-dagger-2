@@ -26,7 +26,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import android.widget.LinearLayout;
 import androidx.lifecycle.ViewModel;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.lifecycle.HiltViewModel;
@@ -141,7 +141,7 @@ public final class OptionalInjectTestClasses {
     @Inject String testAppBinding;
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class AppModule {
     @Provides

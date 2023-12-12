@@ -17,9 +17,9 @@
 package dagger.example.atm;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 
-@Module
+@ModuleDagger2
 interface InMemoryDatabaseModule {
   @Binds
   Database inMemory(InMemoryDatabase database);

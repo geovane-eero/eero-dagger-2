@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.reusable
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Reusable
 import dagger.Subcomponent
@@ -59,7 +59,7 @@ interface ComponentWithReusableBindings {
     @InChildren fun reusableInChild(): Any
   }
 
-  @Module
+  @ModuleDagger2
   object ReusableBindingsModule {
     @Provides
     @Reusable
@@ -76,9 +76,11 @@ interface ComponentWithReusableBindings {
     }
 
     // b/77150738
-    @Provides @Reusable fun primitive(): Int = 0
+    @Provides
+    @Reusable fun primitive(): Int = 0
 
     // b/77150738
-    @Provides @Reusable fun boxedPrimitive(): Boolean = false
+    @Provides
+    @Reusable fun boxedPrimitive(): Boolean = false
   }
 }

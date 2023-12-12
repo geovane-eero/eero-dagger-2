@@ -20,7 +20,7 @@ import dagger.Binds;
 import dagger.Module;
 import javax.inject.Singleton;
 
-@Module
+@ModuleDagger2
 interface HeaterModule {
   @Binds
   @Singleton

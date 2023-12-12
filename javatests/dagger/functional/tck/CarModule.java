@@ -17,11 +17,11 @@
 package dagger.functional.tck;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import org.atinject.tck.auto.Car;
 import org.atinject.tck.auto.Convertible;
 
-@Module
+@ModuleDagger2
 abstract class CarModule {
   @Binds
   abstract Car provideConvertible(Convertible convertible);

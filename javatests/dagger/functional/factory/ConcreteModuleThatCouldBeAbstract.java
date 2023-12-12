@@ -16,10 +16,10 @@
 
 package dagger.functional.factory;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class ConcreteModuleThatCouldBeAbstract {
   @Provides
   static double provideDouble() {

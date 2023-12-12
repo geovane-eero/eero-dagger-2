@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.basic
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -43,7 +43,7 @@ class ComponentNestedTypeTest {
 
   class SomeType : dagger.functional.kotlinsrc.basic.subpackage.NestedType
 
-  @Module
+  @ModuleDagger2
   internal class TestModule {
     @Provides
     fun provideSomeType(): dagger.functional.kotlinsrc.basic.subpackage.NestedType {

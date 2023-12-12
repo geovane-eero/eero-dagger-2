@@ -16,23 +16,28 @@
 
 package dagger.functional.kotlinsrc.subcomponent.repeat
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 class RepeatedModule {
   private val state = Any()
 
-  @Provides fun state(): Any = state
+  @Provides
+  fun state(): Any = state
 
   companion object {
-    @Provides fun provideString(): String = "a string"
+    @Provides
+    fun provideString(): String = "a string"
 
-    @Provides @IntoSet fun contributeString(): String = "a string in a set"
+    @Provides
+    @IntoSet fun contributeString(): String = "a string in a set"
 
-    @Provides fun provideOnlyUsedInParent(): OnlyUsedInParent = object : OnlyUsedInParent() {}
+    @Provides
+    fun provideOnlyUsedInParent(): OnlyUsedInParent = object : OnlyUsedInParent() {}
 
-    @Provides fun provideOnlyUsedInChild(): OnlyUsedInChild = object : OnlyUsedInChild() {}
+    @Provides
+    fun provideOnlyUsedInChild(): OnlyUsedInChild = object : OnlyUsedInChild() {}
   }
 }

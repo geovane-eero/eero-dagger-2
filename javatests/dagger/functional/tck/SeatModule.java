@@ -17,12 +17,12 @@
 package dagger.functional.tck;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import org.atinject.tck.auto.Drivers;
 import org.atinject.tck.auto.DriversSeat;
 import org.atinject.tck.auto.Seat;
 
-@Module
+@ModuleDagger2
 abstract class SeatModule {
   @Binds
   @Drivers

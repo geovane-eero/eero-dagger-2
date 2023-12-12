@@ -16,10 +16,10 @@
 
 package dagger.example.atm;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class SystemOutModule {
   @Provides
   static Outputter textOutputter() {

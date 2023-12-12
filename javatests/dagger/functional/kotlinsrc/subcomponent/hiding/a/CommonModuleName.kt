@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.subcomponent.hiding.a
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 class CommonModuleName {
-  @Provides fun provideString(): String = "a"
+  @Provides
+  fun provideString(): String = "a"
 }

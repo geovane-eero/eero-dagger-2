@@ -51,7 +51,7 @@ final class PkgPrivateModuleGenerator {
   //
   // @Generated("dagger.hilt.processor.internal.aggregateddeps.PkgPrivateModuleGenerator")
   // @InstallIn(ActivityComponent.class)
-  // @Module(includes = MyModule.class)
+  // @ModuleDagger2(includes = MyModule.class)
   // public final class HiltModuleWrapper_MyModule {}
   void generate() throws IOException {
     TypeSpec.Builder builder =

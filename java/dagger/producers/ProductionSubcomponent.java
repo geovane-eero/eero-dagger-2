@@ -20,7 +20,7 @@ import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -42,9 +42,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface ProductionSubcomponent {
   /**
-   * A list of classes annotated with {@link Module} or {@link ProducerModule} whose bindings are
+   * A list of classes annotated with {@link ModuleDagger2} or {@link ProducerModule} whose bindings are
    * used to generate the subcomponent implementation.  Note that through the use of
-   * {@link Module#includes} or {@link ProducerModule#includes} the full set of modules used to
+   * {@link ModuleDagger2#includes} or {@link ProducerModule#includes} the full set of modules used to
    * implement the subcomponent may include more modules that just those listed here.
    */
   Class<?>[] modules() default {};

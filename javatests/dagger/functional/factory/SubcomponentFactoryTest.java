@@ -18,11 +18,9 @@ package dagger.functional.factory;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import dagger.BindsInstance;
-import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
-import dagger.Subcomponent;
+import dagger.*;
+import dagger.ModuleDagger2;
+
 import javax.inject.Inject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -67,7 +65,7 @@ public final class SubcomponentFactoryTest {
     assertThat(subcomponent.s()).isEqualTo("foo");
   }
 
-  @Module(subcomponents = Sub.class)
+  @ModuleDagger2(subcomponents = Sub.class)
   abstract static class ModuleWithSubcomponent {
     @Provides
     static int provideInt() {

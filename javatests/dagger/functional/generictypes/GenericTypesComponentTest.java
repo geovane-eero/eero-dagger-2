@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.Map;
 import java.util.Set;
@@ -43,7 +43,7 @@ public final class GenericTypesComponentTest {
     Map<T1, T2> genericMap();
   }
 
-  @Module
+  @ModuleDagger2
   interface GenericTypesModule {
     @Provides
     static Map<Integer, String> provideMap(String str) {

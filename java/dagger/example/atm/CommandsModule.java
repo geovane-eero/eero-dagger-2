@@ -18,13 +18,13 @@ package dagger.example.atm;
 
 import dagger.Binds;
 import dagger.BindsOptionalOf;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.example.atm.Database.Account;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.StringKey;
 
 /** Installs basic commands. */
-@Module
+@ModuleDagger2
 interface CommandsModule {
   @Binds
   @IntoMap

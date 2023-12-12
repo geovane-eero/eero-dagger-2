@@ -16,13 +16,13 @@
 
 package dagger.functional.multipackage.a;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.multibindings.Multibinds;
 import java.util.Map;
 import java.util.Set;
 
 /** A module that {@code @Multibinds} a set and a map of {@link Inaccessible}. */
-@Module
+@ModuleDagger2
 public abstract class AMultibindsModule {
   @Multibinds
   abstract Set<Inaccessible> inaccessibleSet();

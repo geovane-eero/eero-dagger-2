@@ -20,7 +20,7 @@ import com.google.auto.value.AutoAnnotation
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
 import dagger.MapKey
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoMap
 import org.junit.Test
@@ -32,10 +32,11 @@ class MapKeyWithDefaultTest {
   @MapKey(unwrapValue = false)
   annotation class MapKeyWithDefault(val hasDefault: Boolean = true, val required: Boolean)
 
-  @Module
+  @ModuleDagger2
   internal interface TestModule {
     companion object {
-      @Provides @IntoMap @MapKeyWithDefault(required = false) fun justRequired(): Int = 1
+      @Provides
+      @IntoMap @MapKeyWithDefault(required = false) fun justRequired(): Int = 1
 
       @Provides
       @IntoMap

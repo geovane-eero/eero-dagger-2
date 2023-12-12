@@ -21,7 +21,7 @@ import static dagger.internal.codegen.DaggerModuleMethodSubject.Factory.assertTh
 
 import androidx.room.compiler.processing.util.Source;
 import com.google.common.collect.ImmutableList;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.producers.ProducerModule;
 import dagger.testing.compile.CompilerTests;
 import java.lang.annotation.Annotation;
@@ -39,7 +39,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class BindsOptionalOfMethodValidationTest {
   @Parameters(name = "{0}")
   public static Collection<Object[]> data() {
-    return ImmutableList.copyOf(new Object[][] {{Module.class}, {ProducerModule.class}});
+    return ImmutableList.copyOf(new Object[][] {{ModuleDagger2.class}, {ProducerModule.class}});
   }
 
   private final String moduleDeclaration;

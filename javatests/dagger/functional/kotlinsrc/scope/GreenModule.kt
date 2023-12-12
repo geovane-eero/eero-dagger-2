@@ -16,11 +16,12 @@
 
 package dagger.functional.kotlinsrc.scope
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 internal object GreenModule {
-  @Provides @IntoSet @GreenScope fun green(): Any = Any()
+  @Provides
+  @IntoSet @GreenScope fun green(): Any = Any()
 }

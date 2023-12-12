@@ -17,13 +17,14 @@
 package dagger.functional.kotlinsrc.subcomponent
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 internal abstract class GrandchildModule {
-  @Binds abstract fun provideAnInterface(implementsAnInterface: ImplementsAnInterface): AnInterface
+  @Binds
+  abstract fun provideAnInterface(implementsAnInterface: ImplementsAnInterface): AnInterface
 
   companion object {
     @Provides

@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.assisted
 import com.google.common.truth.Truth.assertThat
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -36,9 +36,10 @@ internal class AssistedFactoryBindsTest {
     fun fooFactory(): FooFactory
   }
 
-  @Module
+  @ModuleDagger2
   interface FooFactoryModule {
-    @Binds fun bind(impl: FooFactoryImpl): FooFactory
+    @Binds
+    fun bind(impl: FooFactoryImpl): FooFactory
   }
 
   interface Foo

@@ -17,7 +17,7 @@
 package dagger.functional.producers.scope;
 
 import com.google.common.util.concurrent.MoreExecutors;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.producers.Production;
 import java.util.concurrent.Executor;
@@ -26,7 +26,7 @@ import java.util.concurrent.Executor;
  * A module that provides an optionally user-defined executor for a production component, defaulting
  * to the direct executor.
  */
-@Module
+@ModuleDagger2
 public final class ExecutorModule {
   private final Executor executor;
 

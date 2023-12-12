@@ -21,7 +21,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import static org.junit.Assert.fail;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import java.lang.annotation.Retention;
@@ -419,7 +419,7 @@ public class BuilderTest {
     B subcomponentBuilder();
   }
 
-  @Module
+  @ModuleDagger2
   static class ByteModule {
     final byte b;
 
@@ -433,7 +433,7 @@ public class BuilderTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class DoubleModule {
     @Provides
     double d() {
@@ -441,7 +441,7 @@ public class BuilderTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class LongModule {
     @Provides
     long l() {
@@ -449,7 +449,7 @@ public class BuilderTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class FloatModule {
     @Provides
     float f() {
@@ -457,7 +457,7 @@ public class BuilderTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class StringModule {
     final String string;
 
@@ -471,7 +471,7 @@ public class BuilderTest {
     }
   }
 
-  @Module(includes = {DoubleModule.class, FloatModule.class})
+  @ModuleDagger2(includes = {DoubleModule.class, FloatModule.class})
   static class IntModuleIncludingDoubleAndFloat {
     final int integer;
 

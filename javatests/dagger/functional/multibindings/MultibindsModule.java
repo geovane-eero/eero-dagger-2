@@ -16,7 +16,7 @@
 
 package dagger.functional.multibindings;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.multibindings.Multibinds;
 import java.util.Map;
 import java.util.Set;
@@ -26,7 +26,7 @@ import javax.inject.Named;
  * A module that uses {@link Multibinds @Multibinds}-annotated abstract methods to declare
  * multibindings.
  */
-@Module
+@ModuleDagger2
 abstract class MultibindsModule {
 
   @Multibinds

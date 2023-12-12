@@ -16,14 +16,14 @@
 
 package dagger.functional.kotlinsrc.multibindings
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.multibindings.Multibinds
 import javax.inject.Named
 
 /**
  * A module that uses [@Multibinds][Multibinds]-annotated abstract methods to declare multibindings.
  */
-@Module
+@ModuleDagger2
 internal abstract class MultibindsModule {
   @Multibinds abstract fun emptySet(): Set<Any>
 

@@ -16,14 +16,14 @@
 
 package dagger.grpc.server;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import io.grpc.Context;
 
 /**
  * Provides the current {@link Context}.
  */
-@Module
+@ModuleDagger2
 public final class CurrentContextModule {
 
   @Provides

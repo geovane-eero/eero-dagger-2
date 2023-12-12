@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import android.os.Build;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.testing.HiltAndroidRule;
@@ -52,7 +52,7 @@ public final class ModuleTest {
   @Rule public HiltAndroidRule rule = new HiltAndroidRule(this);
 
   // Test that modules with only static methods can have private constructors.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class TestModule1 {
     private TestModule1() {} // This is fine because Dagger doesn't need an instance.
@@ -64,7 +64,7 @@ public final class ModuleTest {
   }
 
   // Test that modules with only static methods can have constructors with parameters.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class TestModule2 {
     TestModule2(String str) {} // This is fine because Dagger doesn't need an instance.
@@ -77,7 +77,7 @@ public final class ModuleTest {
 
   // Test that modules with non-static methods can have constructors with parameters if no-arg
   // constructor exists.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class TestModule3 {
     TestModule3() {
@@ -93,41 +93,43 @@ public final class ModuleTest {
   }
 
   // Test that modules with only abstract methods can have private constructors.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   @SuppressWarnings("ClassCanBeStatic") // purposely testing non-static class here
   abstract class TestModule4 {
     private TestModule4() {}  // This is fine because Dagger doesn't need an instance.
 
-    @Binds @Named("Dep4") abstract Object bind(Dep4 impl);
+    @Binds
+    @Named("Dep4") abstract Object bind(Dep4 impl);
   }
 
   // Test that modules with only abstract methods can have constructors with parameters.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   @SuppressWarnings("ClassCanBeStatic") // purposely testing non-static class here
   abstract class TestModule5 {
     TestModule5(String str) {} // This is fine because Dagger doesn't need an instance.
 
-    @Binds @Named("Dep5") abstract Object bind(Dep5 impl);
+    @Binds
+    @Named("Dep5") abstract Object bind(Dep5 impl);
   }
 
   // Test that static modules with no methods can have private constructors.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class TestModule6 {
     private TestModule6() {} // This is fine because Dagger doesn't need an instance.
   }
 
   // Test that static modules with no methods can have constructors with parameters.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class TestModule7 {
     TestModule7(String str) {} // This is fine because Dagger doesn't need an instance.
   }
 
   // Test that abstract modules with no methods can have private constructors.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   @SuppressWarnings("ClassCanBeStatic") // purposely testing non-static class here
   abstract class TestModule8 {
@@ -135,7 +137,7 @@ public final class ModuleTest {
   }
 
   // Test that abstract modules with no methods can have constructors with parameters.
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   @SuppressWarnings("ClassCanBeStatic") // purposely testing non-static class here
   abstract class TestModule9 {

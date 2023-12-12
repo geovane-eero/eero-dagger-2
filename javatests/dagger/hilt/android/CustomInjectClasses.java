@@ -17,7 +17,7 @@
 package dagger.hilt.android;
 
 import android.app.Application;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.migration.CustomInject;
@@ -32,7 +32,7 @@ import javax.inject.Inject;
  */
 final class CustomInjectClasses {
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class TestModule {
     @Provides

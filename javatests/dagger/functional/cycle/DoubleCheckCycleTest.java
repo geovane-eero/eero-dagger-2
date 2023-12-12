@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.lang.annotation.Retention;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class DoubleCheckCycleTest {
   @interface Reentrant {}
 
   /** A module to be overridden in each test. */
-  @Module
+  @ModuleDagger2
   static class OverrideModule {
     @Provides
     @Singleton

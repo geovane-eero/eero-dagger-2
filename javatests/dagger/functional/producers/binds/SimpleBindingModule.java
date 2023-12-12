@@ -18,7 +18,7 @@ package dagger.functional.producers.binds;
 
 import com.google.common.util.concurrent.MoreExecutors;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ElementsIntoSet;
 import dagger.multibindings.IntKey;
@@ -120,9 +120,10 @@ abstract class SimpleBindingModule {
   @Retention(RetentionPolicy.RUNTIME)
   @interface SomeQualifier {}
 
-  @Module
+  @ModuleDagger2
   static final class ExecutorModule {
-    @Provides @Production
+    @Provides
+    @Production
     static Executor provideExecutor() {
       return MoreExecutors.directExecutor();
     }
@@ -145,9 +146,10 @@ abstract class SimpleBindingModule {
     return "789-string";
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class ProvisionModuleForMap {
-    @Provides @Named("Provision string") static String provideProvisionString() {
+    @Provides
+    @Named("Provision string") static String provideProvisionString() {
       return "provision-string";
     }
 

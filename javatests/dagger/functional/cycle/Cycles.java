@@ -16,12 +16,8 @@
 
 package dagger.functional.cycle;
 
-import dagger.Binds;
-import dagger.Component;
-import dagger.Lazy;
-import dagger.Module;
-import dagger.Provides;
-import dagger.Subcomponent;
+import dagger.*;
+import dagger.ModuleDagger2;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.StringKey;
 import java.util.Map;
@@ -118,7 +114,7 @@ final class Cycles {
     }
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class CycleMapModule {
     @Binds
     @IntoMap
@@ -147,7 +143,7 @@ final class Cycles {
     ChildCycleComponent child();
   }
   
-  @Module
+  @ModuleDagger2
   static class CycleModule {
     @Provides
     static Object provideObjectWithCycle(@SuppressWarnings("unused") Provider<Object> object) {
@@ -186,7 +182,7 @@ final class Cycles {
     Bar bar();
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class BindsCycleModule {
     @Binds
     abstract Foo foo(Bar bar);

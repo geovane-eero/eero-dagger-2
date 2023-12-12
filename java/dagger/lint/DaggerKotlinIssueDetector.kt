@@ -52,12 +52,12 @@ import org.jetbrains.uast.toUElement
  * - [ISSUE_JVM_STATIC_PROVIDES_IN_OBJECT] covers using `@JvmStatic` for object
  * `@Provides`-annotated functions, which are redundant as of Dagger 2.25. @JvmStatic on companion
  * object functions are redundant as of Dagger 2.26.
- * - [ISSUE_MODULE_COMPANION_OBJECTS] covers annotating companion objects with `@Module`, as they
+ * - [ISSUE_MODULE_COMPANION_OBJECTS] covers annotating companion objects with `@ModuleDagger2`, as they
  * are now part of the enclosing module class's API in Dagger 2.26. This will also error if the
- * enclosing class is _not_ in a `@Module`-annotated class, as this object just should be moved to a
+ * enclosing class is _not_ in a `@ModuleDagger2`-annotated class, as this object just should be moved to a
  * top-level object to avoid confusion.
  * - [ISSUE_MODULE_COMPANION_OBJECTS_NOT_IN_MODULE_PARENT] covers annotating companion objects with
- * `@Module` when the parent class is _not_ also annotated with `@Module`. While technically legal,
+ * `@ModuleDagger2` when the parent class is _not_ also annotated with `@ModuleDagger2`. While technically legal,
  * these should be moved up to top-level objects to avoid confusion.
  */
 @Suppress(
@@ -108,10 +108,10 @@ class DaggerKotlinIssueDetector : Detector(), SourceCodeScanner {
 
     private val ISSUE_MODULE_COMPANION_OBJECTS: Issue = Issue.create(
       id = "ModuleCompanionObjects",
-      briefDescription = "Module companion objects should not be annotated with @Module.",
+      briefDescription = "Module companion objects should not be annotated with @ModuleDagger2.",
       explanation =
         """
-        Companion objects in @Module-annotated classes are considered part of the API.
+        Companion objects in @ModuleDagger2-annotated classes are considered part of the API.
         """,
       category = Category.CORRECTNESS,
       priority = 5,
@@ -121,11 +121,11 @@ class DaggerKotlinIssueDetector : Detector(), SourceCodeScanner {
 
     private val ISSUE_MODULE_COMPANION_OBJECTS_NOT_IN_MODULE_PARENT: Issue = Issue.create(
       id = "ModuleCompanionObjectsNotInModuleParent",
-      briefDescription = "Companion objects should not be annotated with @Module.",
+      briefDescription = "Companion objects should not be annotated with @ModuleDagger2.",
       explanation =
         """
-        Companion objects in @Module-annotated classes are considered part of the API. This
-        companion object is not a companion to an @Module-annotated class though, and should be
+        Companion objects in @ModuleDagger2-annotated classes are considered part of the API. This
+        companion object is not a companion to an @ModuleDagger2-annotated class though, and should be
         moved to a top-level object declaration instead otherwise Dagger will ignore companion
         object.
         """,
@@ -231,7 +231,7 @@ class DaggerKotlinIssueDetector : Detector(), SourceCodeScanner {
               context.getLocation(node as UElement),
               ISSUE_MODULE_COMPANION_OBJECTS.getBriefDescription(TextFormat.TEXT),
               LintFix.create()
-                .name("Remove @Module")
+                .name("Remove @ModuleDagger2")
                 .replace()
                 .pattern("(@(dagger\\.)?Module)")
                 .with("")

@@ -16,7 +16,7 @@
 
 package dagger.android.support;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.android.AndroidInjectionModule;
 import dagger.internal.Beta;
 
@@ -25,7 +25,7 @@ import dagger.internal.Beta;
  * AndroidInjectionModule} and is just an alias. It will be removed in a future release.
  */
 @Beta
-@Module(includes = AndroidInjectionModule.class)
+@ModuleDagger2(includes = AndroidInjectionModule.class)
 public abstract class AndroidSupportInjectionModule {
   private AndroidSupportInjectionModule() {}
 }

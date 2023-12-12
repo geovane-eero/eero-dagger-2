@@ -16,7 +16,7 @@
 
 package dagger.functional.kotlinsrc.multibindings
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.functional.kotlinsrc.multibindings.NestedAnnotationContainer.NestedWrappedKey
 import dagger.multibindings.ClassKey
@@ -31,14 +31,15 @@ import java.math.BigInteger
 import javax.inject.Named
 import javax.inject.Provider
 
-@Module
+@ModuleDagger2
 internal object MultibindingModule {
   @Provides
   @IntoMap
   @StringKey("foo")
   fun provideFooKey(@Suppress("UNUSED_PARAMETER") doubleDependency: Double): String = "foo value"
 
-  @Provides @IntoMap @StringKey("bar") fun provideBarKey(): String = "bar value"
+  @Provides
+  @IntoMap @StringKey("bar") fun provideBarKey(): String = "bar value"
 
   @Provides
   @IntoMap
@@ -52,31 +53,37 @@ internal object MultibindingModule {
   @StringKey("bar")
   fun provideBarArrayValue(): Array<String> = arrayOf("bar1", "bar2")
 
-  @Provides @IntoSet fun provideFiveToSet(): Int = 5
+  @Provides
+  @IntoSet fun provideFiveToSet(): Int = 5
 
-  @Provides @IntoSet fun provideSixToSet(): Int = 6
+  @Provides
+  @IntoSet fun provideSixToSet(): Int = 6
 
-  @Provides @ElementsIntoSet fun provideElementsIntoSet(): Set<Int> = setOf(-101, -102)
+  @Provides
+  @ElementsIntoSet fun provideElementsIntoSet(): Set<Int> = setOf(-101, -102)
 
   @Provides
   fun provideMapKeys(map: Map<String, @JvmSuppressWildcards Provider<String>>): Set<String> =
     map.keys
 
-  @Provides fun provideMapValues(map: Map<String, String>): Collection<String> = map.values
+  @Provides
+  fun provideMapValues(map: Map<String, String>): Collection<String> = map.values
 
   @Provides
   @IntoMap
   @NestedWrappedKey(java.lang.Integer::class)
   fun valueForInteger(): String = "integer"
 
-  @Provides @IntoMap @NestedWrappedKey(java.lang.Long::class) fun valueForLong(): String = "long"
+  @Provides
+  @IntoMap @NestedWrappedKey(java.lang.Long::class) fun valueForLong(): String = "long"
 
   @Provides
   @IntoMap
   @ClassKey(java.lang.Integer::class)
   fun valueForClassInteger(): String = "integer"
 
-  @Provides @IntoMap @ClassKey(java.lang.Long::class) fun valueForClassLong(): String = "long"
+  @Provides
+  @IntoMap @ClassKey(java.lang.Long::class) fun valueForClassLong(): String = "long"
 
   @Provides
   @IntoMap
@@ -88,19 +95,26 @@ internal object MultibindingModule {
   @NumberClassKey(BigInteger::class)
   fun valueForNumberClassBigInteger(): String = "biginteger"
 
-  @Provides @IntoMap @LongKey(100) fun valueFor100Long(): String = "100 long"
+  @Provides
+  @IntoMap @LongKey(100) fun valueFor100Long(): String = "100 long"
 
-  @Provides @IntoMap @IntKey(100) fun valueFor100Int(): String = "100 int"
+  @Provides
+  @IntoMap @IntKey(100) fun valueFor100Int(): String = "100 int"
 
-  @Provides @IntoMap @ShortKey(100) fun valueFor100Short(): String = "100 short"
+  @Provides
+  @IntoMap @ShortKey(100) fun valueFor100Short(): String = "100 short"
 
-  @Provides @IntoMap @ByteKey(100) fun valueFor100Byte(): String = "100 byte"
+  @Provides
+  @IntoMap @ByteKey(100) fun valueFor100Byte(): String = "100 byte"
 
-  @Provides @IntoMap @BooleanKey(true) fun valueForTrue(): String = "true"
+  @Provides
+  @IntoMap @BooleanKey(true) fun valueForTrue(): String = "true"
 
-  @Provides @IntoMap @CharKey('a') fun valueForA(): String = "a char"
+  @Provides
+  @IntoMap @CharKey('a') fun valueForA(): String = "a char"
 
-  @Provides @IntoMap @CharKey('\n') fun valueForNewline(): String = "newline char"
+  @Provides
+  @IntoMap @CharKey('\n') fun valueForNewline(): String = "newline char"
 
   @Provides
   @IntoMap
@@ -117,16 +131,19 @@ internal object MultibindingModule {
   )
   fun valueForWrappedAnnotationKeyFoo(): String = "wrapped foo annotation"
 
-  @Provides @IntoSet @Named("complexQualifier") fun valueForComplexQualifierSet(): String = "foo"
+  @Provides
+  @IntoSet @Named("complexQualifier") fun valueForComplexQualifierSet(): String = "foo"
 
-  @Provides @IntoSet fun setContribution(): CharSequence = "foo"
+  @Provides
+  @IntoSet fun setContribution(): CharSequence = "foo"
 
   @Provides
   @IntoSet
   @Named("complexQualifier")
   fun qualifiedSetContribution(): CharSequence = "qualified foo"
 
-  @Provides @IntoMap @StringKey("key") fun mapContribution(): CharSequence = "foo value"
+  @Provides
+  @IntoMap @StringKey("key") fun mapContribution(): CharSequence = "foo value"
 
   @Provides
   @IntoMap

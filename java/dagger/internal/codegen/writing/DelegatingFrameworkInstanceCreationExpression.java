@@ -21,6 +21,7 @@ import static com.google.common.collect.Iterables.getOnlyElement;
 import static dagger.internal.codegen.binding.BindingRequest.bindingRequest;
 
 import com.squareup.javapoet.CodeBlock;
+import dagger.Binds;
 import dagger.assisted.Assisted;
 import dagger.assisted.AssistedFactory;
 import dagger.assisted.AssistedInject;
@@ -30,7 +31,7 @@ import dagger.internal.codegen.javapoet.CodeBlocks;
 import dagger.internal.codegen.model.DependencyRequest;
 import dagger.internal.codegen.writing.FrameworkFieldInitializer.FrameworkInstanceCreationExpression;
 
-/** A framework instance creation expression for a {@link dagger.Binds @Binds} binding. */
+/** A framework instance creation expression for a {@link Binds @Binds} binding. */
 final class DelegatingFrameworkInstanceCreationExpression
     implements FrameworkInstanceCreationExpression {
 

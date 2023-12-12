@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.modules
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
 /** This tests that @Module.includes are traversed for supertypes of a module. */
@@ -29,11 +29,11 @@ internal class ModuleIncludesCollectedFromModuleSuperclasses {
     fun includedFromModuleInheritance(): String
   }
 
-  @Module(includes = [IncludedTopLevel::class])
+  @ModuleDagger2(includes = [IncludedTopLevel::class])
   class TopLevelModule : FooModule<String>()
   class Foo<T>
 
-  @Module(includes = [IncludedFromModuleInheritance::class])
+  @ModuleDagger2(includes = [IncludedFromModuleInheritance::class])
   abstract class FooModule<T> : FooCreator() {
     @Provides
     fun fooOfT(): Foo<T> {
@@ -47,13 +47,15 @@ internal class ModuleIncludesCollectedFromModuleSuperclasses {
     }
   }
 
-  @Module
+  @ModuleDagger2
   class IncludedTopLevel {
-    @Provides fun i(): Int = 123
+    @Provides
+    fun i(): Int = 123
   }
 
-  @Module
+  @ModuleDagger2
   class IncludedFromModuleInheritance {
-    @Provides fun inheritedProvision(): String = "inherited"
+    @Provides
+    fun inheritedProvision(): String = "inherited"
   }
 }

@@ -16,12 +16,12 @@
 
 package dagger.functional.producers.monitoring;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoSet;
 import dagger.producers.monitoring.ProductionComponentMonitor;
 
-@Module
+@ModuleDagger2
 final class MonitoringModule {
   private final ProductionComponentMonitor.Factory monitorFactory;
 

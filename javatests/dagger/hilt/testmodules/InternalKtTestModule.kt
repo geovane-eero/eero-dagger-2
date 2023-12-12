@@ -16,14 +16,14 @@
 
 package dagger.hilt.testmodules
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 /** Module for [dagger.hilt.android.InternalKtModuleTest]. */
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 internal abstract class InternalKtTestModule private constructor() {
   companion object {
@@ -33,7 +33,7 @@ internal abstract class InternalKtTestModule private constructor() {
   }
 }
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 internal object InternalKtObjectModule {
   @Provides

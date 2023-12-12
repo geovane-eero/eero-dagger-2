@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.membersinject
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 
@@ -37,9 +37,10 @@ class MembersInjectionOrdering {
     @Inject lateinit var firstToString: String
   }
 
-  @Module
+  @ModuleDagger2
   class OrderingModule(private val subtype: Subtype) {
-    @Provides fun provideToString(): String = subtype.first.toString()
+    @Provides
+    fun provideToString(): String = subtype.first.toString()
   }
 
   @Component(modules = [OrderingModule::class])

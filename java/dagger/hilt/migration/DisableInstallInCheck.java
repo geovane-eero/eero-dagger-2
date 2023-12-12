@@ -16,8 +16,10 @@
 
 package dagger.hilt.migration;
 
+import dagger.ModuleDagger2;
+
 /**
- * Marks a {@link dagger.Module}-annotated class to allow it to have no {@link
+ * Marks a {@link ModuleDagger2}-annotated class to allow it to have no {@link
  * dagger.hilt.InstallIn} annotation.
  *
  * <p>Use this annotation on modules to suppress the error of a missing {@link

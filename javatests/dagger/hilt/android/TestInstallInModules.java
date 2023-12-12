@@ -16,7 +16,7 @@
 
 package dagger.hilt.android;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.android.UsesComponentTestClasses.UsesComponentQualifier;
 import dagger.hilt.components.SingletonComponent;
@@ -26,7 +26,7 @@ import dagger.hilt.testing.TestInstallIn;
 final class TestInstallInModules {
   private TestInstallInModules() {}
 
-  @Module
+  @ModuleDagger2
   @TestInstallIn(components = SingletonComponent.class, replaces = UsesComponentTestModule.class)
   interface TestInstallInModule {
     @Provides

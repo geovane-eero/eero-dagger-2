@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import android.os.Build;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.EntryPoints;
 import dagger.hilt.InstallIn;
@@ -53,7 +53,7 @@ public final class UsesLocalComponentUninstallModuleTest {
 
   @Inject @UsesComponentQualifier String injectedString;
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface LocalTestModule {
 

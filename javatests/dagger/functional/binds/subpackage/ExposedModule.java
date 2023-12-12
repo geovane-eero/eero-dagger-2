@@ -17,7 +17,7 @@
 package dagger.functional.binds.subpackage;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ElementsIntoSet;
 import dagger.multibindings.IntoSet;
@@ -29,7 +29,7 @@ import java.util.Set;
 import javax.inject.Provider;
 import javax.inject.Singleton;
 
-@Module
+@ModuleDagger2
 public abstract class ExposedModule {
   @Binds
   abstract Exposed notExposed(NotExposed notExposed);

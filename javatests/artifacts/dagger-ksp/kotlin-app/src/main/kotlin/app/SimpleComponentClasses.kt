@@ -17,7 +17,7 @@
 package app
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Provider
@@ -31,11 +31,13 @@ class SimpleComponentClasses {
   class ProvidedFoo
   class ScopedProvidedFoo
 
-  @Module
+  @ModuleDagger2
   object SimpleModule {
-    @Provides fun provideFoo(): ProvidedFoo = ProvidedFoo()
+    @Provides
+    fun provideFoo(): ProvidedFoo = ProvidedFoo()
 
-    @Provides @Singleton fun provideScopedFoo(): ScopedProvidedFoo = ScopedProvidedFoo()
+    @Provides
+    @Singleton fun provideScopedFoo(): ScopedProvidedFoo = ScopedProvidedFoo()
   }
 
   @Singleton

@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import jakarta.inject.Inject;
 import jakarta.inject.Qualifier;
 import jakarta.inject.Scope;
@@ -47,7 +47,7 @@ public final class SimpleJakartaTest {
     @Inject Foo() {}
   }
 
-  @Module
+  @ModuleDagger2
   interface TestModule {
     // By binding this to itself, if the qualifier annotation isn't picked up, it will created a
     // cycle.

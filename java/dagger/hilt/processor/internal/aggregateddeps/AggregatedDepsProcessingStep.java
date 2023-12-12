@@ -91,7 +91,7 @@ public final class AggregatedDepsProcessingStep extends BaseProcessingStep {
     ProcessorErrors.checkState(
         !hasInstallIn || isEntryPoint || isModule,
         element,
-        "@%s-annotated classes must also be annotated with @Module or @EntryPoint: %s",
+        "@%s-annotated classes must also be annotated with @ModuleDagger2 or @EntryPoint: %s",
         installInAnnotation.map(ClassName::simpleName).orElse("@InstallIn"),
         XElements.toStableString(element));
 
@@ -99,7 +99,7 @@ public final class AggregatedDepsProcessingStep extends BaseProcessingStep {
         !(isEntryPoint && isModule),
         element,
         "@%s and @%s cannot be used on the same interface: %s",
-        moduleAnnotation.map(ClassName::simpleName).orElse("@Module"),
+        moduleAnnotation.map(ClassName::simpleName).orElse("@ModuleDagger2"),
         entryPointAnnotation.map(ClassName::simpleName).orElse("@EntryPoint"),
         XElements.toStableString(element));
 
@@ -133,7 +133,7 @@ public final class AggregatedDepsProcessingStep extends BaseProcessingStep {
     ProcessorErrors.checkState(
         XElementKt.isTypeElement(element),
         element,
-        "Only classes and interfaces can be annotated with @Module: %s",
+        "Only classes and interfaces can be annotated with @ModuleDagger2: %s",
         XElements.toStableString(element));
 
     XTypeElement module = XElements.asTypeElement(element);
@@ -141,7 +141,7 @@ public final class AggregatedDepsProcessingStep extends BaseProcessingStep {
     ProcessorErrors.checkState(
         module.isClass() || module.isInterface() || module.isKotlinObject(),
         module,
-        "Only classes and interfaces can be annotated with @Module: %s",
+        "Only classes and interfaces can be annotated with @ModuleDagger2: %s",
         XElements.toStableString(module));
 
     ProcessorErrors.checkState(

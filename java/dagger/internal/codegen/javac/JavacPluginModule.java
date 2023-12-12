@@ -22,7 +22,7 @@ import com.sun.tools.javac.model.JavacElements;
 import com.sun.tools.javac.model.JavacTypes;
 import com.sun.tools.javac.util.Context;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.internal.codegen.compileroption.CompilerOptions;
 import javax.lang.model.util.Elements; // ALLOW_TYPES_ELEMENTS
@@ -32,9 +32,9 @@ import javax.lang.model.util.Types; // ALLOW_TYPES_ELEMENTS
  * A module that provides a {@link XMessager}, {@link XProcessingEnv}, and {@link CompilerOptions}
  * for use in {@code javac} plugins. Requires a binding for the {@code javac} {@link Context}.
  */
-@Module(includes = JavacPluginModule.BindsModule.class)
+@ModuleDagger2(includes = JavacPluginModule.BindsModule.class)
 public final class JavacPluginModule {
-  @Module
+  @ModuleDagger2
   interface BindsModule {
     @Binds
     CompilerOptions compilerOptions(JavacPluginCompilerOptions compilerOptions);

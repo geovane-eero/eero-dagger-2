@@ -17,12 +17,12 @@
 package dagger.hilt.android.simpleKotlin
 
 import android.os.Build
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 object ApplicationModule {
   @Provides

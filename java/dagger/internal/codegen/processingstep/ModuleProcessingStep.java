@@ -89,7 +89,7 @@ final class ModuleProcessingStep extends TypeCheckingProcessingStep<XTypeElement
     moduleValidator.addKnownModules(
         elementsByAnnotation.values().stream()
             .flatMap(Set::stream)
-            // This cast is safe because @Module has @Target(ElementType.TYPE)
+            // This cast is safe because @ModuleDagger2 has @Target(ElementType.TYPE)
             .map(XTypeElement.class::cast)
             .collect(toImmutableSet()));
     return super.process(env, elementsByAnnotation);
@@ -100,11 +100,11 @@ final class ModuleProcessingStep extends TypeCheckingProcessingStep<XTypeElement
     if (processedModuleElements.contains(module)) {
       return;
     }
-    // For backwards compatibility, we allow a companion object to be annotated with @Module even
+    // For backwards compatibility, we allow a companion object to be annotated with @ModuleDagger2 even
     // though it's no longer required. However, we skip processing the companion object itself
     // because it will now be processed when processing the companion object's enclosing class.
     if (module.isCompanionObject()) {
-      // TODO(danysantiago): Be strict about annotating companion objects with @Module,
+      // TODO(danysantiago): Be strict about annotating companion objects with @ModuleDagger2,
       //  i.e. tell user to annotate parent instead.
       return;
     }

@@ -16,11 +16,11 @@
 
 package dagger.functional.multipackage.moduleconstructor;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.Random;
 
-@Module
+@ModuleDagger2
 public class ModuleWithInaccessibleConstructor {
   private final int i;
 

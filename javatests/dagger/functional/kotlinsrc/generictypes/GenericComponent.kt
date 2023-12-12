@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.generictypes
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.functional.kotlinsrc.generictypes.subpackage.Exposed
 import dagger.functional.kotlinsrc.generictypes.subpackage.PublicSubclass
@@ -50,17 +50,19 @@ interface GenericComponent {
   fun stringsProvider(): Provider<List<String>> // Regression test for b/71595104
 
   // Regression test for b/71595104
-  @Module
+  @ModuleDagger2
   abstract class GenericModule<T> {
     // Note that for subclasses that use String for T, this factory will still need two
     // Provider<String> framework dependencies.
-    @Provides fun list(t: T, @Suppress("UNUSED_PARAMETER") string: String): List<T> = listOf(t)
+    @Provides
+    fun list(t: T, @Suppress("UNUSED_PARAMETER") string: String): List<T> = listOf(t)
   }
 
   // Regression test for b/71595104
   // TODO(b/264618194): Use object rather than class here.
-  @Module
+  @ModuleDagger2
   class NongenericModule : GenericModule<String>() {
-    @Provides fun string(): String = "string"
+    @Provides
+    fun string(): String = "string"
   }
 }

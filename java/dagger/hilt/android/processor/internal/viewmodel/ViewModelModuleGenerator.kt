@@ -37,7 +37,7 @@ import javax.lang.model.element.Modifier
  * Should generate:
  * ```
  * public final class $_HiltModules {
- *   @Module
+ *   @ModuleDagger2
  *   @InstallIn(ViewModelComponent.class)
  *   public static abstract class BindsModule {
  *     @Binds
@@ -46,7 +46,7 @@ import javax.lang.model.element.Modifier
  *     @HiltViewModelMap
  *     public abstract ViewModel bind($ vm)
  *   }
- *   @Module
+ *   @ModuleDagger2
  *   @InstallIn(ActivityRetainedComponent.class)
  *   public static final class KeyModule {
  *     @Provides

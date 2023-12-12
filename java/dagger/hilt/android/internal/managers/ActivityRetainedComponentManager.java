@@ -24,7 +24,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.lifecycle.viewmodel.CreationExtras;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.EntryPoints;
@@ -142,7 +142,7 @@ final class ActivityRetainedComponentManager
         .getComponent();
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityRetainedComponent.class)
   abstract static class LifecycleModule {
     @Provides

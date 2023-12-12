@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.basic
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal object NullableModule {
-  @Provides fun nullObject(): Any? = null
+  @Provides
+  fun nullObject(): Any? = null
 }

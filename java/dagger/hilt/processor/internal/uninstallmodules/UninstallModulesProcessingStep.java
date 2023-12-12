@@ -81,7 +81,7 @@ public final class UninstallModulesProcessingStep extends BaseProcessingStep {
         invalidModules.isEmpty(),
         // TODO(b/152801981): Point to the annotation value rather than the annotated element.
         testElement,
-        "@UninstallModules should only include modules annotated with both @Module and @InstallIn, "
+        "@UninstallModules should only include modules annotated with both @ModuleDagger2 and @InstallIn, "
             + "but found: %s.",
         invalidModules.stream().map(XElements::toStableString).collect(toImmutableList()));
   }

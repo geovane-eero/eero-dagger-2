@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.cycle
 import dagger.Binds
 import dagger.Component
 import dagger.Lazy
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.multibindings.IntoMap
@@ -53,7 +53,7 @@ class Cycles private constructor() {
     val mapOfProvidersOfY: Map<String, @JvmSuppressWildcards Provider<Y>>
   )
 
-  @Module
+  @ModuleDagger2
   internal abstract class CycleMapModule {
     @Binds
     @IntoMap
@@ -78,7 +78,7 @@ class Cycles private constructor() {
     fun child(): ChildCycleComponent
   }
 
-  @Module
+  @ModuleDagger2
   internal object CycleModule {
     @Provides
     fun provideObjectWithCycle(
@@ -111,8 +111,9 @@ class Cycles private constructor() {
     fun bar(): Bar
   }
 
-  @Module
+  @ModuleDagger2
   internal abstract class BindsCycleModule {
-    @Binds abstract fun foo(bar: Bar): Foo
+    @Binds
+    abstract fun foo(bar: Bar): Foo
   }
 }

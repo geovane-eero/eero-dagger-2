@@ -22,7 +22,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import com.google.auto.value.AutoAnnotation;
 import dagger.Component;
 import dagger.MapKey;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoMap;
 import java.lang.annotation.Retention;
@@ -40,7 +40,7 @@ public final class MapKeyWithDefaultTest {
     boolean required();
   }
 
-  @Module
+  @ModuleDagger2
   interface TestModule {
     @Provides
     @IntoMap

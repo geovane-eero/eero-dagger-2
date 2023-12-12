@@ -18,10 +18,10 @@ package dagger.android.simple;
 
 import static android.os.Build.MODEL;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class ModelModule {
   @Provides
   @Model

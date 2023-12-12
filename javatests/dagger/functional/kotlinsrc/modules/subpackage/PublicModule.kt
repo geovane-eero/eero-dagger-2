@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.modules.subpackage
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module(includes = [PackagePrivateModule::class, NonAbstractPackagePrivateModule::class])
+@ModuleDagger2(includes = [PackagePrivateModule::class, NonAbstractPackagePrivateModule::class])
 object PublicModule {
-  @Provides fun provideInt(): Int = 42
+  @Provides
+  fun provideInt(): Int = 42
 }

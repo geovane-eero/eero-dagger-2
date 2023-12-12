@@ -16,10 +16,10 @@
 
 package dagger.functional.basic;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class PrimitivesModule {
   static final byte BOUND_BYTE = -41;
   static final char BOUND_CHAR = 'g';
@@ -43,67 +43,83 @@ final class PrimitivesModule {
   static final float[] BOUND_FLOAT_ARRAY = {(float) 0.1, (float) 0.01, (float) 0.001};
   static final double[] BOUND_DOUBLE_ARRAY = {0.2, 0.02, 0.002};
 
-  @Provides static byte provideByte() {
+  @Provides
+  static byte provideByte() {
     return BOUND_BYTE;
   }
 
-  @Provides static char provideChar() {
+  @Provides
+  static char provideChar() {
     return BOUND_CHAR;
   }
 
-  @Provides static short provideShort() {
+  @Provides
+  static short provideShort() {
     return BOUND_SHORT;
   }
 
-  @Provides static int provideInt() {
+  @Provides
+  static int provideInt() {
     return BOUND_INT;
   }
 
-  @Provides static long provideLong() {
+  @Provides
+  static long provideLong() {
     return BOUND_LONG;
   }
 
-  @Provides static boolean provideBoolean() {
+  @Provides
+  static boolean provideBoolean() {
     return BOUND_BOOLEAN;
   }
 
-  @Provides static float provideFloat() {
+  @Provides
+  static float provideFloat() {
     return BOUND_FLOAT;
   }
 
-  @Provides static double boundDouble() {
+  @Provides
+  static double boundDouble() {
     return BOUND_DOUBLE;
   }
 
-  @Provides static byte[] provideByteArray() {
+  @Provides
+  static byte[] provideByteArray() {
     return BOUND_BYTE_ARRAY;
   }
 
-  @Provides static char[] provideCharArray() {
+  @Provides
+  static char[] provideCharArray() {
     return BOUND_CHAR_ARRAY;
   }
 
-  @Provides static short[] provideShortArray() {
+  @Provides
+  static short[] provideShortArray() {
     return BOUND_SHORT_ARRAY;
   }
 
-  @Provides static int[] provideIntArray() {
+  @Provides
+  static int[] provideIntArray() {
     return BOUND_INT_ARRAY;
   }
 
-  @Provides static long[] provideLongArray() {
+  @Provides
+  static long[] provideLongArray() {
     return BOUND_LONG_ARRAY;
   }
 
-  @Provides static boolean[] provideBooleanArray() {
+  @Provides
+  static boolean[] provideBooleanArray() {
     return BOUND_BOOLEAN_ARRAY;
   }
 
-  @Provides static float[] provideFloatArray() {
+  @Provides
+  static float[] provideFloatArray() {
     return BOUND_FLOAT_ARRAY;
   }
 
-  @Provides static double[] boundDoubleArray() {
+  @Provides
+  static double[] boundDoubleArray() {
     return BOUND_DOUBLE_ARRAY;
   }
 }

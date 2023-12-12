@@ -17,12 +17,12 @@
 package dagger.functional.multibindings.subpackage;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.multibindings.ClassKey;
 import dagger.multibindings.IntoMap;
 import javax.inject.Inject;
 
-@Module
+@ModuleDagger2
 public abstract class BindsInaccessibleMapKeyModule {
   @Binds
   @IntoMap

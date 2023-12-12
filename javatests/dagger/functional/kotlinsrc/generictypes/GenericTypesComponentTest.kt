@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.generictypes
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -33,14 +33,17 @@ class GenericTypesComponentTest {
     fun genericMap(): Map<T1, T2>
   }
 
-  @Module
+  @ModuleDagger2
   internal interface GenericTypesModule {
     companion object {
-      @Provides fun provideMap(str: String): Map<Int, String> = mapOf(INT_VALUE to str)
+      @Provides
+      fun provideMap(str: String): Map<Int, String> = mapOf(INT_VALUE to str)
 
-      @Provides fun provideSet(str: String): Set<String> = setOf(str)
+      @Provides
+      fun provideSet(str: String): Set<String> = setOf(str)
 
-      @Provides fun provideString(): String = STRING_VALUE
+      @Provides
+      fun provideString(): String = STRING_VALUE
     }
   }
 

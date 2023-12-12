@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.subcomponent
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import org.junit.Assert
@@ -28,14 +28,16 @@ import org.junit.runners.JUnit4
 /** Tests for subcomponent factory methods. */
 @RunWith(JUnit4::class)
 class SubcomponentFactoryMethodTest {
-  @Module
+  @ModuleDagger2
   internal class IntModule {
-    @Provides fun provideInt(): Int = 42
+    @Provides
+    fun provideInt(): Int = 42
   }
 
-  @Module
+  @ModuleDagger2
   internal class StringModule(val s: String) {
-    @Provides fun provideString(i: Int): String = s + i
+    @Provides
+    fun provideString(i: Int): String = s + i
   }
 
   @Component(modules = [IntModule::class])

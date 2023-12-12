@@ -16,11 +16,12 @@
 
 package dagger.functional.kotlinsrc.factory
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
 // intentionally non-static
-@Module
+@ModuleDagger2
 class InstantiableConcreteModule {
-  @Provides fun provideInt(): Int = 42
+  @Provides
+  fun provideInt(): Int = 42
 }

@@ -17,7 +17,7 @@
 package simple;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.testing.HiltAndroidRule;
@@ -44,7 +44,7 @@ public class Test2 {
   }
 
   /** An inner test module. */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class TestModule {
     @Provides

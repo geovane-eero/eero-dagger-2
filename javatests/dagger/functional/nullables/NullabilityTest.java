@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.fail;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Reusable;
 import javax.inject.Inject;
@@ -51,7 +51,7 @@ public class NullabilityTest {
     Provider<Number> numberProvider();
   }
 
-  @Module
+  @ModuleDagger2
   static class NullModule {
     Number numberValue = null;
     Integer integerCallCount = 0;

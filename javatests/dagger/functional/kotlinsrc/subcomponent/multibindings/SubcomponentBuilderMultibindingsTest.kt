@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.subcomponent.multibindings
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.multibindings.IntoSet
@@ -67,10 +67,11 @@ class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module(subcomponents = [FloatingSub::class])
+    @ModuleDagger2(subcomponents = [FloatingSub::class])
     interface ParentModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "parent"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "parent"
 
         @Provides
         @ParentFoo
@@ -79,10 +80,11 @@ class SubcomponentBuilderMultibindingsTest {
     }
 
     // The subcomponent installation of FloatingSub here is the key difference
-    @Module(subcomponents = [FloatingSub::class])
+    @ModuleDagger2(subcomponents = [FloatingSub::class])
     interface ChildModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "child"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "child"
 
         @Provides
         @ChildFoo
@@ -118,10 +120,11 @@ class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module(subcomponents = [FloatingSub::class])
+    @ModuleDagger2(subcomponents = [FloatingSub::class])
     interface ParentModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "parent"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "parent"
 
         @Provides
         @ParentFoo
@@ -130,10 +133,11 @@ class SubcomponentBuilderMultibindingsTest {
     }
 
     // The lack of a subcomponent installation of FloatingSub here is the key difference
-    @Module
+    @ModuleDagger2
     interface ChildModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "child"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "child"
 
         @Provides
         @ChildFoo
@@ -164,10 +168,11 @@ class SubcomponentBuilderMultibindingsTest {
       fun foo(): Foo
     }
 
-    @Module
+    @ModuleDagger2
     interface ParentModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "parent"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "parent"
 
         @Provides
         @ParentFoo
@@ -175,10 +180,11 @@ class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module
+    @ModuleDagger2
     interface ChildModule {
       companion object {
-        @Provides @IntoSet fun provideStringMulti(): String = "child"
+        @Provides
+        @IntoSet fun provideStringMulti(): String = "child"
 
         @Provides
         @ChildFoo

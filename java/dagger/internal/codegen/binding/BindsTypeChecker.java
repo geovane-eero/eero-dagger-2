@@ -27,6 +27,7 @@ import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.XType;
 import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.collect.ImmutableList;
+import dagger.Binds;
 import dagger.internal.codegen.base.ContributionType;
 import dagger.internal.codegen.javapoet.ExpressionType;
 import dagger.internal.codegen.javapoet.TypeNames;
@@ -36,7 +37,7 @@ import javax.inject.Inject;
 /**
  * Checks the assignability of one type to another, given a {@link ContributionType} context. This
  * is used by {@link dagger.internal.codegen.validation.BindsMethodValidator} to validate that the
- * right-hand- side of a {@link dagger.Binds} method is valid, as well as in {@link
+ * right-hand- side of a {@link Binds} method is valid, as well as in {@link
  * dagger.internal.codegen.writing.DelegateRequestRepresentation} when the right-hand-side in
  * generated code might be an erased type due to accessibility.
  */

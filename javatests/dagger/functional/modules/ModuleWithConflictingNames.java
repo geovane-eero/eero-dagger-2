@@ -16,7 +16,7 @@
 
 package dagger.functional.modules;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -25,7 +25,7 @@ import javax.inject.Provider;
  * Module with bindings that might result in generated factories with conflicting field and
  * parameter names.
  */
-@Module
+@ModuleDagger2
 final class ModuleWithConflictingNames {
   @Provides
   static Object object(int foo, Provider<String> fooProvider) {

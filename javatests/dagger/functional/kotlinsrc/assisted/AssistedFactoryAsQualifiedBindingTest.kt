@@ -22,7 +22,7 @@ import dagger.Binds
 import dagger.BindsInstance
 import dagger.BindsOptionalOf
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.assisted.AssistedFactory
 import dagger.assisted.AssistedInject
@@ -61,11 +61,13 @@ internal class AssistedFactoryAsQualifiedBindingTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   interface BarFactoryModule {
-    @Binds @AsBinds fun bindsBar(@AsComponentDependency bar: Bar): Bar
+    @Binds
+    @AsBinds fun bindsBar(@AsComponentDependency bar: Bar): Bar
 
-    @Binds @AsBinds fun bindsBarFactory(@AsComponentDependency barFactory: BarFactory): BarFactory
+    @Binds
+    @AsBinds fun bindsBarFactory(@AsComponentDependency barFactory: BarFactory): BarFactory
 
     @BindsOptionalOf @AsOptional fun optionalBar(): Bar
 
@@ -80,13 +82,15 @@ internal class AssistedFactoryAsQualifiedBindingTest {
     @Multibinds fun unqualifiedBarFactorySet(): Set<BarFactory>
 
     companion object {
-      @Provides @AsProvides fun providesBar(@AsComponentDependency bar: Bar): Bar = bar
+      @Provides
+      @AsProvides fun providesBar(@AsComponentDependency bar: Bar): Bar = bar
 
       @Provides
       @AsProvides
       fun providesBarFactory(@AsComponentDependency barFactory: BarFactory): BarFactory = barFactory
 
-      @Provides @AsOptional fun providesOptionalBar(@AsComponentDependency bar: Bar): Bar = bar
+      @Provides
+      @AsOptional fun providesOptionalBar(@AsComponentDependency bar: Bar): Bar = bar
 
       @Provides
       @AsOptional

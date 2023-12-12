@@ -23,7 +23,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.util.Source;
 import com.google.common.collect.ImmutableList;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.multibindings.IntKey;
 import dagger.multibindings.LongKey;
 import dagger.producers.ProducerModule;
@@ -41,7 +41,7 @@ import org.junit.runners.Parameterized.Parameters;
 public class BindsMethodValidationTest {
   @Parameters
   public static Collection<Object[]> data() {
-    return ImmutableList.copyOf(new Object[][] {{Module.class}, {ProducerModule.class}});
+    return ImmutableList.copyOf(new Object[][] {{ModuleDagger2.class}, {ProducerModule.class}});
   }
 
   private final String moduleAnnotation;

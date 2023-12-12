@@ -16,6 +16,7 @@
 
 package dagger.hilt.android.testing;
 
+import dagger.ModuleDagger2;
 import dagger.hilt.GeneratesRootInput;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
@@ -51,10 +52,10 @@ public @interface UninstallModules {
   /**
    * Returns the list of classes to uninstall.
    *
-   * <p>These classes must be annotated with both {@link dagger.Module} and {@link
+   * <p>These classes must be annotated with both {@link ModuleDagger2} and {@link
    * dagger.hilt.InstallIn}.
    *
-   * <p>Note:A module that is included as part of another module's {@link dagger.Module#includes()}
+   * <p>Note:A module that is included as part of another module's {@link ModuleDagger2#includes()}
    * cannot be truly uninstalled until the including module is also uninstalled.
    */
   Class<?>[] value() default {};

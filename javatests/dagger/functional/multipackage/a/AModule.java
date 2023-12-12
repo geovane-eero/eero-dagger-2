@@ -17,7 +17,7 @@
 package dagger.functional.multipackage.a;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ElementsIntoSet;
 import dagger.multibindings.IntoMap;
@@ -26,7 +26,7 @@ import dagger.multibindings.StringKey;
 import java.util.HashSet;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 public abstract class AModule {
   @Provides
   @IntoSet

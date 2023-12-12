@@ -16,18 +16,21 @@
 
 package dagger.functional.kotlinsrc.generictypes
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import java.util.ArrayList
 import java.util.LinkedList
 
-@Module
+@ModuleDagger2
 class BoundedGenericModule {
-  @Provides fun provideInteger(): Int = 1
+  @Provides
+  fun provideInteger(): Int = 1
 
-  @Provides fun provideDouble(): Double = 2.0
+  @Provides
+  fun provideDouble(): Double = 2.0
 
-  @Provides fun provideArrayListString(): ArrayList<String> = arrayListOf("arrayListOfString")
+  @Provides
+  fun provideArrayListString(): ArrayList<String> = arrayListOf("arrayListOfString")
 
   @Provides
   fun provideLinkedListString(): LinkedList<String> = LinkedList(listOf("linkedListOfString"))
@@ -40,7 +43,9 @@ class BoundedGenericModule {
   fun provideArrayListOfComparableString(): LinkedList<Comparable<String>> =
     LinkedList(listOf("arrayListOfComparableOfString"))
 
-  @Provides fun provideListOfInteger(): List<Int> = listOf(3)
+  @Provides
+  fun provideListOfInteger(): List<Int> = listOf(3)
 
-  @Provides fun provideSetOfDouble(): Set<Double> = setOf(4.0)
+  @Provides
+  fun provideSetOfDouble(): Set<Double> = setOf(4.0)
 }

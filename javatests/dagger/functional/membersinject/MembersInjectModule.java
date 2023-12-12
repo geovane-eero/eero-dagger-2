@@ -16,17 +16,20 @@
 
 package dagger.functional.membersinject;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 class MembersInjectModule {
   
-  @Provides String[] provideStringArray() { return new String[10]; }
+  @Provides
+  String[] provideStringArray() { return new String[10]; }
   
-  @Provides int[] provideIntArray() { return new int[10]; }
+  @Provides
+  int[] provideIntArray() { return new int[10]; }
   
   @SuppressWarnings({"unchecked", "rawtypes"})
-  @Provides MembersInjectGenericParent<String[]>[] provideFooArrayOfStringArray() { return new MembersInjectGenericParent[10]; }
+  @Provides
+  MembersInjectGenericParent<String[]>[] provideFooArrayOfStringArray() { return new MembersInjectGenericParent[10]; }
 
 }

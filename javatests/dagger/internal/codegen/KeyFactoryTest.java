@@ -31,7 +31,7 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.testing.compile.CompilationRule;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.internal.codegen.binding.KeyFactory;
 import dagger.internal.codegen.javac.JavacPluginModule;
@@ -94,9 +94,10 @@ public class KeyFactoryTest {
     assertThat(key.toString()).isEqualTo("java.lang.String");
   }
 
-  @Module
+  @ModuleDagger2
   static final class ProvidesMethodModule {
-    @Provides String provideString() {
+    @Provides
+    String provideString() {
       throw new UnsupportedOperationException();
     }
   }
@@ -142,7 +143,7 @@ public class KeyFactoryTest {
                 + "}) java.lang.String");
   }
 
-  @Module
+  @ModuleDagger2
   static final class QualifiedProvidesMethodModule {
     @Provides
     @TestQualifier({
@@ -193,27 +194,31 @@ public class KeyFactoryTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static final class SetProvidesMethodsModule {
-    @Provides @IntoSet String provideString() {
+    @Provides
+    @IntoSet String provideString() {
       throw new UnsupportedOperationException();
     }
 
-    @Provides @ElementsIntoSet Set<String> provideStrings() {
+    @Provides
+    @ElementsIntoSet Set<String> provideStrings() {
       throw new UnsupportedOperationException();
     }
   }
 
-  @Module
+  @ModuleDagger2
   static final class PrimitiveTypes {
-    @Provides int foo() {
+    @Provides
+    int foo() {
       return 0;
     }
   }
 
-  @Module
+  @ModuleDagger2
   static final class BoxedPrimitiveTypes {
-    @Provides Integer foo() {
+    @Provides
+    Integer foo() {
       return 0;
     }
   }

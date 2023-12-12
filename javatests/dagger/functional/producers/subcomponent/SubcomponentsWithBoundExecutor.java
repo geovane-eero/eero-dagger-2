@@ -18,7 +18,7 @@ package dagger.functional.producers.subcomponent;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.producers.ProducerModule;
 import dagger.producers.Produces;
@@ -55,7 +55,7 @@ final class SubcomponentsWithBoundExecutor {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static final class ExecutorModule {
     private final AtomicInteger constructionCount;
     private final AtomicInteger executionCount;
@@ -73,7 +73,7 @@ final class SubcomponentsWithBoundExecutor {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static final class ParentModule {
     @Provides
     @FromParent

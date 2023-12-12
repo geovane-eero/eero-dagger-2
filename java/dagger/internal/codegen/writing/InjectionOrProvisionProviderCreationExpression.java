@@ -21,6 +21,7 @@ import static dagger.internal.codegen.binding.SourceFiles.generatedClassNameForB
 import static dagger.internal.codegen.model.BindingKind.INJECTION;
 
 import com.squareup.javapoet.CodeBlock;
+import dagger.Provides;
 import dagger.assisted.Assisted;
 import dagger.assisted.AssistedFactory;
 import dagger.assisted.AssistedInject;
@@ -33,7 +34,7 @@ import javax.inject.Provider;
 
 /**
  * A {@link Provider} creation expression for an {@link javax.inject.Inject @Inject}-constructed
- * class or a {@link dagger.Provides @Provides}-annotated module method.
+ * class or a {@link Provides @Provides}-annotated module method.
  */
 // TODO(dpb): Resolve with ProducerCreationExpression.
 final class InjectionOrProvisionProviderCreationExpression

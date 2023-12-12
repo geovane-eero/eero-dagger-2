@@ -57,9 +57,9 @@ abstract class SourceGenerator {
       return AnnotationSpec.builder(ClassName.get("dagger", "Provides")).build();
     }
 
-    /** A {@code @dagger.Module} annotation that includes the given module classes. */
+    /** A {@code @dagger.ModuleDagger2} annotation that includes the given module classes. */
     static AnnotationSpec module(ClassName... includedModules) {
-      AnnotationSpec.Builder module = AnnotationSpec.builder(ClassName.get("dagger", "Module"));
+      AnnotationSpec.Builder module = AnnotationSpec.builder(ClassName.get("dagger", "ModuleDagger2"));
       for (ClassName includedModule : includedModules) {
         module.addMember("includes", "$T.class", includedModule);
       }

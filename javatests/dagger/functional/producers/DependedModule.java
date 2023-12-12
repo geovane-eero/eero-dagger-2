@@ -16,10 +16,10 @@
 
 package dagger.functional.producers;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class DependedModule {
   @Provides
   String provideGreeting() {

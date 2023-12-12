@@ -20,7 +20,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Subcomponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerAppCompatActivity
@@ -58,7 +58,7 @@ interface SimpleActivityComponent : AndroidInjector<SimpleActivity> {
   @Subcomponent.Factory interface Factory : AndroidInjector.Factory<SimpleActivity> {}
 }
 
-@Module(subcomponents = [SimpleActivityComponent::class], includes = [UserNameModule::class])
+@ModuleDagger2(subcomponents = [SimpleActivityComponent::class], includes = [UserNameModule::class])
 interface InjectorModule {
   @Binds
   @IntoMap

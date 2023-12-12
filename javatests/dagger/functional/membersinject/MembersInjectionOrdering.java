@@ -17,7 +17,7 @@
 package dagger.functional.membersinject;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Inject;
 
@@ -38,7 +38,7 @@ class MembersInjectionOrdering {
     @Inject String firstToString;
   }
 
-  @Module
+  @ModuleDagger2
   static class OrderingModule {
     private final Subtype subtype;
 

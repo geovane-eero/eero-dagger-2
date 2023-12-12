@@ -16,10 +16,10 @@
 
 package dagger.functional.multipackage.primitives;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 public final class PrimitiveAcrossPackagesModule {
   // This method should be package-private so that a proxy method is created
   @Provides

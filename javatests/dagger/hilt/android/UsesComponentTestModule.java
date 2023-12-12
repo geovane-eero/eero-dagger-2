@@ -16,14 +16,14 @@
 
 package dagger.hilt.android;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.UsesComponentTestClasses.UsesComponentQualifier;
 import dagger.hilt.components.SingletonComponent;
 
 /** Module for shared test component tests. */
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 final class UsesComponentTestModule {
 

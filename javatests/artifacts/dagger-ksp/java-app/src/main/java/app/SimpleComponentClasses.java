@@ -17,7 +17,7 @@
 package app;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Inject;
 import javax.inject.Provider;
@@ -44,7 +44,7 @@ public class SimpleComponentClasses {
     ScopedProvidedFoo() {}
   }
 
-  @Module
+  @ModuleDagger2
   static final class SimpleModule {
     @Provides
     static ProvidedFoo provideFoo() {

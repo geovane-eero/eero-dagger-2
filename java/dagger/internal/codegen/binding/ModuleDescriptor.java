@@ -41,7 +41,7 @@ import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.TypeName;
 import dagger.Binds;
 import dagger.BindsOptionalOf;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.ClearableCache;
 import dagger.internal.codegen.base.DaggerSuperficialValidation;
 import dagger.internal.codegen.base.ModuleKind;
@@ -67,7 +67,7 @@ public abstract class ModuleDescriptor {
   /** The multibinding declarations contained in this module. */
   abstract ImmutableSet<MultibindingDeclaration> multibindingDeclarations();
 
-  /** The {@link Module#subcomponents() subcomponent declarations} contained in this module. */
+  /** The {@link ModuleDagger2#subcomponents() subcomponent declarations} contained in this module. */
   abstract ImmutableSet<SubcomponentDeclaration> subcomponentDeclarations();
 
   /** The {@link Binds} method declarations that define delegate bindings. */

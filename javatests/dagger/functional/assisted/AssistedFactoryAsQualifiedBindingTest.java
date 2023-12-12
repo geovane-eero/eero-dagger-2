@@ -20,12 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.google.common.truth.Truth8.assertThat;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
+import dagger.*;
 import dagger.Binds;
-import dagger.BindsInstance;
-import dagger.BindsOptionalOf;
-import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
 import dagger.assisted.AssistedFactory;
 import dagger.assisted.AssistedInject;
 import dagger.multibindings.IntoSet;
@@ -75,7 +71,7 @@ public final class AssistedFactoryAsQualifiedBindingTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   interface BarFactoryModule {
 
     @Provides

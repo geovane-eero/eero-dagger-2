@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.componentdependency
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Provider
 
@@ -31,9 +31,10 @@ internal interface BoxedPrimitives {
     fun providerOfBoxedPrimitive(): Provider<Int>
   }
 
-  @Module
+  @ModuleDagger2
   object PrimitiveModule {
-    @Provides fun providePrimitive(): Int = 1
+    @Provides
+    fun providePrimitive(): Int = 1
   }
 
   @Component(modules = [PrimitiveModule::class])

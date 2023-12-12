@@ -21,7 +21,7 @@ import static com.google.common.truth.Truth.assertThat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -44,7 +44,7 @@ public final class Injection1Test {
   private static final String APPLICATION_VALUE = "Injection1Test_ApplicationValue";
   private static final String ACTIVITY_VALUE = "Injection1Test_ActivityValue";
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface TestApplicationModule {
     @Provides
@@ -54,7 +54,7 @@ public final class Injection1Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface TestActivityModule {
     @Provides

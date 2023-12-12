@@ -16,7 +16,7 @@
 
 package dagger.grpc.server;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -29,7 +29,7 @@ import javax.inject.Singleton;
  * Installing this module into a {@link Singleton @Singleton} component means the component can
  * provide a {@linkplain NettyServerBuilder Netty}-based {@link Server}.
  */
-@Module(includes = ServerModule.class)
+@ModuleDagger2(includes = ServerModule.class)
 public final class NettyServerModule {
 
   private final SocketAddress socketAddress;

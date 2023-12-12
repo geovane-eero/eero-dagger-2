@@ -16,7 +16,7 @@
 
 package library1
 
-import dagger.Module
+import dagger.ModuleDagger2
 import library2.MyTransitiveAnnotation
 import library2.MyTransitiveType
 
@@ -24,7 +24,7 @@ import library2.MyTransitiveType
 @MyTransitiveAnnotation
 @MyAnnotation(MyTransitiveType.VALUE)
 @MyOtherAnnotation(MyTransitiveType::class)
-@Module
+@ModuleDagger2
 class MySubcomponentModule
 @MyTransitiveAnnotation
 @MyAnnotation(MyTransitiveType.VALUE)

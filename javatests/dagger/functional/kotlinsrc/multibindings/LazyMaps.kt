@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.multibindings
 
 import dagger.Component
 import dagger.Lazy
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoMap
 import dagger.multibindings.StringKey
@@ -33,9 +33,10 @@ import javax.inject.Singleton
  * [dagger.internal.MapFactory]. See b/65084589.
  */
 class LazyMaps {
-  @Module
+  @ModuleDagger2
   internal object TestModule {
-    @Provides @Singleton fun provideAtomicInteger(): AtomicInteger = AtomicInteger()
+    @Provides
+    @Singleton fun provideAtomicInteger(): AtomicInteger = AtomicInteger()
 
     @Provides
     fun provideString(atomicInteger: AtomicInteger): String =

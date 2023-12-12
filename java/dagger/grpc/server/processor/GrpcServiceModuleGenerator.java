@@ -29,6 +29,7 @@ import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
+import dagger.Provides;
 import dagger.grpc.server.GrpcService;
 import java.util.List;
 
@@ -67,7 +68,7 @@ final class GrpcServiceModuleGenerator extends SourceGenerator {
   }
 
   /**
-   * Returns the {@link dagger.Provides @Provides} method for the {@link
+   * Returns the {@link Provides @Provides} method for the {@link
    * io.grpc.ServerServiceDefinition} for the service.
    */
   private MethodSpec provideServiceDefinition() {

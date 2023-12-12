@@ -27,7 +27,7 @@ import dagger.producers.ProductionComponent;
  * producers.
  *
  * <p>For example: <pre><code>
- *   {@literal @Module}
+ *   {@literal @ModuleDagger2}
  *   final class MyMonitorModule {
  *     {@literal @Provides @IntoSet} ProductionComponentMonitor.Factory provideMonitorFactory(
  *         MyProductionComponentMonitor.Factory monitorFactory) {

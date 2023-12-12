@@ -24,7 +24,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
 /**
- * Annotates <em>abstract</em> methods of a {@link Module} that delegate bindings. For example, to
+ * Annotates <em>abstract</em> methods of a {@link ModuleDagger2} that delegate bindings. For example, to
  * bind {@link java.util.Random} to {@link java.security.SecureRandom} a module could declare the
  * following: {@code @Binds abstract Random bindRandom(SecureRandom secureRandom);}
  *
@@ -39,7 +39,7 @@ import java.lang.annotation.Target;
  *   <li>May be {@linkplain javax.inject.Scope scoped}.
  *   <li>May be {@linkplain javax.inject.Qualifier qualified}.
  *   <li>Must have a single parameter whose type is assignable to the return type. The return type
- *       declares the bound type (just as it would for a {@literal @}{@link dagger.Provides} method)
+ *       declares the bound type (just as it would for a {@literal @}{@link Provides} method)
  *       and the parameter is the type to which it is bound.
  *       <p>For {@linkplain dagger.multibindings multibindings}, assignability is checked in similar
  *       ways:

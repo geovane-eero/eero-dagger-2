@@ -23,6 +23,7 @@ import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.XTypeElement;
 import androidx.room.compiler.processing.compat.XConverters;
 import com.google.common.collect.ImmutableSet;
+import dagger.ModuleDagger2;
 import dagger.hilt.processor.internal.optionvalues.BooleanValue;
 import dagger.hilt.processor.internal.optionvalues.GradleProjectType;
 import dagger.internal.codegen.extension.DaggerStreams;
@@ -77,7 +78,7 @@ public final class HiltCompilerOptions {
    * separate generated components per Hilt test root.
    *
    * <p>Tests that provide their own test bindings (e.g. using {@link
-   * dagger.hilt.android.testing.BindValue} or a test {@link dagger.Module}) cannot use the shared
+   * dagger.hilt.android.testing.BindValue} or a test {@link ModuleDagger2}) cannot use the shared
    * component. In these cases, a component will be generated for the test.
    */
   public static boolean isSharedTestComponentsEnabled(XProcessingEnv env) {

@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.membersinject
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 import org.junit.Test
@@ -33,10 +33,11 @@ class MembersWithInstanceNameTest {
     @Inject lateinit var instance: String
   }
 
-  @Module
+  @ModuleDagger2
   internal interface TestModule {
     companion object {
-      @Provides fun provideString(): String = "test"
+      @Provides
+      fun provideString(): String = "test"
     }
   }
 

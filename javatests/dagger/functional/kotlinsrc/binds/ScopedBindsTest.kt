@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.binds
 import com.google.common.truth.Truth.assertThat
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -33,7 +33,7 @@ class ScopedBindsTest {
 
   internal class FooImpl @Inject constructor() : Foo
 
-  @Module
+  @ModuleDagger2
   internal interface FooModule {
     @Binds
     @Singleton

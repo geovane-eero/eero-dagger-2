@@ -17,11 +17,10 @@
 package dagger.functional.kotlinsrc.multibindings
 
 import com.google.auto.value.AutoAnnotation
-import com.google.common.truth.Truth
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
 import dagger.MapKey
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoMap
 import org.junit.Test
@@ -32,12 +31,14 @@ import org.junit.runners.JUnit4
 class ComplexMapKeysInDifferentOrderTest {
   @MapKey(unwrapValue = false) annotation class ComplexMapKey(val i: Int, val j: Int)
 
-  @Module
+  @ModuleDagger2
   internal interface TestModule {
     companion object {
-      @Provides @IntoMap @ComplexMapKey(i = 1, j = 2) fun inOrder(): Int = 3
+      @Provides
+      @IntoMap @ComplexMapKey(i = 1, j = 2) fun inOrder(): Int = 3
 
-      @Provides @IntoMap @ComplexMapKey(j = 4, i = 5) fun backwardsOrder(): Int = 6
+      @Provides
+      @IntoMap @ComplexMapKey(j = 4, i = 5) fun backwardsOrder(): Int = 6
     }
   }
 

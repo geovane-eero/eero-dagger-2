@@ -16,11 +16,8 @@
 
 package dagger.functional.subcomponent.multibindings;
 
-import dagger.Binds;
-import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
-import dagger.Subcomponent;
+import dagger.*;
+import dagger.ModuleDagger2;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.IntoSet;
 import dagger.multibindings.StringKey;
@@ -84,7 +81,7 @@ final class MultibindingSubcomponents {
     }
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class ParentMultibindingModule {
 
     @Provides
@@ -122,7 +119,7 @@ final class MultibindingSubcomponents {
             RequiresMultibindings<BoundInParentAndChild> requiresMultibindingsInParentAndChild);
   }
 
-  @Module
+  @ModuleDagger2
   static final class ChildMultibindingModule {
 
     @Provides
@@ -152,7 +149,7 @@ final class MultibindingSubcomponents {
     }
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class ChildMultibindingModuleWithOnlyBindsMultibindings {
     @Provides
     static BoundInParentAndChild provideBoundInParentAndChildForBinds() {

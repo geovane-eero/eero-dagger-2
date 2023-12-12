@@ -29,6 +29,7 @@ import static javax.lang.model.element.Modifier.STATIC;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.MethodSpec;
 import com.squareup.javapoet.TypeSpec;
+import dagger.Binds;
 import dagger.grpc.server.GrpcService;
 
 /**
@@ -94,7 +95,7 @@ final class UnscopedGrpcServiceModuleGenerator extends SourceGenerator {
   }
 
   /**
-   * Returns the {@link dagger.Binds @Binds} method that binds the component factory type to the
+   * Returns the {@link Binds @Binds} method that binds the component factory type to the
    * {@linkplain #unscopedComponentFactory(String) unscoped component factory implementation class}.
    */
   private MethodSpec bindSubcomponentFactory(ClassName unscopedComponentFactory) {

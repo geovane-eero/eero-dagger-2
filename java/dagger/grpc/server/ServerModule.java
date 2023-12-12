@@ -16,7 +16,7 @@
 
 package dagger.grpc.server;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -27,7 +27,7 @@ import javax.inject.Singleton;
 /**
  * Provides a {@link Singleton @Singleton} {@link Server}.
  */
-@Module
+@ModuleDagger2
 public final class ServerModule {
 
   @Provides

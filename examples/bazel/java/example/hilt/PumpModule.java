@@ -23,7 +23,7 @@ import dagger.hilt.components.SingletonComponent;
 import example.common.Pump;
 import example.common.Thermosiphon;
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 abstract class PumpModule {
   @Binds

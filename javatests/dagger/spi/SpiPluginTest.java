@@ -42,7 +42,7 @@ public final class SpiPluginTest {
             "import dagger.Module;",
             "import dagger.Provides;",
             "",
-            "@Module",
+            "@ModuleDagger2",
             "interface TestModule {",
             "  @Provides",
             "  static int provideInt() {",
@@ -368,7 +368,7 @@ public final class SpiPluginTest {
 
   // SpiDiagnosticReporter uses a shortest path algorithm to determine a dependency trace to a
   // binding. Without modifications, this would produce a strange error if a shorter path exists
-  // from one entrypoint, through a @Module.subcomponents builder binding edge, and to the binding
+  // from one entrypoint, through a @ModuleDagger2.subcomponents builder binding edge, and to the binding
   // usage within the subcomponent. Therefore, when scanning for the shortest path, we only consider
   // BindingNodes so we don't cross component boundaries. This test exhibits this case.
   @Test

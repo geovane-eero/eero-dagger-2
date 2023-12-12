@@ -22,7 +22,7 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.ListenableFuture;
 import dagger.BindsOptionalOf;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.producers.Produced;
 import dagger.producers.Producer;
@@ -61,7 +61,7 @@ final class OptionalBindingComponents {
     QUALIFIED_VALUE
   }
 
-  @Module
+  @ModuleDagger2
   static final class ExecutorModule {
     @Provides
     @Production
@@ -128,7 +128,7 @@ final class OptionalBindingComponents {
   }
 
   /** Binds {@link Value} using {@link Provider}s. */
-  @Module
+  @ModuleDagger2
   abstract static class ConcreteBindingModule {
     @Provides
     static Value value() {

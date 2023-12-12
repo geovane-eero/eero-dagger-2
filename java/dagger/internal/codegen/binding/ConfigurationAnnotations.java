@@ -27,12 +27,13 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.collect.ImmutableSet;
 import com.squareup.javapoet.ClassName;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
+
 import java.util.Optional;
 
 /**
  * Utility methods related to dagger configuration annotations (e.g.: {@link Component} and {@link
- * Module}).
+ * ModuleDagger2}).
  */
 public final class ConfigurationAnnotations {
 

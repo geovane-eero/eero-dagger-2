@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.membersinject
 import com.google.common.truth.Truth.assertThat
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.functional.kotlinsrc.membersinject.subpackage.MembersWithSameNameParent
 import org.junit.Test
@@ -52,12 +52,14 @@ class MembersWithSameNameTest {
     assertThat(child.childSameNameObjectWasInvoked()).isTrue()
   }
 
-  @Module
+  @ModuleDagger2
   internal abstract class TestModule {
-    @Binds abstract fun bindObject(string: String): Any
+    @Binds
+    abstract fun bindObject(string: String): Any
 
     companion object {
-      @Provides fun provideString(): String = ""
+      @Provides
+      fun provideString(): String = ""
     }
   }
 

@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
@@ -72,7 +72,7 @@ public final class TestRootModulesTest {
   @Inject FooImpl fooImpl;
   @Inject Foo foo;
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public final class NonStaticModuleNonStaticProvidesDefaultConstructor {
     @Provides
@@ -84,7 +84,7 @@ public final class TestRootModulesTest {
     NonStaticModuleNonStaticProvidesDefaultConstructor() {}
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public final class NonStaticModuleNonStaticProvides {
     @Provides
@@ -94,7 +94,7 @@ public final class TestRootModulesTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class StaticModuleStaticProvides {
     @Provides
@@ -106,7 +106,7 @@ public final class TestRootModulesTest {
     private StaticModuleStaticProvides() {}
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class StaticModuleNonStaticProvidesDefaultConstructor {
     @Provides
@@ -116,7 +116,7 @@ public final class TestRootModulesTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public abstract static class AbstractModuleStaticProvides {
     @Provides
@@ -128,7 +128,7 @@ public final class TestRootModulesTest {
     private AbstractModuleStaticProvides() {}
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public abstract static class AbstractModuleBindsMethod {
     @Binds

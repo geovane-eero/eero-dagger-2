@@ -17,11 +17,12 @@
 package dagger.internal.codegen.validation;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.binding.InjectBindingRegistry;
 
 /** Binds the {@link InjectBindingRegistry} implementation. */
-@Module
+@ModuleDagger2
 public interface InjectBindingRegistryModule {
-  @Binds InjectBindingRegistry injectBindingRegistry(InjectBindingRegistryImpl impl);
+  @Binds
+  InjectBindingRegistry injectBindingRegistry(InjectBindingRegistryImpl impl);
 }

@@ -17,13 +17,13 @@
 package dagger.functional.modules;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 
 final class ModuleCycles {
-  @Module(includes = ModuleB.class)
+  @ModuleDagger2(includes = ModuleB.class)
   interface ModuleA {}
 
-  @Module(includes = ModuleA.class)
+  @ModuleDagger2(includes = ModuleA.class)
   interface ModuleB {}
 
   @Component(modules = ModuleA.class)

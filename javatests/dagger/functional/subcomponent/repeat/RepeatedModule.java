@@ -16,11 +16,11 @@
 
 package dagger.functional.subcomponent.repeat;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoSet;
 
-@Module
+@ModuleDagger2
 final class RepeatedModule {
   private final Object state = new Object();
 

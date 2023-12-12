@@ -21,7 +21,7 @@ import static dagger.hilt.internal.Preconditions.checkNotNull;
 import androidx.fragment.app.Fragment;
 import androidx.activity.ComponentActivity;
 import androidx.lifecycle.ViewModelProvider;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.EntryPoints;
 import dagger.hilt.InstallIn;
@@ -98,7 +98,7 @@ public final class DefaultViewModelFactories {
   }
 
   /** The activity module to declare the optional factories. */
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface ActivityModule {
     @Multibinds

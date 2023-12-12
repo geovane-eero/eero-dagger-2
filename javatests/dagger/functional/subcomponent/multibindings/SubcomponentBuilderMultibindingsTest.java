@@ -19,7 +19,7 @@ package dagger.functional.subcomponent.multibindings;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.multibindings.IntoSet;
@@ -82,7 +82,7 @@ public final class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module(subcomponents = FloatingSub.class)
+    @ModuleDagger2(subcomponents = FloatingSub.class)
     public interface ParentModule {
       @Provides
       @IntoSet
@@ -98,7 +98,7 @@ public final class SubcomponentBuilderMultibindingsTest {
     }
 
     // The subcomponent installation of FloatingSub here is the key difference
-    @Module(subcomponents = FloatingSub.class)
+    @ModuleDagger2(subcomponents = FloatingSub.class)
     public interface ChildModule {
       @Provides
       @IntoSet
@@ -144,7 +144,7 @@ public final class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module(subcomponents = FloatingSub.class)
+    @ModuleDagger2(subcomponents = FloatingSub.class)
     public interface ParentModule {
       @Provides
       @IntoSet
@@ -160,7 +160,7 @@ public final class SubcomponentBuilderMultibindingsTest {
     }
 
     // The lack of a subcomponent installation of FloatingSub here is the key difference
-    @Module
+    @ModuleDagger2
     public interface ChildModule {
       @Provides
       @IntoSet
@@ -203,7 +203,7 @@ public final class SubcomponentBuilderMultibindingsTest {
       Foo getFoo();
     }
 
-    @Module
+    @ModuleDagger2
     public interface ParentModule {
       @Provides
       @IntoSet
@@ -218,7 +218,7 @@ public final class SubcomponentBuilderMultibindingsTest {
       }
     }
 
-    @Module
+    @ModuleDagger2
     public interface ChildModule {
       @Provides
       @IntoSet

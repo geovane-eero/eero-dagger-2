@@ -17,7 +17,7 @@
 package dagger.internal.codegen.bindinggraphvalidation;
 
 import com.google.common.collect.ImmutableSet;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.internal.codegen.compileroption.CompilerOptions;
 import dagger.internal.codegen.model.BindingGraphPlugin;
@@ -25,7 +25,7 @@ import dagger.internal.codegen.validation.Validation;
 import dagger.internal.codegen.validation.ValidationBindingGraphPlugin;
 
 /** Binds the set of {@link BindingGraphPlugin}s used to implement Dagger validation. */
-@Module
+@ModuleDagger2
 public interface BindingGraphValidationModule {
 
   @Provides

@@ -21,14 +21,14 @@ import static com.google.common.collect.Maps.uniqueIndex;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.squareup.javapoet.ClassName;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
 /**
  * Binds each {@link BindingMethodValidator} into a map, keyed by {@link
  * BindingMethodValidator#methodAnnotation()}.
  */
-@Module
+@ModuleDagger2
 public interface BindingMethodValidatorsModule {
   @Provides
   static ImmutableMap<ClassName, BindingMethodValidator> indexValidators(

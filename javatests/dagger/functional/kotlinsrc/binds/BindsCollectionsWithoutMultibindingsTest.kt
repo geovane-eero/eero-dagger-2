@@ -16,20 +16,18 @@
 
 package dagger.functional.kotlinsrc.binds
 
-import com.google.common.truth.MapSubject
 import com.google.common.truth.Truth.assertThat
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.JUnit4
 
 @RunWith(JUnit4::class)
 class BindsCollectionsWithoutMultibindingsTest {
-  @Module
+  @ModuleDagger2
   internal abstract class M {
     @Binds
     abstract fun bindStringSet(set: HashSet<String>): Set<String>

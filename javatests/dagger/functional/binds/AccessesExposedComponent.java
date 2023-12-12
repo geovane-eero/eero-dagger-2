@@ -16,6 +16,7 @@
 
 package dagger.functional.binds;
 
+import dagger.Binds;
 import dagger.Component;
 import dagger.functional.binds.subpackage.Exposed;
 import dagger.functional.binds.subpackage.ExposedModule;
@@ -25,7 +26,7 @@ import javax.inject.Provider;
 import javax.inject.Singleton;
 
 /**
- * This component tests cases where the right-hand-side of a {@link dagger.Binds} method is not
+ * This component tests cases where the right-hand-side of a {@link Binds} method is not
  * accessible from the component, but the left-hand-side is. If the right-hand-side is represented
  * as a Provider (e.g. because it is scoped), then the raw {@code Provider.get()} will return {@link
  * Object}, which must be downcasted to the type accessible from the component. See {@code

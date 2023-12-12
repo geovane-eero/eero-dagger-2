@@ -20,7 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.testing.HiltAndroidRule;
@@ -71,7 +71,7 @@ public final class ModuleTest {
    * Module which is used to test if non-static test modules get registered in the component
    * correctly.
    */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public final class NonStaticModuleNonStaticProvides {
     @Provides
@@ -84,7 +84,7 @@ public final class ModuleTest {
   /**
    * Module which is used to test if static test modules get registered in the component correctly.
    */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class StaticModuleStaticProvides {
     @Provides
@@ -100,7 +100,7 @@ public final class ModuleTest {
    * Module which is used to test if static test modules with a non-static methods get registered in
    * the component correctly.
    */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public static final class StaticModuleNonStaticProvidesDefaultConstructor {
     @Provides
@@ -114,7 +114,7 @@ public final class ModuleTest {
    * Module which is used to test if abstract test modules get registered in the component
    * correctly.
    */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public abstract static class AbstractModuleStaticProvides {
     @Provides
@@ -130,7 +130,7 @@ public final class ModuleTest {
    * Module which is used to test if abstract test modules with a binds method get registered in the
    * component correctly.
    */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public abstract static class AbstractModuleBindsMethod {
     @Binds

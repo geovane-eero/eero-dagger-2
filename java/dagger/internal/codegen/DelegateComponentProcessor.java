@@ -24,11 +24,8 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.CheckReturnValue;
-import dagger.Binds;
-import dagger.BindsInstance;
-import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
+import dagger.*;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.ClearableCache;
 import dagger.internal.codegen.base.SourceFileGenerationException;
 import dagger.internal.codegen.base.SourceFileGenerator;
@@ -63,6 +60,7 @@ import dagger.spi.model.BindingGraphPlugin;
 import java.util.Optional;
 import java.util.Set;
 import javax.inject.Inject;
+//import javax.inject.
 import javax.inject.Singleton;
 import javax.tools.Diagnostic.Kind;
 
@@ -156,7 +154,7 @@ final class DelegateComponentProcessor {
     }
   }
 
-  @Module
+  @ModuleDagger2
   interface ProcessingRoundCacheModule {
     @Binds
     @IntoSet
@@ -187,7 +185,7 @@ final class DelegateComponentProcessor {
     ClearableCache kotlinMetadata(KotlinMetadataFactory cache);
   }
 
-  @Module
+  @ModuleDagger2
   interface SourceFileGeneratorsModule {
     @Provides
     static SourceFileGenerator<ProvisionBinding> factoryGenerator(

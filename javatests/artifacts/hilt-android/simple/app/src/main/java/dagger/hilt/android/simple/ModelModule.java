@@ -18,12 +18,12 @@ package dagger.hilt.android.simple;
 
 import static android.os.Build.MODEL;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 final class ModelModule {
   @Provides

@@ -17,6 +17,8 @@
 
 package dagger.hilt;
 
+import dagger.ModuleDagger2;
+
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
 import java.lang.annotation.ElementType;
@@ -26,7 +28,7 @@ import java.lang.annotation.Target;
 /**
  * An annotation that declares which component(s) the annotated class should be included in when
  * Hilt generates the components. This may only be used with classes annotated with
- * {@literal @}{@link dagger.Module} or {@literal @}{@link dagger.hilt.EntryPoint}.
+ * {@literal @}{@link ModuleDagger2} or {@literal @}{@link dagger.hilt.EntryPoint}.
  *
  * <p>Example usage for installing a module in the generated {@code ApplicationComponent}:
  *

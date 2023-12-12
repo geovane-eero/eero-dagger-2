@@ -20,7 +20,7 @@ import static com.google.common.io.Resources.getResource;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,7 +37,7 @@ public class SpiTest {
     String string();
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class M {
     @Provides
     static String string() {

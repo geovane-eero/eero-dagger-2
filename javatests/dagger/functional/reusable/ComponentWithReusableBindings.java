@@ -17,7 +17,7 @@
 package dagger.functional.reusable;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Reusable;
 import dagger.Subcomponent;
@@ -73,7 +73,7 @@ interface ComponentWithReusableBindings {
     Object reusableInChild();
   }
 
-  @Module
+  @ModuleDagger2
   static class ReusableBindingsModule {
     @Provides
     @Reusable

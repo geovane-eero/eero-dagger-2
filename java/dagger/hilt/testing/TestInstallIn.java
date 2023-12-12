@@ -18,6 +18,7 @@ package dagger.hilt.testing;
 
 import static java.lang.annotation.RetentionPolicy.CLASS;
 
+import dagger.ModuleDagger2;
 import dagger.hilt.GeneratesRootInput;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -27,7 +28,7 @@ import java.lang.annotation.Target;
  * An annotation that replaces one or more {@link dagger.hilt.InstallIn} modules with the annotated
  * module in tests.
  *
- * <p>The annotated class must also be annotated with {@link dagger.Module}.
+ * <p>The annotated class must also be annotated with {@link ModuleDagger2}.
  *
  * <p>Example:
  *

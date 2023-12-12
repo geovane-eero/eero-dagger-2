@@ -21,7 +21,7 @@ import static java.util.Arrays.asList;
 import com.google.common.collect.ConcurrentHashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.protos.test.BaristaGrpc;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.grpc.server.ForGrpcService;
 import io.grpc.Metadata;
@@ -53,7 +53,7 @@ class CountingInterceptor implements ServerInterceptor {
     return calls.count(methodName);
   }
 
-  @Module
+  @ModuleDagger2
   static class CountingInterceptorModule {
     @Provides
     @ForGrpcService(BaristaGrpc.class)

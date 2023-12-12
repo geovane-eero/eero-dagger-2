@@ -16,11 +16,11 @@
 
 package dagger.functional.producers.scope;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.producers.ProductionScope;
 
-@Module
+@ModuleDagger2
 final class ScopedModule {
   @Provides
   @ProductionScope

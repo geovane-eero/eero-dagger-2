@@ -17,10 +17,10 @@
 package dagger.functional.modules.subpackage;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 abstract class PackagePrivateModule {
   @Binds
   abstract Object bindObject(String string);

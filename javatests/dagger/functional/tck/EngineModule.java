@@ -17,12 +17,12 @@
 package dagger.functional.tck;
 
 import dagger.MembersInjector;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import org.atinject.tck.auto.Engine;
 import org.atinject.tck.auto.V8Engine;
 
-@Module
+@ModuleDagger2
 public class EngineModule {
   @Provides
   static Engine provideEngine(MembersInjector<V8Engine> injector) {

@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.subcomponent.module
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.multibindings.IntoSet
@@ -29,12 +29,13 @@ interface UsesModuleSubcomponents {
   fun usesChild(): UsesChild
   fun strings(): Set<String>
 
-  @Module(subcomponents = [Child::class], includes = [AlsoIncludesSubcomponents::class])
+  @ModuleDagger2(subcomponents = [Child::class], includes = [AlsoIncludesSubcomponents::class])
   object ModuleWithSubcomponents {
-    @Provides @IntoSet fun provideStringInParent(): String = "from parent"
+    @Provides
+    @IntoSet fun provideStringInParent(): String = "from parent"
   }
 
-  @Module(subcomponents = [Child::class]) class AlsoIncludesSubcomponents
+  @ModuleDagger2(subcomponents = [Child::class]) class AlsoIncludesSubcomponents
 
   @Subcomponent(modules = [ChildModule::class])
   interface Child {
@@ -46,16 +47,17 @@ interface UsesModuleSubcomponents {
     }
   }
 
-  @Module
+  @ModuleDagger2
   object ChildModule {
-    @Provides @IntoSet fun provideStringInChild(): String = "from child"
+    @Provides
+    @IntoSet fun provideStringInChild(): String = "from child"
   }
 
   class UsesChild @Inject internal constructor(childBuilder: Child.Builder) {
     var strings: Set<String> = childBuilder.build().strings()
   }
 
-  @Module(includes = [ModuleWithSubcomponents::class]) class OnlyIncludesModuleWithSubcomponents
+  @ModuleDagger2(includes = [ModuleWithSubcomponents::class]) class OnlyIncludesModuleWithSubcomponents
 
   @Component(modules = [OnlyIncludesModuleWithSubcomponents::class])
   interface ParentIncludesSubcomponentTransitively : UsesModuleSubcomponents

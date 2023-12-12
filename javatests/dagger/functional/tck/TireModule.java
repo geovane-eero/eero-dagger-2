@@ -17,12 +17,13 @@
 package dagger.functional.tck;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import javax.inject.Named;
+
 import org.atinject.tck.auto.Tire;
 import org.atinject.tck.auto.accessories.SpareTire;
 
-@Module
+@ModuleDagger2
 abstract class TireModule {
   @Binds
   @Named("spare")

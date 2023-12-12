@@ -26,7 +26,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.viewmodel.CreationExtras;
 import androidx.savedstate.SavedStateRegistryOwner;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.EntryPoints;
 import dagger.hilt.InstallIn;
@@ -67,7 +67,7 @@ public final class HiltViewModelFactory implements ViewModelProvider.Factory {
       new CreationExtras.Key<Function1<Object, ViewModel>>() {};
 
   /** Hilt module for providing the empty multi-binding map of ViewModels. */
-  @Module
+  @ModuleDagger2
   @InstallIn(ViewModelComponent.class)
   interface ViewModelModule {
     @Multibinds

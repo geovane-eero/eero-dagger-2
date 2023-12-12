@@ -16,12 +16,12 @@
 
 package dagger.functional.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 
 /**
  * This is a module that can't be constructed with a default constructor.
  */
-@Module
+@ModuleDagger2
 final class ChildModuleWithParameters {
   public ChildModuleWithParameters(@SuppressWarnings("unused") Object whatever) {}
 }

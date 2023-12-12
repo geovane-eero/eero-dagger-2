@@ -17,7 +17,7 @@
 package dagger.grpc.functional.server;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.grpc.functional.server.CoffeeServerWithCallScopeService.CallScopeServiceModule;
@@ -47,7 +47,7 @@ abstract class CoffeeServerWithCallScopeService
   )
   interface BaristaCallScope extends FriendlyBaristaServiceDefinition {}
 
-  @Module(includes = FriendlyBaristaGrpcProxyModule.class)
+  @ModuleDagger2(includes = FriendlyBaristaGrpcProxyModule.class)
   static class CallScopeServiceModule {
     @Provides
     static FriendlyBaristaServiceDefinition.Factory friendlyBaristaServiceDefinitionFactory(

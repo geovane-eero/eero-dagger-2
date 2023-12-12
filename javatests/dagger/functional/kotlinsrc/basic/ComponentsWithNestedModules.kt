@@ -17,17 +17,18 @@
 package dagger.functional.kotlinsrc.basic
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 
 // https://github.com/google/dagger/issues/279
 class ComponentsWithNestedModules {
   @Component(modules = [RegularComponent.SharedModule::class])
   interface RegularComponent {
-    @Module class SharedModule
+    @ModuleDagger2
+    class SharedModule
   }
 
   @Component(modules = [ExtendsRegularComponent.SharedModule::class])
   interface ExtendsRegularComponent : RegularComponent {
-    @Module(includes = [RegularComponent.SharedModule::class]) class SharedModule
+    @ModuleDagger2(includes = [RegularComponent.SharedModule::class]) class SharedModule
   }
 }

@@ -16,11 +16,8 @@
 
 package dagger.android.support.functional;
 
-import dagger.Binds;
-import dagger.Component;
-import dagger.Module;
-import dagger.Provides;
-import dagger.Subcomponent;
+import dagger.*;
+import dagger.ModuleDagger2;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
@@ -43,7 +40,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
   @Component(modules = {ApplicationComponent.ApplicationModule.class, AndroidInjectionModule.class})
   interface ApplicationComponent
       extends AndroidInjector<AllControllersAreDirectChildrenOfApplication> {
-    @Module(
+    @ModuleDagger2(
       subcomponents = {
         ActivitySubcomponent.class,
         InnerActivitySubcomponent.class,
@@ -120,7 +117,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
 
     @Subcomponent(modules = ActivitySubcomponent.ActivityModule.class)
     interface ActivitySubcomponent extends AndroidInjector<TestActivity> {
-      @Module
+      @ModuleDagger2
       abstract class ActivityModule {
         @Provides
         @IntoSet
@@ -138,7 +135,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
       @Subcomponent.Builder
       abstract class Builder extends AndroidInjector.Builder<OuterClass.TestInnerClassActivity> {}
 
-      @Module
+      @ModuleDagger2
       abstract class InnerActivityModule {
         @Provides
         @IntoSet
@@ -150,7 +147,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
 
     @Subcomponent(modules = ParentFragmentSubcomponent.ParentFragmentModule.class)
     interface ParentFragmentSubcomponent extends AndroidInjector<TestParentFragment> {
-      @Module
+      @ModuleDagger2
       abstract class ParentFragmentModule {
         @Provides
         @IntoSet
@@ -165,7 +162,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
 
     @Subcomponent(modules = ChildFragmentSubcomponent.ChildFragmentModule.class)
     interface ChildFragmentSubcomponent extends AndroidInjector<TestChildFragment> {
-      @Module
+      @ModuleDagger2
       abstract class ChildFragmentModule {
         @Provides
         @IntoSet
@@ -180,7 +177,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
 
     @Subcomponent(modules = DialogFragmentSubcomponent.DialogFragmentModule.class)
     interface DialogFragmentSubcomponent extends AndroidInjector<TestDialogFragment> {
-      @Module
+      @ModuleDagger2
       abstract class DialogFragmentModule {
         @Provides
         @IntoSet
@@ -198,7 +195,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
       @Subcomponent.Builder
       abstract class Builder extends AndroidInjector.Builder<TestService> {}
 
-      @Module
+      @ModuleDagger2
       abstract class ServiceModule {
         @Provides
         @IntoSet
@@ -213,7 +210,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
       @Subcomponent.Builder
       abstract class Builder extends AndroidInjector.Builder<TestIntentService> {}
 
-      @Module
+      @ModuleDagger2
       abstract class IntentServiceModule {
         @Provides
         @IntoSet
@@ -228,7 +225,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
       @Subcomponent.Builder
       abstract class Builder extends AndroidInjector.Builder<TestBroadcastReceiver> {}
 
-      @Module
+      @ModuleDagger2
       abstract class BroadcastReceiverModule {
         @Provides
         @IntoSet
@@ -243,7 +240,7 @@ public final class AllControllersAreDirectChildrenOfApplication extends DaggerAp
       @Subcomponent.Builder
       abstract class Builder extends AndroidInjector.Builder<TestContentProvider> {}
 
-      @Module
+      @ModuleDagger2
       abstract class ContentProviderModule {
         @Provides
         @IntoSet

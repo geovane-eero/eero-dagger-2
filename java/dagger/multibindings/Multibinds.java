@@ -33,7 +33,7 @@ import java.lang.annotation.Target;
  * contribution, but you do have to declare them if they may be empty.
  *
  * <pre><code>
- *   {@literal @Module} abstract class MyModule {
+ *   {@literal @ModuleDagger2} abstract class MyModule {
  *     {@literal @Multibinds abstract Set<Foo> aSet();}
  *     {@literal @Multibinds abstract @MyQualifier Set<Foo> aQualifiedSet();}
  *     {@literal @Multibinds abstract Map<String, Foo> aMap();}

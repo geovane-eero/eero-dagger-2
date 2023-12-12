@@ -25,11 +25,12 @@ import androidx.room.compiler.processing.XMethodElement;
 import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.XVariableElement;
 import com.google.common.collect.ImmutableSet;
+import dagger.Provides;
 import dagger.internal.codegen.binding.InjectionAnnotations;
 import dagger.internal.codegen.javapoet.TypeNames;
 import javax.inject.Inject;
 
-/** A validator for {@link dagger.Provides} methods. */
+/** A validator for {@link Provides} methods. */
 final class ProvidesMethodValidator extends BindingMethodValidator {
 
   private final DependencyRequestValidator dependencyRequestValidator;
@@ -62,7 +63,7 @@ final class ProvidesMethodValidator extends BindingMethodValidator {
       super(method);
     }
 
-    /** Adds an error if a {@link dagger.Provides @Provides} method depends on a producer type. */
+    /** Adds an error if a {@link Provides @Provides} method depends on a producer type. */
     @Override
     protected void checkParameter(XVariableElement parameter) {
       super.checkParameter(parameter);

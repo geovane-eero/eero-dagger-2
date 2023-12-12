@@ -22,7 +22,7 @@ import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.compat.XConverters;
 import com.google.googlejavaformat.java.filer.FormattingFiler;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Reusable;
 import dagger.internal.codegen.compileroption.CompilerOptions;
@@ -31,7 +31,7 @@ import dagger.internal.codegen.compileroption.ProcessingOptions;
 import java.util.Map;
 
 /** Bindings that depend on the {@link XProcessingEnv}. */
-@Module
+@ModuleDagger2
 interface ProcessingEnvironmentModule {
   @Binds
   @Reusable // to avoid parsing options more than once

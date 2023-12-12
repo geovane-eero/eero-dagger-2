@@ -16,8 +16,8 @@
 
 package dagger.functional.kotlin;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 
 /** Verifies that a non-public included Kotlin object module does not fail compilation. */
-@Module(includes = {NonPublicObjectModule.class})
+@ModuleDagger2(includes = {NonPublicObjectModule.class})
 public class PublicModuleWithNonPublicInclude {}

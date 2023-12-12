@@ -16,19 +16,21 @@
 
 package dagger.functional.generictypes;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.ArrayList;
 import java.util.List;
 
-@Module
+@ModuleDagger2
 class ChildIntegerModule extends ParentModule<Integer, String, List<Integer>> {
 
-  @Provides Integer provideInteger() {
+  @Provides
+  Integer provideInteger() {
     return 1;
   }
 
-  @Provides List<Integer> provideListOfInteger() {
+  @Provides
+  List<Integer> provideListOfInteger() {
     List<Integer> list = new ArrayList<>();
     list.add(2);
     return list;

@@ -18,7 +18,7 @@ package dagger.functional.subcomponent.pruning;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 import dagger.functional.subcomponent.pruning.ParentDoesntUseSubcomponent.ChildA;
 import dagger.functional.subcomponent.pruning.ParentDoesntUseSubcomponent.ChildB;
@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 /**
- * Tests for {@link Subcomponent}s which are included with {@link Module#subcomponents()} but not
+ * Tests for {@link Subcomponent}s which are included with {@link ModuleDagger2#subcomponents()} but not
  * used directly within the component which adds them.
  *
  * <p>This tests to make sure that while resolving one subcomponent (A), another subcomponent (B)

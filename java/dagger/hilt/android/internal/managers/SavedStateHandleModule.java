@@ -18,7 +18,7 @@ package dagger.hilt.android.internal.managers;
 
 import androidx.annotation.OptIn;
 import androidx.lifecycle.SavedStateHandle;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.UnstableApi;
@@ -27,7 +27,7 @@ import dagger.hilt.android.lifecycle.ActivityRetainedSavedState;
 import dagger.hilt.android.scopes.ActivityRetainedScoped;
 
 /** Module providing SavedStateHandle from ActivityRetainedComponent. */
-@Module
+@ModuleDagger2
 @InstallIn(ActivityRetainedComponent.class)
 abstract class SavedStateHandleModule {
   @OptIn(markerClass = UnstableApi.class)

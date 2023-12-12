@@ -16,14 +16,16 @@
 
 package dagger.functional.kotlinsrc.membersinject
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal class MembersInjectModule {
-  @Provides fun provideStringArray(): Array<String> = arrayOf()
+  @Provides
+  fun provideStringArray(): Array<String> = arrayOf()
 
-  @Provides fun provideIntArray(): IntArray = intArrayOf()
+  @Provides
+  fun provideIntArray(): IntArray = intArrayOf()
 
   @Provides
   fun provideFooArrayOfStringArray(): Array<MembersInjectGenericParent<Array<String>>> = arrayOf()

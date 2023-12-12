@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.binds
 import com.google.common.truth.Truth.assertThat
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
@@ -37,12 +37,13 @@ class RecursiveBindsTest {
   class FooImpl internal @Inject constructor(@SuppressWarnings("unused") provider: Provider<Foo>) :
     Foo {}
 
-  @Module
+  @ModuleDagger2
   interface FooModule {
     // This binding must be scoped to create the cycle. Otherwise without a scope, the generated
     // code just doesn't have a field for this @Binds because we can directly use FooImpl's
     // provider as they are equivalent.
-    @Binds @Singleton fun bindFoo(impl: FooImpl): Foo
+    @Binds
+    @Singleton fun bindFoo(impl: FooImpl): Foo
   }
 
   @Component(modules = FooModule::class)

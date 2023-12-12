@@ -16,12 +16,13 @@
 
 package dagger.functional.subcomponent.hiding.a;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 public class CommonModuleName {
-  @Provides String provideString() {
+  @Provides
+  String provideString() {
     return "a";
   }
 }

@@ -18,11 +18,9 @@ package dagger.functional.kotlinsrc.builder
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Scope
@@ -325,34 +323,40 @@ class BuilderTest {
     fun subcomponentBuilder(): B
   }
 
-  @Module
+  @ModuleDagger2
   internal class ByteModule(private val b: Byte) {
-    @Provides fun b(): Byte = b
+    @Provides
+    fun b(): Byte = b
   }
 
-  @Module
+  @ModuleDagger2
   internal class DoubleModule {
-    @Provides fun d(): Double = 4.2
+    @Provides
+    fun d(): Double = 4.2
   }
 
-  @Module
+  @ModuleDagger2
   internal class LongModule {
-    @Provides fun l(): Long = 6L
+    @Provides
+    fun l(): Long = 6L
   }
 
-  @Module
+  @ModuleDagger2
   internal class FloatModule {
-    @Provides fun f(): Float = 5.5f
+    @Provides
+    fun f(): Float = 5.5f
   }
 
-  @Module
+  @ModuleDagger2
   internal class StringModule(private val string: String) {
-    @Provides fun string(): String = string
+    @Provides
+    fun string(): String = string
   }
 
-  @Module(includes = [DoubleModule::class, FloatModule::class])
+  @ModuleDagger2(includes = [DoubleModule::class, FloatModule::class])
   internal class IntModuleIncludingDoubleAndFloat(private val integer: Int) {
-    @Provides fun integer(): Int = integer
+    @Provides
+    fun integer(): Int = integer
   }
 
   @Test

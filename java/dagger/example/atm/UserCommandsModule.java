@@ -17,12 +17,12 @@
 package dagger.example.atm;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.multibindings.IntoMap;
 import dagger.multibindings.StringKey;
 
 /** Commands that are only applicable when a user is logged in. */
-@Module
+@ModuleDagger2
 interface UserCommandsModule {
   @Binds
   @IntoMap

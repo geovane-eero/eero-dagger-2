@@ -16,10 +16,10 @@
 
 package dagger.functional.kotlinsrc.generictypes
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal abstract class ParentModule<T1, T2, T3 : Iterable<T1>> where
 T1 : Number,
 T1 : Comparable<T1> {
@@ -36,7 +36,8 @@ T1 : Comparable<T1> {
   }
 
   companion object {
-    @Provides fun provideNonGenericBindingInParameterizedModule(): Char = 'c'
+    @Provides
+    fun provideNonGenericBindingInParameterizedModule(): Char = 'c'
 
     @Provides
     fun provideStaticGenericTypeWithNoTypeParametersInParameterizedModule(): List<Set<String>> =

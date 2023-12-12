@@ -207,7 +207,7 @@ import javax.inject.Singleton;
  * inherit the <em>entire</em> binding graph from its parent when it is declared. For that reason, a
  * subcomponent isn't evaluated for completeness until it is associated with a parent.
  *
- * <p>Subcomponents are declared by listing the class in the {@link Module#subcomponents()}
+ * <p>Subcomponents are declared by listing the class in the {@link ModuleDagger2#subcomponents()}
  * attribute of one of the parent component's modules. This binds the {@link Subcomponent.Builder}
  * or {@link Subcomponent.Factory} for that subcomponent within the parent component.
  *
@@ -245,8 +245,8 @@ import javax.inject.Singleton;
 @Documented
 public @interface Component {
   /**
-   * A list of classes annotated with {@link Module} whose bindings are used to generate the
-   * component implementation. Note that through the use of {@link Module#includes} the full set of
+   * A list of classes annotated with {@link ModuleDagger2} whose bindings are used to generate the
+   * component implementation. Note that through the use of {@link ModuleDagger2#includes} the full set of
    * modules used to implement the component may include more modules that just those listed here.
    */
   Class<?>[] modules() default {};

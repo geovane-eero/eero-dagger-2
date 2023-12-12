@@ -16,13 +16,15 @@
 
 package dagger.functional.kotlinsrc.generictypes
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal class ChildDoubleModule :
   ParentModule<Double, String, List<@JvmSuppressWildcards Double>>() {
-  @Provides fun provideDouble(): Double = 3.0
+  @Provides
+  fun provideDouble(): Double = 3.0
 
-  @Provides fun provideListOfDouble(): List<@JvmSuppressWildcards Double> = listOf(4.0)
+  @Provides
+  fun provideListOfDouble(): List<@JvmSuppressWildcards Double> = listOf(4.0)
 }

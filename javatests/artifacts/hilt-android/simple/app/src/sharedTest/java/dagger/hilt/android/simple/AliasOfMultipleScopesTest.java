@@ -23,7 +23,7 @@ import android.content.Context;
 import androidx.activity.ComponentActivity;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.DefineComponent;
 import dagger.hilt.EntryPoint;
@@ -83,7 +83,7 @@ public final class AliasOfMultipleScopesTest {
 
   public interface AliasScopedDep {}
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface SingletonTestModule {
     @Provides
@@ -92,7 +92,7 @@ public final class AliasOfMultipleScopesTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface ActivityTestModule {
     @Provides
@@ -108,7 +108,7 @@ public final class AliasOfMultipleScopesTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(CustomComponent.class)
   interface CustomTestModule {
     @Provides

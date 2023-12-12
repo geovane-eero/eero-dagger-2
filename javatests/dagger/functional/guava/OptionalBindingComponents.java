@@ -20,12 +20,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Optional;
-import dagger.BindsOptionalOf;
-import dagger.Component;
-import dagger.Lazy;
-import dagger.Module;
-import dagger.Provides;
-import dagger.Subcomponent;
+import dagger.*;
+import dagger.ModuleDagger2;
+
 import java.lang.annotation.Retention;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
@@ -64,7 +61,7 @@ public final class OptionalBindingComponents {
   }
 
   /** Binds optionals and {@link Values}. */
-  @Module
+  @ModuleDagger2
   public abstract static class OptionalBindingModule {
     @BindsOptionalOf
     abstract Value value();
@@ -102,7 +99,7 @@ public final class OptionalBindingComponents {
   }
 
   /** Binds {@link Value}. */
-  @Module
+  @ModuleDagger2
   public abstract static class ConcreteBindingModule {
     /** @param cycle to demonstrate that optional {@link Provider} injection can break cycles */
     @Provides

@@ -37,7 +37,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
@@ -93,7 +93,7 @@ public final class InjectionTest {
   @interface ServiceLevel {}
 
   /** Application level bindings */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   static final class AppModule {
     @Provides
@@ -115,7 +115,7 @@ public final class InjectionTest {
   }
 
   /** Activity level bindings */
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   static final class ActivityModule {
     @Provides
@@ -126,7 +126,7 @@ public final class InjectionTest {
   }
 
   /** Fragment level bindings */
-  @Module
+  @ModuleDagger2
   @InstallIn(FragmentComponent.class)
   static final class FragmentModule {
     @Provides
@@ -137,7 +137,7 @@ public final class InjectionTest {
   }
 
   /** Service level bindings */
-  @Module
+  @ModuleDagger2
   @InstallIn(ServiceComponent.class)
   static final class ServiceModule {
     @Provides

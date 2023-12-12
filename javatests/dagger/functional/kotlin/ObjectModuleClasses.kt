@@ -17,7 +17,7 @@
 package dagger.functional.kotlin
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 import javax.inject.Named
@@ -37,7 +37,7 @@ interface TestKotlinComponentWithObjectModule {
   fun getPrimitiveType(): Boolean
 }
 
-@Module
+@ModuleDagger2
 object TestKotlinObjectModule {
   @Provides
   fun provideDataA() = TestDataA("test")
@@ -55,7 +55,7 @@ object TestKotlinObjectModule {
 }
 
 class TestModuleForNesting {
-  @Module
+  @ModuleDagger2
   object TestNestedKotlinObjectModule {
     @Provides
     @Named("nested-data-a")
@@ -63,7 +63,7 @@ class TestModuleForNesting {
   }
 }
 
-@Module
+@ModuleDagger2
 internal object NonPublicObjectModule {
   @Provides
   fun provideInt() = 42

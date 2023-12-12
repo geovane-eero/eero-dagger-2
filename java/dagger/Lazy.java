@@ -28,7 +28,7 @@ package dagger;
  * injection</strong> and <strong>lazy injection</strong> are best demonstrated
  * with an example. Start with a module that computes a different integer for
  * each use:<pre><code>
- *   {@literal @Module}
+ *   {@literal @ModuleDagger2}
  *   final class CounterModule {
  *     int next = 100;
  *

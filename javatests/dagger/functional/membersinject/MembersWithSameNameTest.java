@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.functional.membersinject.subpackage.MembersWithSameNameParent;
 import org.junit.Test;
@@ -67,7 +67,7 @@ public class MembersWithSameNameTest {
     assertThat(child.childSameNameObjectWasInvoked()).isFalse();
   }
 
-  @Module
+  @ModuleDagger2
   abstract static class TestModule {
     @Provides
     static String provideString() {

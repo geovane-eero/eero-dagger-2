@@ -31,12 +31,13 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ClassName;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.xprocessing.XElements;
 import java.util.Optional;
 import javax.tools.Diagnostic.Kind;
 
 /**
- * A descriptor of a generated {@link dagger.Module} and {@link dagger.Subcomponent} to be generated
+ * A descriptor of a generated {@link ModuleDagger2} and {@link dagger.Subcomponent} to be generated
  * from a {@code ContributesAndroidInjector} method.
  */
 @AutoValue
@@ -50,7 +51,7 @@ abstract class AndroidInjectorDescriptor {
   /** See {@code ContributesAndroidInjector#modules()} */
   abstract ImmutableSet<ClassName> modules();
 
-  /** The {@link dagger.Module} that contains the {@code ContributesAndroidInjector} method. */
+  /** The {@link ModuleDagger2} that contains the {@code ContributesAndroidInjector} method. */
   abstract ClassName enclosingModule();
 
   /** The method annotated with {@code ContributesAndroidInjector}. */
@@ -97,7 +98,7 @@ abstract class AndroidInjectorDescriptor {
           new AutoValue_AndroidInjectorDescriptor.Builder().method(method);
       XTypeElement enclosingElement = XElements.asTypeElement(method.getEnclosingElement());
       if (!enclosingElement.hasAnnotation(TypeNames.MODULE)) {
-        reporter.reportError("@ContributesAndroidInjector methods must be in a @Module");
+        reporter.reportError("@ContributesAndroidInjector methods must be in a @ModuleDagger2");
       }
       builder.enclosingModule(enclosingElement.getClassName());
 
@@ -114,7 +115,7 @@ abstract class AndroidInjectorDescriptor {
         if (module.getTypeElement().hasAnnotation(TypeNames.MODULE)) {
           builder.modulesBuilder().add((ClassName) module.getTypeName());
         } else {
-          reporter.reportError(String.format("%s is not a @Module", module), annotation);
+          reporter.reportError(String.format("%s is not a @ModuleDagger2", module), annotation);
         }
       }
 

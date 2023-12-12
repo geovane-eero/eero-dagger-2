@@ -16,14 +16,15 @@
 
 package dagger.functional.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class StaticChildModule {
   private StaticChildModule() {}
   
-  @Provides static Object provideStaticObject() {
+  @Provides
+  static Object provideStaticObject() {
     return "static";
   }
 }

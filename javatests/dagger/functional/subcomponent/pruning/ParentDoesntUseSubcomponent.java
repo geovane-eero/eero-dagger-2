@@ -17,7 +17,7 @@
 package dagger.functional.subcomponent.pruning;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.multibindings.IntoSet;
@@ -57,7 +57,7 @@ interface ParentDoesntUseSubcomponent {
     Set<Class<?>> componentHierarchyFromChildA();
   }
 
-  @Module(subcomponents = {ChildA.class, ChildB.class})
+  @ModuleDagger2(subcomponents = {ChildA.class, ChildB.class})
   class ParentModule {
     @Provides
     @IntoSet
@@ -66,7 +66,7 @@ interface ParentDoesntUseSubcomponent {
     }
   }
 
-  @Module
+  @ModuleDagger2
   class ChildAModule {
     @Provides
     @IntoSet
@@ -75,7 +75,7 @@ interface ParentDoesntUseSubcomponent {
     }
   }
 
-  @Module
+  @ModuleDagger2
   class ChildBModule {
     @Provides
     @IntoSet

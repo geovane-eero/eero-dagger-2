@@ -16,9 +16,11 @@
 
 package dagger.functional.producers.binds;
 
+import dagger.Binds;
+
 /**
  * This is not marked with {@link javax.inject.Inject @Inject} in order to test that {@link
- * dagger.Binds @Binds} properly translate to {@code dagger.internal.codegen.ProductionBinding}s
+ * Binds @Binds} properly translate to {@code dagger.internal.codegen.ProductionBinding}s
  * when the right-hand-side of the method is also a production binding. We force this by adding a
  * {@link dagger.producers.Produces @Produces} method to add it to the graph instead of relying on
  * the {@code dagger.internal.codegen.ProvisionBinding} that would be created by default with an

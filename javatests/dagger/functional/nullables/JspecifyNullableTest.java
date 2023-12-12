@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import org.jspecify.annotations.Nullable;
 import org.junit.Test;
@@ -34,7 +34,7 @@ public final class JspecifyNullableTest {
     Integer getInt();
   }
 
-  @Module
+  @ModuleDagger2
   static class MyModule {
     private final Integer value;
 

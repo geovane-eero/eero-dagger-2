@@ -19,7 +19,7 @@ package dagger.functional.kotlinsrc.factory
 import com.google.common.truth.Truth.assertThat
 import dagger.BindsInstance
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import javax.inject.Inject
@@ -64,9 +64,10 @@ class SubcomponentFactoryTest {
     assertThat(subcomponent.s()).isEqualTo("foo")
   }
 
-  @Module(subcomponents = [Sub::class])
+  @ModuleDagger2(subcomponents = [Sub::class])
   internal object ModuleWithSubcomponent {
-    @Provides fun provideInt(): Int = 42
+    @Provides
+    fun provideInt(): Int = 42
   }
 
   internal class UsesSubcomponentFactory @Inject constructor(private val subFactory: Sub.Factory) {

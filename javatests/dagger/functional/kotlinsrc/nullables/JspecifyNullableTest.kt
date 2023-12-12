@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.nullables
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import org.jspecify.annotations.Nullable
 import org.junit.Test
@@ -32,10 +32,11 @@ public final class JspecifyNullableTest {
   interface MyIntComponent {
     fun getInt(): Int
 
-    @Module
+    @ModuleDagger2
     class MyModule(val intValue: Int) {
       // Check that using @Nullable on the type is ignored (matching KAPT).
-      @Provides fun provideInt(): @Nullable Int = intValue
+      @Provides
+      fun provideInt(): @Nullable Int = intValue
     }
   }
 
@@ -43,10 +44,11 @@ public final class JspecifyNullableTest {
   interface MyNullableStringComponent {
     fun getString(): String?
 
-    @Module
+    @ModuleDagger2
     class MyModule(val stringValue: String?) {
       // Check that using @Nullable on the type is ignored (matching KAPT).
-      @Provides fun provideString(): @Nullable String? = stringValue
+      @Provides
+      fun provideString(): @Nullable String? = stringValue
     }
   }
 

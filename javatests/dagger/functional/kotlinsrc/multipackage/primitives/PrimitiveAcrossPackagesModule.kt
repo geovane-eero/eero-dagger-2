@@ -16,11 +16,12 @@
 
 package dagger.functional.kotlinsrc.multipackage.primitives
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 object PrimitiveAcrossPackagesModule {
   // This method should be internal so that a proxy method is created
-  @Provides internal fun primitive(): Boolean = false
+  @Provides
+  internal fun primitive(): Boolean = false
 }

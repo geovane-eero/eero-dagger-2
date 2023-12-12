@@ -16,10 +16,11 @@
 
 package dagger.android.ksp
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 object UserNameModule {
-  @UserName @Provides fun provideUserName(): String = "ProdUser"
+  @UserName @Provides
+  fun provideUserName(): String = "ProdUser"
 }

@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface Module {
+public @interface ModuleDagger2 {
   /**
    * Additional {@code @Module}-annotated classes from which this module is composed. The
    * de-duplicated contributions of the modules in {@code includes}, and of their inclusions

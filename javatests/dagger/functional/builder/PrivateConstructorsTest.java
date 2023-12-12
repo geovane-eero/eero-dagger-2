@@ -19,7 +19,7 @@ package dagger.functional.builder;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ import org.junit.runners.JUnit4;
 
 @RunWith(JUnit4.class)
 public final class PrivateConstructorsTest {
-  @Module
+  @ModuleDagger2
   static final class M {
     @Provides
     static String provideString() {

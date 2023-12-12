@@ -17,11 +17,11 @@
 package dagger.functional.subcomponent.module;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 
 /**
- * Tests for {@link Subcomponent}s which are defined with {@link Module#subcomponents()} and are
+ * Tests for {@link Subcomponent}s which are defined with {@link ModuleDagger2#subcomponents()} and are
  * also requested as component factory methods.
  */
 public class SubcomponentFromModuleAndFactoryMethod {
@@ -33,7 +33,7 @@ public class SubcomponentFromModuleAndFactoryMethod {
     }
   }
 
-  @Module(subcomponents = Sub.class)
+  @ModuleDagger2(subcomponents = Sub.class)
   class ModuleWithSubcomponent {}
 
   @Component(modules = ModuleWithSubcomponent.class)

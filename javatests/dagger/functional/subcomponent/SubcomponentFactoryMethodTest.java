@@ -19,7 +19,7 @@ package dagger.functional.subcomponent;
 import static org.junit.Assert.fail;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import org.junit.Test;
@@ -30,7 +30,7 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public final class SubcomponentFactoryMethodTest {
 
-  @Module
+  @ModuleDagger2
   static class IntModule {
     @Provides
     int provideInt() {
@@ -38,7 +38,7 @@ public final class SubcomponentFactoryMethodTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class StringModule {
     final String s;
 

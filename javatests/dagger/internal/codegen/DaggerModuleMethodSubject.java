@@ -23,7 +23,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.truth.FailureMetadata;
 import com.google.common.truth.Subject;
 import com.google.common.truth.Truth;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.producers.ProducerModule;
 import dagger.testing.compile.CompilerTests;
 import java.io.PrintWriter;
@@ -37,7 +37,7 @@ final class DaggerModuleMethodSubject extends Subject {
   /** A {@link Truth} subject factory for testing Dagger module methods. */
   static final class Factory implements Subject.Factory<DaggerModuleMethodSubject, String> {
 
-    /** Starts a clause testing a Dagger {@link Module @Module} method. */
+    /** Starts a clause testing a Dagger {@link ModuleDagger2 @Module} method. */
     static DaggerModuleMethodSubject assertThatModuleMethod(String method) {
       return assertAbout(new Factory())
           .that(method)

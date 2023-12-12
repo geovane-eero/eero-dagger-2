@@ -16,6 +16,8 @@
 
 package dagger.android;
 
+import dagger.ModuleDagger2;
+
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -25,10 +27,10 @@ import java.lang.annotation.Target;
 
 /**
  * Generates an {@link AndroidInjector} for the return type of this method. The injector is
- * implemented with a {@link dagger.Subcomponent} and will be a child of the {@link dagger.Module}'s
+ * implemented with a {@link dagger.Subcomponent} and will be a child of the {@link ModuleDagger2}'s
  * component.
  *
- * <p>This annotation must be applied to an abstract method in a {@link dagger.Module} that returns
+ * <p>This annotation must be applied to an abstract method in a {@link ModuleDagger2} that returns
  * a concrete Android framework type (e.g. {@code FooActivity}, {@code BarFragment}, {@code
  * MyService}, etc). The method should have no parameters.
  *

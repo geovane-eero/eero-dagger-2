@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.multibindings
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.ClassKey
 import dagger.multibindings.IntoMap
@@ -33,7 +33,7 @@ class ClassKeyWithGenericsTest {
     val map: Map<Class<*>, String>
   }
 
-  @Module
+  @ModuleDagger2
   internal object TestModule {
     @Provides
     @IntoMap

@@ -17,7 +17,7 @@
 package dagger.hilt.android.simple.lib;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.InstallIn;
 import dagger.hilt.components.SingletonComponent;
 import javax.inject.Inject;
@@ -27,9 +27,10 @@ public final class ThingImpl implements Thing {
   @Inject
   ThingImpl() {}
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface FooStringModule {
-    @Binds Thing bind(ThingImpl impl);
+    @Binds
+    Thing bind(ThingImpl impl);
   }
 }

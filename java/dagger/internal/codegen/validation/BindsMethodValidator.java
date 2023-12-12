@@ -27,6 +27,7 @@ import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.XType;
 import androidx.room.compiler.processing.XVariableElement;
 import com.google.common.collect.ImmutableSet;
+import dagger.Binds;
 import dagger.internal.codegen.base.ContributionType;
 import dagger.internal.codegen.base.DaggerSuperficialValidation;
 import dagger.internal.codegen.base.SetType;
@@ -35,7 +36,7 @@ import dagger.internal.codegen.binding.InjectionAnnotations;
 import dagger.internal.codegen.javapoet.TypeNames;
 import javax.inject.Inject;
 
-/** A validator for {@link dagger.Binds} methods. */
+/** A validator for {@link Binds} methods. */
 final class BindsMethodValidator extends BindingMethodValidator {
   private final BindsTypeChecker bindsTypeChecker;
   private final DaggerSuperficialValidation superficialValidation;

@@ -17,7 +17,7 @@
 package dagger.functional.binds;
 
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Reusable;
 import dagger.multibindings.ElementsIntoSet;
@@ -32,7 +32,7 @@ import java.util.TreeSet;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
-@Module(includes = InterfaceModule.class)
+@ModuleDagger2(includes = InterfaceModule.class)
 abstract class SimpleBindingModule {
 
   // Regression test for b/161853413 that binds an implementation that extends a generated class

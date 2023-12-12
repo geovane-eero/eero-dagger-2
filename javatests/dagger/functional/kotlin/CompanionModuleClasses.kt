@@ -18,7 +18,7 @@ package dagger.functional.kotlin
 
 import dagger.Binds
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Named
@@ -48,7 +48,7 @@ interface TestKotlinComponentWithCompanionModule {
   fun getInteger(): Int
 }
 
-@Module
+@ModuleDagger2
 class TestKotlinModuleWithCompanion {
   @Provides
   fun provideDataA() = TestDataA("test")
@@ -62,7 +62,7 @@ class TestKotlinModuleWithCompanion {
   }
 }
 
-@Module
+@ModuleDagger2
 class TestKotlinModuleWithNamedCompanion {
 
   @Provides
@@ -75,7 +75,7 @@ class TestKotlinModuleWithNamedCompanion {
   }
 }
 
-@Module
+@ModuleDagger2
 abstract class TestKotlinAbstractModuleWithCompanion {
 
   @Binds
@@ -87,13 +87,13 @@ abstract class TestKotlinAbstractModuleWithCompanion {
   }
 }
 
-@Module
+@ModuleDagger2
 class TestKotlinWorkaroundModuleWithCompanion {
 
   @Provides
   fun provideDouble() = 1.0
 
-  @Module
+  @ModuleDagger2
   companion object {
     @Provides
     @JvmStatic
@@ -101,7 +101,7 @@ class TestKotlinWorkaroundModuleWithCompanion {
   }
 }
 
-@Module
+@ModuleDagger2
 class TestKotlinModuleWithPrivateCompanion {
 
   @Provides

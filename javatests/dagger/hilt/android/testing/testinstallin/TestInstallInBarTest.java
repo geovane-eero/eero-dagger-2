@@ -19,7 +19,7 @@ package dagger.hilt.android.testing.testinstallin;
 import static com.google.common.truth.Truth.assertThat;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.testing.HiltAndroidRule;
@@ -49,7 +49,7 @@ public final class TestInstallInBarTest {
 
   @Rule public HiltAndroidRule hiltRule = new HiltAndroidRule(this);
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface LocalBarTestModule {
     @Provides

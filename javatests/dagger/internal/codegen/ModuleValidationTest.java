@@ -20,7 +20,7 @@ import static dagger.internal.codegen.DaggerModuleMethodSubject.Factory.assertTh
 
 import androidx.room.compiler.processing.XProcessingEnv;
 import androidx.room.compiler.processing.util.Source;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.producers.ProducerModule;
 import dagger.testing.compile.CompilerTests;
 import java.lang.annotation.Annotation;
@@ -39,7 +39,7 @@ public final class ModuleValidationTest {
   }
 
   private enum ModuleType {
-    MODULE(Module.class),
+    MODULE(ModuleDagger2.class),
     PRODUCER_MODULE(ProducerModule.class),
     ;
 

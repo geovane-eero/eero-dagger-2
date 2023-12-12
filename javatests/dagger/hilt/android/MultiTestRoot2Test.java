@@ -23,7 +23,7 @@ import static org.junit.Assert.assertThrows;
 import android.os.Build;
 import androidx.activity.ComponentActivity;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.EntryPoints;
@@ -67,7 +67,7 @@ public final class MultiTestRoot2Test {
     @Inject @MultiTestRootExternalModules.External Long externalLongValue;
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   public interface TestActivityModule {
     @Provides
@@ -76,7 +76,7 @@ public final class MultiTestRoot2Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface PkgPrivateTestModule {
     @Provides
@@ -85,7 +85,7 @@ public final class MultiTestRoot2Test {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface TestModule {
     @Provides
@@ -100,7 +100,7 @@ public final class MultiTestRoot2Test {
   }
 
   public static final class Outer {
-    @Module
+    @ModuleDagger2
     @InstallIn(SingletonComponent.class)
     public interface NestedTestModule {
       @Provides
@@ -141,7 +141,7 @@ public final class MultiTestRoot2Test {
   // Must be public due to b/183636779
   public static class Qux {}
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   public interface BarModule {
     @Provides

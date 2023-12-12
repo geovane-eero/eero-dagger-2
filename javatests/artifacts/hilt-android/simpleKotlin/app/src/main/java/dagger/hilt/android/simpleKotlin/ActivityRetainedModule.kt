@@ -15,12 +15,12 @@
  */
 package dagger.hilt.android.simpleKotlin
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 
-@Module
+@ModuleDagger2
 @InstallIn(ActivityRetainedComponent::class)
 object ActivityRetainedModule {
   @UserName

@@ -16,12 +16,14 @@
 
 package dagger.functional.kotlinsrc.generictypes
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 internal class ChildIntegerModule : ParentModule<Int, String, List<@JvmSuppressWildcards Int>>() {
-  @Provides fun provideInteger(): Int = 1
+  @Provides
+  fun provideInteger(): Int = 1
 
-  @Provides fun provideListOfInteger(): List<Int> = listOf(2)
+  @Provides
+  fun provideListOfInteger(): List<Int> = listOf(2)
 }

@@ -34,6 +34,7 @@ import com.squareup.javapoet.ParameterSpec;
 import com.squareup.javapoet.ParameterizedTypeName;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
+import dagger.Provides;
 import dagger.grpc.server.GrpcService;
 import java.util.List;
 import java.util.function.Function;
@@ -72,7 +73,7 @@ final class ProxyModuleGenerator extends SourceGenerator {
   }
 
   /**
-   * Returns the {@link dagger.Provides @Provides} method for the proxying {@link
+   * Returns the {@link Provides @Provides} method for the proxying {@link
    * io.grpc.ServerServiceDefinition}.
    */
   private MethodSpec provideServiceDefinitionContribution() {
@@ -143,7 +144,7 @@ final class ProxyModuleGenerator extends SourceGenerator {
   }
 
   /**
-   * Returns the {@link dagger.Provides @Provides} method for the {@link
+   * Returns the {@link Provides @Provides} method for the {@link
    * dagger.grpc.server.ProxyServerCallHandler.ServiceDefinitionFactory} used by the proxy.
    */
   private MethodSpec provideServiceDefinitionFactory() {

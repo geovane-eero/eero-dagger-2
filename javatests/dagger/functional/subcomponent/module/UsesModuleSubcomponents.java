@@ -17,7 +17,7 @@
 package dagger.functional.subcomponent.module;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.multibindings.IntoSet;
@@ -31,7 +31,7 @@ public interface UsesModuleSubcomponents {
 
   Set<String> strings();
 
-  @Module(subcomponents = Child.class, includes = AlsoIncludesSubcomponents.class)
+  @ModuleDagger2(subcomponents = Child.class, includes = AlsoIncludesSubcomponents.class)
   class ModuleWithSubcomponents {
     @Provides
     @IntoSet
@@ -40,7 +40,7 @@ public interface UsesModuleSubcomponents {
     }
   }
 
-  @Module(subcomponents = Child.class)
+  @ModuleDagger2(subcomponents = Child.class)
   class AlsoIncludesSubcomponents {}
 
   @Subcomponent(modules = ChildModule.class)
@@ -53,7 +53,7 @@ public interface UsesModuleSubcomponents {
     }
   }
 
-  @Module
+  @ModuleDagger2
   class ChildModule {
     @Provides
     @IntoSet
@@ -71,7 +71,7 @@ public interface UsesModuleSubcomponents {
     }
   }
 
-  @Module(includes = ModuleWithSubcomponents.class)
+  @ModuleDagger2(includes = ModuleWithSubcomponents.class)
   class OnlyIncludesModuleWithSubcomponents {}
 
   @Component(modules = OnlyIncludesModuleWithSubcomponents.class)

@@ -16,7 +16,7 @@
 
 package dagger.functional.modules.subpackage;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
 /**
@@ -25,7 +25,7 @@ import dagger.Provides;
  * because the generated no-op method references the inaccessible package-private type, so we
  * omitted those no-op methods to support such modules.
  */
-@Module
+@ModuleDagger2
 class NonAbstractPackagePrivateModule {
   @Provides
   static FooForProvision provideFoo() {

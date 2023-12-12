@@ -17,12 +17,12 @@
 package dagger.functional.kotlinsrc.subcomponent
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.IntoSet
 import javax.inject.Singleton
 
-@Module
+@ModuleDagger2
 internal abstract class ParentModule {
   @Binds
   @Singleton

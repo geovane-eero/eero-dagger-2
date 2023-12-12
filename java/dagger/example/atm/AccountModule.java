@@ -16,15 +16,18 @@
 
 package dagger.example.atm;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.example.atm.Database.Account;
 
-/** Bindings for the {@link Account} of the currently signed-in user. */
-@Module
+/**
+ * Bindings for the {@link Account} of the currently signed-in user.
+ */
+@ModuleDagger2
 interface AccountModule {
-  @Provides
-  static Account account(Database database, @Username String username) {
-    return database.getAccount(username);
-  }
+
+    @Provides
+    static Account account(Database database, @Username String username) {
+        return database.getAccount(username);
+    }
 }

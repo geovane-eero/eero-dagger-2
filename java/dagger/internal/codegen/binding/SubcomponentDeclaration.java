@@ -25,6 +25,7 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.auto.value.AutoValue;
 import com.google.auto.value.extension.memoized.Memoized;
 import com.google.common.collect.ImmutableSet;
+import dagger.ModuleDagger2;
 import dagger.internal.codegen.base.DaggerSuperficialValidation;
 import dagger.internal.codegen.base.ModuleAnnotation;
 import dagger.internal.codegen.model.Key;
@@ -33,7 +34,7 @@ import javax.inject.Inject;
 
 /**
  * A declaration for a subcomponent that is included in a module via {@link
- * dagger.Module#subcomponents()}.
+ * ModuleDagger2#subcomponents()}.
  */
 @AutoValue
 public abstract class SubcomponentDeclaration extends BindingDeclaration {

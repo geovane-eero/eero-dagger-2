@@ -16,11 +16,11 @@
 
 package dagger.functional.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoSet;
 
-@Module
+@ModuleDagger2
 final class ChildModule {
   @Provides
   @IntoSet

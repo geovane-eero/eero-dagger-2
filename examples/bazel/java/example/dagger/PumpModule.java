@@ -21,7 +21,7 @@ import dagger.Module;
 import example.common.Pump;
 import example.common.Thermosiphon;
 
-@Module
+@ModuleDagger2
 abstract class PumpModule {
   @Binds
   abstract Pump providePump(Thermosiphon pump);

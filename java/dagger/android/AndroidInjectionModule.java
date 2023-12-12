@@ -16,7 +16,7 @@
 
 package dagger.android;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.internal.Beta;
 import dagger.multibindings.Multibinds;
 import java.util.Map;
@@ -27,7 +27,7 @@ import java.util.Map;
  * android.app.Application} class.
  */
 @Beta
-@Module
+@ModuleDagger2
 public abstract class AndroidInjectionModule {
   @Multibinds
   abstract Map<Class<?>, AndroidInjector.Factory<?>> classKeyedInjectorFactories();

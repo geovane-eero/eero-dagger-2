@@ -18,13 +18,13 @@ package dagger.functional.staticprovides;
 
 import static java.util.Collections.emptySet;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ElementsIntoSet;
 import dagger.multibindings.IntoSet;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 final class AllStaticModule {
   @Provides
   @IntoSet

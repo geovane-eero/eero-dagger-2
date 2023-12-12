@@ -18,7 +18,7 @@ package dagger.functional.gwt;
 
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.lang.annotation.Retention;
 import javax.inject.Inject;
@@ -53,7 +53,7 @@ interface GwtIncompatibles {
   }
 
   @GwtIncompatible
-  @Module
+  @ModuleDagger2
   class OnModule {
     @Provides
     static String onModule() {
@@ -61,7 +61,7 @@ interface GwtIncompatibles {
     }
   }
 
-  @Module
+  @ModuleDagger2
   class OnMethod {
     @GwtIncompatible
     @Provides

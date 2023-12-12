@@ -16,11 +16,11 @@
 
 package dagger.functional.producers.monitoring;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import javax.inject.Qualifier;
 
-@Module
+@ModuleDagger2
 final class StubModule {
   @Qualifier
   @interface ForServer1 {}

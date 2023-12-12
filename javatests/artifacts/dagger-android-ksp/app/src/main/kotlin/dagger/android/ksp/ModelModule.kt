@@ -17,10 +17,11 @@
 package dagger.android.ksp
 
 import android.os.Build.MODEL
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 object ModelModule {
-  @Provides @Model fun provideModel(): String = MODEL
+  @Provides
+  @Model fun provideModel(): String = MODEL
 }

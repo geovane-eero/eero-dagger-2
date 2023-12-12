@@ -16,13 +16,13 @@
 
 package dagger.hilt.viewmodel;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ViewModelComponent;
 import java.util.Random;
 
-@Module
+@ModuleDagger2
 @InstallIn(ViewModelComponent.class)
 final class UserNameModule {
   @UserName

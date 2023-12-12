@@ -22,7 +22,7 @@ import example.common.ElectricHeater;
 import example.common.Heater;
 import javax.inject.Singleton;
 
-@Module
+@ModuleDagger2
 interface HeaterModule {
   @Binds
   @Singleton

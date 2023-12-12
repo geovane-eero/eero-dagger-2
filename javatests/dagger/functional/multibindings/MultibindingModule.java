@@ -16,7 +16,7 @@
 
 package dagger.functional.multibindings;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ClassKey;
 import dagger.multibindings.ElementsIntoSet;
@@ -34,7 +34,7 @@ import java.util.Set;
 import javax.inject.Named;
 import javax.inject.Provider;
 
-@Module
+@ModuleDagger2
 class MultibindingModule {
   @Provides
   @IntoMap

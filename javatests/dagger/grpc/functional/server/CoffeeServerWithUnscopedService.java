@@ -18,7 +18,7 @@ package dagger.grpc.functional.server;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.grpc.functional.server.CoffeeServerWithUnscopedService.UnscopedServiceModule;
 import dagger.grpc.functional.server.CountingInterceptor.CountingInterceptorModule;
 import dagger.grpc.server.InProcessServerModule;
@@ -38,7 +38,7 @@ abstract class CoffeeServerWithUnscopedService extends CoffeeServer<CoffeeServer
   @Component.Builder
   interface Builder extends CoffeeServer.Builder<CoffeeServerWithUnscopedService> {}
 
-  @Module(includes = FriendlyBaristaUnscopedGrpcServiceModule.class)
+  @ModuleDagger2(includes = FriendlyBaristaUnscopedGrpcServiceModule.class)
   abstract static class UnscopedServiceModule {
     @Binds
     abstract FriendlyBaristaServiceDefinition friendlyBaristaServiceDefinition(

@@ -17,12 +17,12 @@
 package dagger.functional.kotlinsrc.modules
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 
 internal class ModuleCycles {
-  @Module(includes = [ModuleB::class]) interface ModuleA
+  @ModuleDagger2(includes = [ModuleB::class]) interface ModuleA
 
-  @Module(includes = [ModuleA::class]) interface ModuleB
+  @ModuleDagger2(includes = [ModuleA::class]) interface ModuleB
 
   @Component(modules = [ModuleA::class]) interface CycleComponent
 }

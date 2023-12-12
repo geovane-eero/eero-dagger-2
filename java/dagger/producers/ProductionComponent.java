@@ -21,7 +21,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import com.google.common.util.concurrent.ListenableFuture;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.internal.Beta;
 import java.lang.annotation.Documented;
@@ -85,7 +85,7 @@ import javax.inject.Qualifier;
 @Beta
 public @interface ProductionComponent {
   /**
-   * A list of classes annotated with {@link Module} or {@link ProducerModule} whose bindings are
+   * A list of classes annotated with {@link ModuleDagger2} or {@link ProducerModule} whose bindings are
    * used to generate the component implementation.
    */
   Class<?>[] modules() default {};

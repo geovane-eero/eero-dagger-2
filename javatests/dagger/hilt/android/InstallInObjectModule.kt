@@ -16,7 +16,7 @@
 
 package dagger.hilt.android
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -30,14 +30,14 @@ interface TestEntryPoint {
   fun getBoolean(): Boolean
 }
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 object InstallInObjectModule {
   @Provides
   fun provideBoolean() = true
 }
 
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent::class)
 class InstallInCompanionObjectModule {
   @Provides

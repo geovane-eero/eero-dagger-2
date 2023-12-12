@@ -16,7 +16,7 @@
 
 package dagger.functional.multibindings.subpackage;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.ElementsIntoSet;
 import dagger.multibindings.IntoSet;
@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 public final class ContributionsModule {
   @Provides
   @IntoSet

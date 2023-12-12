@@ -16,11 +16,11 @@
 
 package dagger.functional.multipackage.b;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.multibindings.IntoSet;
 
-@Module
+@ModuleDagger2
 public final class BModule {
   @Provides
   @IntoSet

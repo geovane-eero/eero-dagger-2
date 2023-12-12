@@ -35,7 +35,7 @@ import java.util.Optional;
 
 /**
  * A {@code @Component}, {@code @Subcomponent}, {@code @ProductionComponent}, or
- * {@code @ProductionSubcomponent} annotation, or a {@code @Module} or {@code @ProducerModule}
+ * {@code @ProductionSubcomponent} annotation, or a {@code @ModuleDagger2} or {@code @ProducerModule}
  * annotation that is being treated as a component annotation when validating full binding graphs
  * for modules.
  */

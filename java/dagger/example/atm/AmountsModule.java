@@ -16,12 +16,12 @@
 
 package dagger.example.atm;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.math.BigDecimal;
 
 /** Configures various amounts of money the application uses to control transactions. */
-@Module
+@ModuleDagger2
 abstract class AmountsModule {
 
   @Provides

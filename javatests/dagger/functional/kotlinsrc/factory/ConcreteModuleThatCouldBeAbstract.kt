@@ -16,13 +16,14 @@
 
 package dagger.functional.kotlinsrc.factory
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
 @Suppress("ClassShouldBeObject")
-@Module
+@ModuleDagger2
 class ConcreteModuleThatCouldBeAbstract {
   companion object {
-    @Provides fun provideDouble(): Double = 42.0
+    @Provides
+    fun provideDouble(): Double = 42.0
   }
 }

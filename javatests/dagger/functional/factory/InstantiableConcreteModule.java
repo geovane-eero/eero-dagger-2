@@ -16,11 +16,11 @@
 
 package dagger.functional.factory;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
 @SuppressWarnings("StaticModuleMethods") // intentionally non-static
-@Module
+@ModuleDagger2
 final class InstantiableConcreteModule {
   @Provides
   int provideInt() {

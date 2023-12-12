@@ -24,7 +24,7 @@ import android.view.View
 import androidx.test.core.app.ApplicationProvider.getApplicationContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -74,7 +74,7 @@ class EntryPointAccessorsTest {
   @Retention(AnnotationRetention.BINARY)
   annotation class ViewLevel
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent::class)
   internal object ApplicationModule {
     @ApplicationLevel
@@ -84,7 +84,7 @@ class EntryPointAccessorsTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent::class)
   internal object ActivityModule {
     @ActivityLevel
@@ -94,7 +94,7 @@ class EntryPointAccessorsTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(FragmentComponent::class)
   internal object FragmentModule {
     @FragmentLevel
@@ -104,7 +104,7 @@ class EntryPointAccessorsTest {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ViewComponent::class)
   internal object ViewModule {
     @ViewLevel

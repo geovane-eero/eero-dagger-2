@@ -16,13 +16,13 @@
 
 package simple;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
 
 /** Just a module. */
-@Module
+@ModuleDagger2
 @InstallIn(ActivityComponent.class)
 public class Module1 {
 

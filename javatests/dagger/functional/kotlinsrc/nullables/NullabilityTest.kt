@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.nullables
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Reusable
 import java.lang.NullPointerException
@@ -49,14 +49,16 @@ class NullabilityTest {
     fun numberProvider(): Provider<Number>
   }
 
-  @Module
+  @ModuleDagger2
   internal class NullModule {
     var numberValue: Number? = null
     var integerCallCount = 0
 
-    @Provides fun provideNullableString(): String? = null
+    @Provides
+    fun provideNullableString(): String? = null
 
-    @Provides fun provideNumber(): Number = numberValue!!
+    @Provides
+    fun provideNumber(): Number = numberValue!!
 
     @Provides
     @Reusable

@@ -16,17 +16,18 @@
 
 package dagger.functional.kotlinsrc.multipackage.moduleconstructor
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import kotlin.random.Random
 
-@Module
+@ModuleDagger2
 class ModuleWithInaccessibleConstructor
 /* intentionally package private */
 internal constructor() {
   private val i: Int = Random.nextInt()
 
-  @Provides fun i(): Int = i
+  @Provides
+  fun i(): Int = i
 
   // This is a regression test for b/283164293
   private companion object {

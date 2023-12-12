@@ -34,6 +34,7 @@ import androidx.room.compiler.processing.XTypeElement;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.FormatMethod;
 import com.squareup.javapoet.ClassName;
+import dagger.Provides;
 import dagger.internal.codegen.base.ContributionType;
 import dagger.internal.codegen.base.FrameworkTypes;
 import dagger.internal.codegen.base.SetType;
@@ -297,7 +298,7 @@ public abstract class BindingElementValidator<E extends XElement> {
      *   <li>the element doesn't allow {@linkplain MultibindingAnnotations multibinding annotations}
      *       and has any
      *   <li>the element does allow them but has more than one
-     *   <li>the element has a multibinding annotation and its {@link dagger.Provides} or {@link
+     *   <li>the element has a multibinding annotation and its {@link Provides} or {@link
      *       dagger.producers.Produces} annotation has a {@code type} parameter.
      * </ul>
      */

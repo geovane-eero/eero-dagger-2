@@ -35,8 +35,8 @@ import java.lang.annotation.Target;
 @Documented
 public @interface Subcomponent {
   /**
-   * A list of classes annotated with {@link Module} whose bindings are used to generate the
-   * subcomponent implementation.  Note that through the use of {@link Module#includes} the full set
+   * A list of classes annotated with {@link ModuleDagger2} whose bindings are used to generate the
+   * subcomponent implementation.  Note that through the use of {@link ModuleDagger2#includes} the full set
    * of modules used to implement the subcomponent may include more modules that just those listed
    * here.
    */

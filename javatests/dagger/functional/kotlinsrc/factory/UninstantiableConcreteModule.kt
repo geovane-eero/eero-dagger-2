@@ -16,10 +16,11 @@
 
 package dagger.functional.kotlinsrc.factory
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 
-@Module
+@ModuleDagger2
 class UninstantiableConcreteModule(private val l: Long) {
-  @Provides fun provideLong(): Long = l
+  @Provides
+  fun provideLong(): Long = l
 }

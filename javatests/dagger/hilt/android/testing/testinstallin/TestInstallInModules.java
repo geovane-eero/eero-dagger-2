@@ -18,7 +18,7 @@ package dagger.hilt.android.testing.testinstallin;
 
 import android.app.Activity;
 import androidx.fragment.app.Fragment;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
@@ -53,7 +53,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface SingletonFooModule {
     @Provides
@@ -62,7 +62,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   interface SingletonBarModule {
     @Provides
@@ -71,7 +71,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @TestInstallIn(components = SingletonComponent.class, replaces = SingletonFooModule.class)
   interface SingletonFooTestModule {
     @Provides
@@ -80,7 +80,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface ActivityFooModule {
     @Provides
@@ -90,7 +90,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(ActivityComponent.class)
   interface ActivityBarModule {
     @Provides
@@ -101,7 +101,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @TestInstallIn(components = ActivityComponent.class, replaces = ActivityFooModule.class)
   interface ActivityFooTestModule {
     @Provides
@@ -112,7 +112,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(FragmentComponent.class)
   interface FragmentFooModule {
     @Provides
@@ -122,7 +122,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @InstallIn(FragmentComponent.class)
   interface FragmentBarModule {
     @Provides
@@ -133,7 +133,7 @@ final class TestInstallInModules {
     }
   }
 
-  @Module
+  @ModuleDagger2
   @TestInstallIn(components = FragmentComponent.class, replaces = FragmentFooModule.class)
   interface FragmentFooTestModule {
     @Provides

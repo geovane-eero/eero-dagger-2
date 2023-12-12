@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.assisted.Assisted;
 import dagger.assisted.AssistedFactory;
 import dagger.assisted.AssistedInject;
@@ -37,7 +37,7 @@ public final class AssistedFactoryBindsTest {
     FooFactory fooFactory();
   }
 
-  @Module
+  @ModuleDagger2
   interface FooFactoryModule {
     @Binds
     FooFactory bind(FooFactoryImpl impl);

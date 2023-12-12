@@ -17,7 +17,7 @@
 package dagger.internal.codegen.componentgenerator;
 
 import dagger.BindsInstance;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Subcomponent;
 import dagger.internal.codegen.binding.BindingGraph;
@@ -47,7 +47,7 @@ public interface CurrentImplementationSubcomponent {
   ComponentImplementation componentImplementation();
 
   /** A module to bind the {@link ChildComponentImplementationFactory}. */
-  @Module
+  @ModuleDagger2
   interface ChildComponentImplementationFactoryModule {
     @Provides
     static ChildComponentImplementationFactory provideChildComponentImplementationFactory(

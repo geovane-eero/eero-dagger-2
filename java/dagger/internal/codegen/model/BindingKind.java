@@ -16,12 +16,15 @@
 
 package dagger.internal.codegen.model;
 
+import dagger.Binds;
+import dagger.Provides;
+
 /** Represents the different kinds of {@link Binding}s that can exist in a binding graph. */
 public enum BindingKind {
   /** A binding for an {@link javax.inject.Inject}-annotated constructor. */
   INJECTION,
 
-  /** A binding for a {@link dagger.Provides}-annotated method. */
+  /** A binding for a {@link Provides}-annotated method. */
   PROVISION,
 
   /**
@@ -98,7 +101,7 @@ public enum BindingKind {
   OPTIONAL,
 
   /**
-   * A binding for {@link dagger.Binds}-annotated method that that delegates from requests for one
+   * A binding for {@link Binds}-annotated method that that delegates from requests for one
    * key to another.
    */
   // TODO(dpb,ronshapiro): This name is confusing and could use work. Not all usages of @Binds

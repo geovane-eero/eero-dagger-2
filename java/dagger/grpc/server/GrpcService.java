@@ -16,6 +16,8 @@
 
 package dagger.grpc.server;
 
+import dagger.ModuleDagger2;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
@@ -27,7 +29,7 @@ import java.lang.annotation.Target;
  *
  * <ul>
  * <li>Interfaces {@code FooComponent} and {@code FooComponent.Factory}.
- * <li>{@linkplain dagger.Module Modules} {@code FooGrpcProxyModule} and {@code
+ * <li>{@linkplain ModuleDagger2 Modules} {@code FooGrpcProxyModule} and {@code
  *     FooGrpcServiceModule}.
  * </ul>
  *

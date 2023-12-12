@@ -19,7 +19,7 @@ package dagger.android.support.functional;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.android.AndroidInjectionModule;
 import dagger.android.AndroidInjector;
@@ -40,7 +40,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   @Component(modules = {ApplicationModule.class, AndroidInjectionModule.class})
   interface ApplicationComponent extends AndroidInjector<UsesGeneratedModulesApplication> {}
 
-  @Module
+  @ModuleDagger2
   abstract static class ApplicationModule {
     @Provides
     @IntoSet
@@ -84,7 +84,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   @Scope
   @interface ActivityScope {}
 
-  @Module
+  @ModuleDagger2
   static class ActivityScopedModule {
     @Provides
     @ActivityScope
@@ -94,7 +94,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyActivitySubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -105,7 +105,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyInnerActivitySubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -116,7 +116,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyParentFragmentSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -127,7 +127,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyChildFragmentSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -138,7 +138,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyDialogFragmentSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -149,7 +149,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyServiceSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -160,7 +160,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyIntentServiceSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -171,7 +171,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyBroadcastReceiverSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet
@@ -182,7 +182,7 @@ public final class UsesGeneratedModulesApplication extends DaggerApplication {
   }
 
   interface DummyContentProviderSubcomponent {
-    @Module
+    @ModuleDagger2
     abstract class AddToHierarchy {
       @Provides
       @IntoSet

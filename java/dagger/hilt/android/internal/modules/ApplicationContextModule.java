@@ -18,7 +18,7 @@ package dagger.hilt.android.internal.modules;
 
 import android.app.Application;
 import android.content.Context;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.internal.Contexts;
@@ -26,7 +26,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext;
 import dagger.hilt.components.SingletonComponent;
 
 /** Provides a binding for an Android BinderFragment Context. */
-@Module
+@ModuleDagger2
 @InstallIn(SingletonComponent.class)
 public final class ApplicationContextModule {
   private final Context applicationContext;

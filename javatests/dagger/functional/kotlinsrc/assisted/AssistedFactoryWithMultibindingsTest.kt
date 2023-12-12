@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.assisted
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.Subcomponent
 import dagger.assisted.Assisted
@@ -58,14 +58,16 @@ internal class AssistedFactoryWithMultibindingsTest {
     }
   }
 
-  @Module(subcomponents = [ChildComponent::class])
+  @ModuleDagger2(subcomponents = [ChildComponent::class])
   class ParentModule {
-    @Provides @IntoSet fun parentString(): String = "parent"
+    @Provides
+    @IntoSet fun parentString(): String = "parent"
   }
 
-  @Module
+  @ModuleDagger2
   class ChildModule {
-    @Provides @IntoSet fun childString(): String = "child"
+    @Provides
+    @IntoSet fun childString(): String = "child"
   }
 
   @AssistedFactory

@@ -17,11 +17,11 @@
 package dagger.functional.kotlinsrc.subcomponent.module
 
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Subcomponent
 
 /**
- * Tests for [Subcomponent]s which are defined with [Module.subcomponents] and are also requested as
+ * Tests for [Subcomponent]s which are defined with [ModuleDagger2.subcomponents] and are also requested as
  * component factory methods.
  */
 class SubcomponentFromModuleAndFactoryMethod {
@@ -33,7 +33,7 @@ class SubcomponentFromModuleAndFactoryMethod {
     }
   }
 
-  @Module(subcomponents = [Sub::class]) internal inner class ModuleWithSubcomponent
+  @ModuleDagger2(subcomponents = [Sub::class]) internal inner class ModuleWithSubcomponent
 
   @Component(modules = [ModuleWithSubcomponent::class])
   interface ExposesBuilder {

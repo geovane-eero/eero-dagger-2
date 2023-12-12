@@ -33,7 +33,7 @@ import com.squareup.javapoet.ClassName;
 import dagger.internal.codegen.javapoet.TypeNames;
 import java.util.Optional;
 
-/** A {@code @Module} or {@code @ProducerModule} annotation. */
+/** A {@code @ModuleDagger2} or {@code @ProducerModule} annotation. */
 @AutoValue
 public abstract class ModuleAnnotation {
   private static final ImmutableSet<ClassName> MODULE_ANNOTATIONS =
@@ -78,7 +78,7 @@ public abstract class ModuleAnnotation {
         .collect(toImmutableList());
   }
 
-  /** Returns {@code true} if the argument is a {@code @Module} or {@code @ProducerModule}. */
+  /** Returns {@code true} if the argument is a {@code @ModuleDagger2} or {@code @ProducerModule}. */
   public static boolean isModuleAnnotation(XAnnotation annotation) {
     return MODULE_ANNOTATIONS.contains(getClassName(annotation));
   }
@@ -99,7 +99,7 @@ public abstract class ModuleAnnotation {
   }
 
   /**
-   * Returns an object representing the {@code @Module} or {@code @ProducerModule} annotation if one
+   * Returns an object representing the {@code @ModuleDagger2} or {@code @ProducerModule} annotation if one
    * annotates {@code typeElement}.
    */
   public static Optional<ModuleAnnotation> moduleAnnotation(

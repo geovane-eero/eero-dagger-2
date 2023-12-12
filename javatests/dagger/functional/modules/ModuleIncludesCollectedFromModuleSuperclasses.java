@@ -17,7 +17,7 @@
 package dagger.functional.modules;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
 /**
@@ -31,14 +31,15 @@ final class ModuleIncludesCollectedFromModuleSuperclasses {
     String includedFromModuleInheritance();
   }
 
-  @Module(includes = IncludedTopLevel.class)
+  @ModuleDagger2(includes = IncludedTopLevel.class)
   static class TopLevelModule extends FooModule<String> {}
 
   static class Foo<T> {}
 
-  @Module(includes = IncludedFromModuleInheritance.class)
+  @ModuleDagger2(includes = IncludedFromModuleInheritance.class)
   abstract static class FooModule<T> extends FooCreator {
-    @Provides Foo<T> fooOfT() {
+    @Provides
+    Foo<T> fooOfT() {
       return createFoo();
     }
   }
@@ -49,16 +50,18 @@ final class ModuleIncludesCollectedFromModuleSuperclasses {
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class IncludedTopLevel {
-    @Provides int i() {
+    @Provides
+    int i() {
       return 123;
     }
   }
 
-  @Module
+  @ModuleDagger2
   static class IncludedFromModuleInheritance {
-    @Provides String inheritedProvision() {
+    @Provides
+    String inheritedProvision() {
       return "inherited";
     }
   }

@@ -20,7 +20,7 @@ import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Binds;
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import javax.inject.Inject;
 import javax.inject.Provider;
 import javax.inject.Singleton;
@@ -36,7 +36,7 @@ public class ScopedBindsTest {
     @Inject FooImpl() {}
   }
 
-  @Module
+  @ModuleDagger2
   interface FooModule {
     @Binds
     @Singleton

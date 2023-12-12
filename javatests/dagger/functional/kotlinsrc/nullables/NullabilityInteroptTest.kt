@@ -18,7 +18,7 @@ package dagger.functional.kotlinsrc.nullables
 
 import com.google.common.truth.Truth.assertThat
 import dagger.Component
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import javax.inject.Inject
 import javax.inject.Qualifier
@@ -53,14 +53,15 @@ class NullabilityInteroptTest {
     @ProvidedWithNullType fun nullTypeWithNullType(): String?
   }
 
-  @Module
+  @ModuleDagger2
   object TestModule {
     @Provides
     @ProvidedWithNullable
     @Nullable
     fun providedWithNullable(): String = PROVIDED_WITH_NULLABLE
 
-    @Provides @ProvidedWithNullType fun providedWithNullType(): String? = PROVIDED_WITH_NULL_TYPE
+    @Provides
+    @ProvidedWithNullType fun providedWithNullType(): String? = PROVIDED_WITH_NULL_TYPE
 
     @Provides
     fun providesUsage(

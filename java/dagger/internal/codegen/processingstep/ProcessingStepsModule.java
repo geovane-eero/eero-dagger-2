@@ -19,14 +19,14 @@ package dagger.internal.codegen.processingstep;
 import androidx.room.compiler.processing.XProcessingStep;
 import com.google.common.collect.ImmutableList;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.internal.codegen.base.ClearableCache;
 import dagger.internal.codegen.compileroption.CompilerOptions;
 import dagger.multibindings.IntoSet;
 
 /** A module that provides the list of processing steps in the expected order. */
-@Module
+@ModuleDagger2
 public interface ProcessingStepsModule {
   @Provides
   static ImmutableList<XProcessingStep> processingSteps(

@@ -18,7 +18,7 @@ package dagger.grpc.server;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
@@ -29,7 +29,7 @@ import javax.inject.Singleton;
  * Installing this module into a {@link Singleton @Singleton} component means the component can
  * provide a {@link Server} that serves {@linkplain InProcessServerBuilder in-process} requests.
  */
-@Module(includes = ServerModule.class)
+@ModuleDagger2(includes = ServerModule.class)
 public final class InProcessServerModule {
 
   private final String name;

@@ -16,10 +16,10 @@
 
 package dagger.android.simple;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class UserNameModule {
   @UserName
   @Provides

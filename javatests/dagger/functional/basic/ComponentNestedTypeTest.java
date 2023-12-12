@@ -19,7 +19,7 @@ package dagger.functional.basic;
 import static com.google.common.truth.Truth.assertThat;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,7 +44,7 @@ public final class ComponentNestedTypeTest {
 
   public static final class SomeType implements dagger.functional.basic.subpackage.NestedType {}
 
-  @Module
+  @ModuleDagger2
   static final class TestModule {
     @Provides
     static dagger.functional.basic.subpackage.NestedType provideSomeType() {

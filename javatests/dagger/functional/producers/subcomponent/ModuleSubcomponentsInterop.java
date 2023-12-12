@@ -17,7 +17,7 @@
 package dagger.functional.producers.subcomponent;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 import dagger.producers.ProducerModule;
 import dagger.producers.ProductionComponent;
@@ -29,7 +29,7 @@ final class ModuleSubcomponentsInterop {
     ProductionChild.Builder productionChild();
   }
 
-  @Module(subcomponents = ProductionChild.class)
+  @ModuleDagger2(subcomponents = ProductionChild.class)
   static class ProvisionTestModule {}
 
   @ProductionSubcomponent

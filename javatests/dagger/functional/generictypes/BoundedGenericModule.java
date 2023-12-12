@@ -16,7 +16,7 @@
 
 package dagger.functional.generictypes;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -24,7 +24,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-@Module
+@ModuleDagger2
 class BoundedGenericModule {
 
   @Provides

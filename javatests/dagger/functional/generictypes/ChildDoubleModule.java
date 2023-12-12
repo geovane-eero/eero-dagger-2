@@ -16,19 +16,21 @@
 
 package dagger.functional.generictypes;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import java.util.ArrayList;
 import java.util.List;
 
-@Module
+@ModuleDagger2
 class ChildDoubleModule extends ParentModule<Double, String, List<Double>> {
 
-  @Provides Double provideDouble() {
+  @Provides
+  Double provideDouble() {
     return 3d;
   }
 
-  @Provides List<Double> provideListOfDouble() {
+  @Provides
+  List<Double> provideListOfDouble() {
     List<Double> list = new ArrayList<>();
     list.add(4d);
     return list;

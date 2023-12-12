@@ -17,7 +17,7 @@
 package dagger.functional.kotlinsrc.binds.subpackage
 
 import dagger.Binds
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.ElementsIntoSet
 import dagger.multibindings.IntoSet
@@ -25,9 +25,10 @@ import javax.inject.Provider
 import javax.inject.Singleton
 import kotlin.jvm.JvmWildcard
 
-@Module
+@ModuleDagger2
 abstract class ExposedModule {
-  @Binds internal abstract fun notExposed(notExposed: NotExposed): Exposed
+  @Binds
+  internal abstract fun notExposed(notExposed: NotExposed): Exposed
 
   // TODO(b/260626101): @JvmWildcard is needed for KAPT to generate List<? extends Exposed>.
   @Binds

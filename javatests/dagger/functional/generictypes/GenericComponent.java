@@ -17,7 +17,7 @@
 package dagger.functional.generictypes;
 
 import dagger.Component;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.functional.generictypes.GenericComponent.NongenericModule;
 import dagger.functional.generictypes.subpackage.Exposed;
@@ -47,7 +47,7 @@ interface GenericComponent {
   Provider<List<String>> stringsProvider(); // b/71595104
 
   // b/71595104
-  @Module
+  @ModuleDagger2
   abstract class GenericModule<T> {
     // Note that for subclasses that use String for T, this factory will still need two
     // Provider<String> framework dependencies.
@@ -58,7 +58,7 @@ interface GenericComponent {
   }
 
   // b/71595104
-  @Module
+  @ModuleDagger2
   class NongenericModule extends GenericModule<String> {
     @Provides
     static String string() {

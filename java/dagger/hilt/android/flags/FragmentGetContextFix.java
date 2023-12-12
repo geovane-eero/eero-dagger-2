@@ -17,7 +17,7 @@
 package dagger.hilt.android.flags;
 
 import android.content.Context;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.hilt.EntryPoint;
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.EntryPointAccessors;
@@ -86,7 +86,7 @@ public final class FragmentGetContextFix {
   }
 
   /** Declare the empty flag set. */
-  @Module
+  @ModuleDagger2
   @InstallIn(SingletonComponent.class)
   abstract static class FragmentGetContextFixModule {
     @Multibinds

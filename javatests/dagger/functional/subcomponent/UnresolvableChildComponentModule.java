@@ -16,10 +16,10 @@
 
 package dagger.functional.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 
-@Module
+@ModuleDagger2
 final class UnresolvableChildComponentModule {
   /**
    * Provides a qualified version of the {@link UnresolvableChildComponent}'s builder. If the

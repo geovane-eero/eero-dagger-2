@@ -41,6 +41,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.ImmutableSetMultimap;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Multimaps;
+import dagger.Binds;
 import dagger.Reusable;
 import dagger.internal.codegen.base.ClearableCache;
 import dagger.internal.codegen.base.ContributionType;
@@ -602,7 +603,7 @@ public final class BindingGraphFactory implements ClearableCache {
 
     /**
      * Creates one (and only one) delegate binding for a delegate declaration, based on the resolved
-     * bindings of the right-hand-side of a {@link dagger.Binds} method. If there are duplicate
+     * bindings of the right-hand-side of a {@link Binds} method. If there are duplicate
      * bindings for the dependency key, there should still be only one binding for the delegate key.
      */
     private ContributionBinding createDelegateBinding(DelegateDeclaration delegateDeclaration) {

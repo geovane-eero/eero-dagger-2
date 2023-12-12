@@ -16,14 +16,14 @@
 
 package dagger.functional.producers.subcomponent;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Subcomponent;
 import dagger.producers.ProducerModule;
 import dagger.producers.ProductionComponent;
 import dagger.producers.ProductionSubcomponent;
 
 /**
- * Tests for {@link Subcomponent}s which are defined with {@link Module#subcomponents()} and are
+ * Tests for {@link Subcomponent}s which are defined with {@link ModuleDagger2#subcomponents()} and are
  * also requested as component factory methods.
  */
 public class ProductionSubcomponentFromModuleAndFactoryMethod {

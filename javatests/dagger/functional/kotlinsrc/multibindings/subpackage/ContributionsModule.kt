@@ -16,18 +16,21 @@
 
 package dagger.functional.kotlinsrc.multibindings.subpackage
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.multibindings.ElementsIntoSet
 import dagger.multibindings.IntoSet
 
-@Module
+@ModuleDagger2
 object ContributionsModule {
-  @Provides @IntoSet fun contributeAnInt(
+  @Provides
+  @IntoSet fun contributeAnInt(
     @Suppress("UNUSED_PARAMETER") doubleDependency: Double
   ): Int = 1742
 
-  @Provides @IntoSet fun contributeAnotherInt(): Int = 832
+  @Provides
+  @IntoSet fun contributeAnotherInt(): Int = 832
 
-  @Provides @ElementsIntoSet fun contributeSomeInts(): Set<Int> = linkedSetOf(-1, -90, -17)
+  @Provides
+  @ElementsIntoSet fun contributeSomeInts(): Set<Int> = linkedSetOf(-1, -90, -17)
 }

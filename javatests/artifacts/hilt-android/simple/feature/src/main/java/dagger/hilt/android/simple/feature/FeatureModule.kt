@@ -16,13 +16,13 @@
 
 package dagger.hilt.android.simple.feature
 
-import dagger.Module
+import dagger.ModuleDagger2
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityRetainedComponent
 import dagger.hilt.android.scopes.ActivityRetainedScoped
 
-@Module
+@ModuleDagger2
 @InstallIn(ActivityRetainedComponent::class)
 object FeatureModule {
   @Provides

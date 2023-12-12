@@ -20,7 +20,7 @@ import android.app.Activity;
 import android.content.Context;
 import androidx.fragment.app.FragmentActivity;
 import dagger.Binds;
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import dagger.Reusable;
 import dagger.hilt.InstallIn;
@@ -28,7 +28,7 @@ import dagger.hilt.android.components.ActivityComponent;
 import dagger.hilt.android.qualifiers.ActivityContext;
 
 /** Provides convenience bindings for activities. */
-@Module
+@ModuleDagger2
 @InstallIn(ActivityComponent.class)
 abstract class ActivityModule {
   @Binds

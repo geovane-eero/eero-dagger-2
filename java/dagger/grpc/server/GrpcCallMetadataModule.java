@@ -18,14 +18,14 @@ package dagger.grpc.server;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import dagger.Module;
+import dagger.ModuleDagger2;
 import dagger.Provides;
 import io.grpc.Metadata;
 
 /**
  * Provides {@link Metadata} about a gRPC call.
  */
-@Module
+@ModuleDagger2
 public final class GrpcCallMetadataModule {
   private final Metadata metadata;
 
